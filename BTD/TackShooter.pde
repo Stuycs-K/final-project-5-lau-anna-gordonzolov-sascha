@@ -1,0 +1,2 @@
+class TackShooter extends Monkeys{
+}
