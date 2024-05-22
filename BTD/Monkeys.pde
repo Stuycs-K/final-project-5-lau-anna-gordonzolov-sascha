@@ -2,7 +2,7 @@ abstract class Monkeys{
   private int cost;
   private int sell;
   private int size;
-  private int vel;
+  private int velo;
   private int str;
   private int rad;
   private PVector pos;
