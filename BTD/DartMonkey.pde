@@ -6,5 +6,3 @@ class DartMonkey extends Monkeys{
   public void upgrade(){
   }
 }
-
-  
