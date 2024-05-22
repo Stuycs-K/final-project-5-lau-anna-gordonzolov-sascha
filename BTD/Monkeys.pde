@@ -1,4 +1,4 @@
-abstract class Monkeys{
+class abstract Monkeys{
   private int cost;
   private int sell;
   private int size;
