@@ -43,6 +43,9 @@ public class Map{
   public boolean canBePlaced(int[][] size){
     return false;
   }
+  public ArrayList<Block> getPath() {
+    return path;
+  }
   void mousePressed() {
   }
 }
