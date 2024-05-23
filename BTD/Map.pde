@@ -8,7 +8,6 @@ public class Map{
     background = map;
     money = 0;
     lives = 0;
-    //add a grid
   }
   public int getWidth(){
     return background.width;
@@ -18,6 +17,12 @@ public class Map{
   }
   public void display(){
     image(background, 0, 0);
+    for (int h = 0; h < background.height; h += 41) {
+      for (int w = 0; w < background.width; w += 41) {
+        Block curr = new Block(w,h);
+        curr.display();
+      }
+    }
   }
   public void displayMoney(){
   }
