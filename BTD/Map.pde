@@ -26,5 +26,7 @@ public class Map{
   public boolean canBePlaced(int[][] size){
     return false;
   }
+  void mousePressed() {
+  }
 }
   

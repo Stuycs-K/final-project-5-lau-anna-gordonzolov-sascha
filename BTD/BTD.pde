@@ -7,7 +7,7 @@ void setup() {
   Map map = new Map(m);
   int w = m.width;
   int h = m.height;
-  size(1000, 1000);
+  size(826, 532);
   fill(0, 0, 0);
   textSize(36);
   text("" + w + " " + h, 200, 200);
