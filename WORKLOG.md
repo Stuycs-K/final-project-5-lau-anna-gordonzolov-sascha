@@ -1,10 +1,10 @@
 # Work Log
 
-## GROUP MEMBER 1
+## Sascha Gordon-Zolov
 
-### date x
+### 5/22
 
-info
+Created Skeleton, worked on writing abstract classes and subclasses. 
 
 ### date y
 
