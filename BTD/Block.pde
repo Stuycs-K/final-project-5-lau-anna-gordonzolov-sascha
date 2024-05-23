@@ -5,7 +5,7 @@ public class Block {
   }
   public void display() {
     stroke(#00FFFFFF);
-    square(x,y,200);
+    square(pos.x,pos.y,200);
     //edit the last value based on the map
     //first two values are the UPPER LEFT CORNER
   }

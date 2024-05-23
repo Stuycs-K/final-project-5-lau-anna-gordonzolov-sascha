@@ -10,6 +10,15 @@ public class Map{
     lives = 0;
     //add a grid
   }
+  public int getWidth(){
+    return background.width;
+  }
+  public int getHeight(){
+    return background.height;
+  }
+  public void display(){
+    image(background, 0, 0);
+  }
   public void displayMoney(){
   }
   public void displaylives(){
