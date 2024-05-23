@@ -2,15 +2,18 @@ abstract class Monkeys{
   private int cost;
   private int sell;
   private int size;
-  private int velo;
-  private int str;
-  private int rad;
+  private int v;
+  private int strength;
+  private int radius;
   private PVector pos;
   private boolean isSelected;
   private PImage sprite;
   public abstract void attack();
   public abstract void upgrade();
   public void move(){
+    if (isSelected) {
+      pos = new PVector(mouseX,mouseY);
+    }
   }
   public void click(){
   }
