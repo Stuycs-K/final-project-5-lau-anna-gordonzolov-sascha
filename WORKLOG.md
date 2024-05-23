@@ -6,9 +6,9 @@
 
 Created Skeleton, worked on writing abstract classes and subclasses. 
 
-### date y
+### 5/23
 
-info
+Having some trouble committing, but displayed the map with coordinates (826, 532).
 
 
 ## GROUP MEMBER 2
