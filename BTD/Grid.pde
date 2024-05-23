@@ -4,6 +4,6 @@ public class Grid {
   private Block[][] blocks;
   private Block[][] path;
   
-  public Grid(Image map) {
+  public Grid(PImage map) {
   }
 }

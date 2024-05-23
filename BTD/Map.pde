@@ -15,6 +15,7 @@ public class Map{
   public void displaylives(){
   }
   public boolean canBePlaced(int[][] size){
+    return false;
   }
 }
   
