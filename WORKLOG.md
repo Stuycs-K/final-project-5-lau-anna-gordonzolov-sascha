@@ -13,10 +13,10 @@ info
 
 ## GROUP MEMBER 2
 
-### date x
+### date 5/22
 
-info
+Finished the skeletons for the rest of the classes and wrote constructor for Monkeys
 
-### date y
+### date 5/23
 
-info
+Coded constructor for DartMonkeys and added the image to display. Coded the move method for Monkeys to be inherited by each of the subclasses.
