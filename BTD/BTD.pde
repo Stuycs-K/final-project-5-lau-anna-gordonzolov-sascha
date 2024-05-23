@@ -12,4 +12,6 @@ void setup() {
   textSize(36);
   text("" + w + " " + h, 200, 200);
   map.display();
+  //path starts at 0,205
+  //each tile is 40 w and h
 }
