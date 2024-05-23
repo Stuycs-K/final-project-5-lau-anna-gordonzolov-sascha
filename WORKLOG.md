@@ -11,7 +11,7 @@ Created Skeleton, worked on writing abstract classes and subclasses.
 Having some trouble committing, but displayed the map with coordinates (826, 532).
 
 
-## GROUP MEMBER 2
+Anna Lau
 
 ### date 5/22
 
