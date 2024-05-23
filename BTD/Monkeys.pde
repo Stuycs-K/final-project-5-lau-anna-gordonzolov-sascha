@@ -8,11 +8,9 @@ abstract class Monkeys{
   private PVector pos;
   private boolean isSelected;
   private PImage sprite;
-  public void attack(){
-  }
+  public abstract void attack();
+  public abstract void upgrade();
   public void move(){
-  }
-  public void upgrade(){
   }
   public void click(){
   }
