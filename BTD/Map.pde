@@ -5,7 +5,9 @@ public class Map{
   private Block start;
   private Block end;
   private PImage background;
+  private Block[][] blocks = new Block[13][20];
   private ArrayList<Block> path = new ArrayList<Block>();
+  private int dir = 0;
   public Map(PImage map){
     background = map;
     Block start = new Block(0.0, 205.0);
@@ -26,22 +28,21 @@ public class Map{
   }
   public void display(){
     image(background, 0, 0);
+    int row = 0;
+    int col = 0;
     for (int h = 0; h < background.height; h += 41) {
-      for (int w = 0; w < background.width; w += 41) {
+      for (int w = 0; w < background.width-20; w += 41) {
         Block curr = new Block(w,h);
-        color mid = background.get(w+15,h+15);
-        if (red(mid) > 120 && blue(mid) > 110) {
-          curr.setFill(color(20,45,10));
-          path.add(curr);
-        }
-        else {
-          curr.setFill(color(#00FFFFFF));
-        }
-        //noFill();
+        blocks[row][col] = curr;
         curr.display();
+        col++;
       }
+      row++;
+      col = 0;
     }
-    print(path);
+    start = blocks[5][0];
+    end = blocks[12][9];
+    //print(Arrays.deepToString(blocks));
   }
   public void displayMoney(){
   }
@@ -51,6 +52,33 @@ public class Map{
     return false;
   }
   public ArrayList<Block> getPath() {
+    for (int i = 0; i <= 10; i++) {
+      path.add(blocks[5][i]);
+    }
+    for (int i = 4; i >= 2; i--) {
+      path.add(blocks[i][10]);
+    }
+    for (int i = 9; i >= 6; i--) {
+      path.add(blocks[2][i]);
+    }
+    for(int i = 2; i <= 10; i++) {
+      path.add(blocks[i][6]);
+    }
+    for (int i = 5; i >= 3; i--) {
+      path.add(blocks[10][i]);
+    }
+    for (int i = 9; i >= 7; i--) {
+      path.add(blocks[i][3]);
+    }
+    for (int i = 3; i <= 12; i++) {
+      path.add(blocks[7][i]);
+    }
+    for (int i = 6; i >= 4; i--) {
+      path.add(blocks[i][12]);
+    }
+    for (int i = 13; i <= 15; i++) {
+      path.add(blocks[4][i]);
+    }
     return path;
   }
   void mousePressed() {
