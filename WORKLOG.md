@@ -10,8 +10,11 @@ Created Skeleton, worked on writing abstract classes and subclasses.
 
 Having some trouble committing, but displayed the map with coordinates (826, 532).
 
+### 5/24
 
-Anna Lau
+Created getStart() and getEnd(), explicitly found which block was the start block. Switched variable types to make different parts of the code align better. 
+
+## Anna Lau
 
 ### date 5/22
 
