@@ -79,6 +79,15 @@ public class Map{
     for (int i = 13; i <= 15; i++) {
       path.add(blocks[4][i]);
     }
+    for (int i = 5; i <= 9; i++) {
+      path.add(blocks[i][15]);
+     }
+     for (int i = 8; i <= 14; i++) {
+       path.add(blocks[9][i]);
+     }
+     for (int i = 9; i <= 12; i++) {
+       path.add(blocks[i][8]);
+     }
     return path;
   }
   void mousePressed() {
