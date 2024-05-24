@@ -1,6 +1,6 @@
 public class Block {
   private PVector pos;
-  public Block (int x, int y) {
+  public Block (float x, float y) {
     pos = new PVector(x,y);
   }
   public void display() {

@@ -2,12 +2,13 @@ import java.util.*;
 public class Map{
   private int money;
   private int lives;
-  private PVector start;
-  private PVector end;
+  private Block start;
+  private Block end;
   private PImage background;
   private ArrayList<Block> path = new ArrayList<Block>();
   public Map(PImage map){
     background = map;
+    Block start = new Block(0.0, 205.0);
     money = 0;
     lives = 0;
   }
@@ -17,10 +18,10 @@ public class Map{
   public int getHeight(){
     return background.height;
   }
-  public PVector getStart(){
+  public Block getStart(){
     return start;
   }
-  public PVector getEnd(){
+  public Block getEnd(){
     return end;
   }
   public void display(){
