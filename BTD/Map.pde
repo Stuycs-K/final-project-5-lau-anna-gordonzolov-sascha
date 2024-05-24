@@ -17,6 +17,12 @@ public class Map{
   public int getHeight(){
     return background.height;
   }
+  public PVector getStart(){
+    return start;
+  }
+  public PVector getEnd(){
+    return end;
+  }
   public void display(){
     image(background, 0, 0);
     for (int h = 0; h < background.height; h += 41) {
