@@ -7,7 +7,6 @@ public class Map{
   private PImage background;
   private Block[][] blocks = new Block[13][20];
   private ArrayList<Block> path = new ArrayList<Block>();
-  private int dir = 0;
   public Map(PImage map){
     background = map;
     Block start = new Block(0.0, 205.0);
