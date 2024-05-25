@@ -102,6 +102,9 @@ public class Map{
   public LinkedList<Block> getPath() {
     return path;
   }
+  public ArrayList<Block> getTurns() {
+    return turns;
+  }
   void mousePressed() {
   }
    public void displayPath(){
