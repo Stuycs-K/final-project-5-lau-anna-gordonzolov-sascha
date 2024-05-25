@@ -11,8 +11,8 @@ void setup() {
   fill(0, 0, 0);
   textSize(36);
   text("" + w + " " + h, 200, 200);
-  map.getPath();
   map.display();
+  print(map.getPath());
   //path starts at 0,205
   //each tile is 40 w and h
 }
