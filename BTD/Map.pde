@@ -13,7 +13,7 @@ public class Map{
     path.add(start);
     for (int i = 0; i < blocks.length; i++){
       for (int j = 0; j < blocks[0].length; j++){
-        blocks[i][j] = new Block(map.height * i /13, map.width * i /20);
+        blocks[i][j] = new Block(map.height * (i-1) /13, map.width * (j-1) /20);
       }
     }
     for (int i = 0; i <= 10; i++) {
@@ -100,6 +100,7 @@ public class Map{
    public void displayPath(){
       for (Block i : path){
         fill(0);
+        System.out.println(i.toString());
         rect(i.getX(), i.getY(), 862/20, 532/13);
       }
    }
