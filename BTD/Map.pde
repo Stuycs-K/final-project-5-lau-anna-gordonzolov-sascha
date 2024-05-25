@@ -13,16 +13,16 @@ public class Map{
     path.add(start);
     for (int i = 0; i < blocks.length; i++){
       for (int j = 0; j < blocks[0].length; j++){
-        blocks[i][j] = new Block(map.height * (i-1) /13, map.width * (j-1) /20);
+        blocks[i][j] = new Block(map.width * j /20, map.height * i /13);
       }
     }
-    for (int i = 0; i <= 10; i++) {
+    for (int i = 1; i <= 9; i++) {
       path.add(blocks[5][i]);
     }
-    for (int i = 4; i >= 2; i--) {
-      path.add(blocks[i][10]);
+    for (int i = 5; i >= 3; i--) {
+      path.add(blocks[i][9]);
     }
-    for (int i = 9; i >= 6; i--) {
+    for (int i = 9; i >= 7; i--) {
       path.add(blocks[2][i]);
     }
     for(int i = 2; i <= 10; i++) {
@@ -34,10 +34,10 @@ public class Map{
     for (int i = 9; i >= 7; i--) {
       path.add(blocks[i][3]);
     }
-    for (int i = 3; i <= 12; i++) {
+    for (int i = 3; i <= 11; i++) {
       path.add(blocks[7][i]);
     }
-    for (int i = 6; i >= 4; i--) {
+    for (int i = 7; i >= 4; i--) {
       path.add(blocks[i][12]);
     }
     for (int i = 13; i <= 15; i++) {
