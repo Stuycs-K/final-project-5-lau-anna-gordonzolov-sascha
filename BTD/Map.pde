@@ -5,13 +5,15 @@ public class Map{
   private Block start;
   private Block end;
   private PImage background;
-  private Block[][] blocks = new Block[13][20];
-  private ArrayList<Block> path = new ArrayList<Block>();
+  private Block[][] blocks;
+  private ArrayList<Block> path;
   public Map(PImage map){
     background = map;
     Block start = new Block(0.0, 205.0);
     money = 0;
     lives = 0;
+    blocks = new Block[13][20];
+    path = new ArrayList<Block>();
   }
   public int getWidth(){
     return background.width;
@@ -41,7 +43,6 @@ public class Map{
     }
     start = blocks[5][0];
     end = blocks[12][9];
-    //print(Arrays.deepToString(blocks));
   }
   public void displayMoney(){
   }

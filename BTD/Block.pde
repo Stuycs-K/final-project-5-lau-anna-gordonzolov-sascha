@@ -1,7 +1,9 @@
 public class Block {
   private PVector pos;
+  private boolean onPath;
   public Block (float x, float y) {
     pos = new PVector(x,y);
+    onPath = false;
   }
   public void display() {
     //stroke(#00FFFFFF);
@@ -18,5 +20,11 @@ public class Block {
   }
   public void setFill(color c) {
     fill(c);
+  }
+  public boolean on() {
+    return onPath;
+  }
+  public void setPath(boolean on) {
+    onPath = on;
   }
 }
