@@ -14,6 +14,10 @@ Having some trouble committing, but displayed the map with coordinates (826, 532
 
 Created getStart() and getEnd(), explicitly found which block was the start block. Switched variable types to make different parts of the code align better. 
 
+### date 5/24
+
+Made a visible path for the bloons to stay on, toggleable (maybe?) with the new display() method in map. Also made the path an ordered linked list, such that the start is the head and the end is the tail. 
+
 ## Anna Lau
 
 ### date 5/22
