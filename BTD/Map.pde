@@ -99,10 +99,9 @@ public class Map{
   }
    public void displayPath(){
       for (Block i : path){
-        System.out.println(i.toString());
+        fill(0);
+        rect(i.getX(), i.getY(), 862/20, 532/13);
       }
-      System.out.println(path.size());
-      path.getFirst().setFill(123);
    }
 }
   

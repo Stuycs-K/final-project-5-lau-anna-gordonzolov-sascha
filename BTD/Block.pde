@@ -10,6 +10,12 @@ public class Block {
     //edit the last value based on the map
     //first two values are the UPPER LEFT CORNER
   }
+  public float getX(){
+    return pos.x;
+  }
+  public float getY(){
+    return pos.y;
+  }
   public void highlight() {
     //make the borders white
   }
