@@ -8,6 +8,14 @@ public class Map{
   private Block[][] blocks = new Block[13][20];
   private LinkedList<Block> path = new LinkedList<Block>();
   public Map(PImage map){
+    background = map;
+    Block start = new Block(0.0, 205.0);
+    path.add(start);
+    for (int i = 0; i < blocks.length; i++){
+      for (int j = 0; j < blocks[0].length; j++){
+        blocks[i][j] = new Block(map.height * i /13, map.width * i /20);
+      }
+    }
     for (int i = 0; i <= 10; i++) {
       path.add(blocks[5][i]);
     }
@@ -44,8 +52,6 @@ public class Map{
      for (int i = 9; i <= 12; i++) {
        path.add(blocks[i][8]);
      }
-    background = map;
-    Block start = new Block(0.0, 205.0);
     money = 0;
     lives = 0;
   }
@@ -91,5 +97,12 @@ public class Map{
   }
   void mousePressed() {
   }
+   public void displayPath(){
+      for (Block i : path){
+        System.out.println(i.toString());
+      }
+      System.out.println(path.size());
+      path.getFirst().setFill(123);
+   }
 }
   
