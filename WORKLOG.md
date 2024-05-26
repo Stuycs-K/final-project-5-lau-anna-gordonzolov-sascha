@@ -35,3 +35,6 @@ Found the images for each Ballon and started their constructors. Started coding 
 
 ### date 5/24
 Created an list of Blocks for the path and started a list of turning points to be implemented in the move function for Block.
+
+### date 5/26
+Added a method to access the map through the coonstructor. Have to think more about how to implement move. Resized the images for the Bloons.
