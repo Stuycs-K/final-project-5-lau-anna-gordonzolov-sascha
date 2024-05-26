@@ -41,6 +41,9 @@ public class Bloons{
   public Block getNext(){
     return next;
   }
+  public void display() {
+    image(balloon,pos.x,pos.y);
+  }
   public void move(){
     ArrayList<Block> turns = m.getTurns();
   }
