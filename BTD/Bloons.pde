@@ -6,7 +6,8 @@ public class Bloons{
   Block next;
   PVector pos;
   PImage balloon;
-  public Bloons(int level){
+  Map m;
+  public Bloons(int level, Map map){
     if (level > 0 && level < 5) {
       this.level = level;
     }
@@ -26,6 +27,7 @@ public class Bloons{
       balloon = loadImage("red.png");
       velo = 1;
     }
+    m = map;
   }
   public Block getCurr(){
     return curr;
