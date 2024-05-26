@@ -14,9 +14,13 @@ Having some trouble committing, but displayed the map with coordinates (826, 532
 
 Created getStart() and getEnd(), explicitly found which block was the start block. Switched variable types to make different parts of the code align better. 
 
-### date 5/24
+### 5/24
 
 Made a visible path for the bloons to stay on, toggleable (maybe?) with the new display() method in map. Also made the path an ordered linked list, such that the start is the head and the end is the tail. 
+
+### date 5/25
+
+Made skeletons of potential useful methods: getCurr() and getNext(). Also set all the elements of path to true for being onpath. Not entirely sure how to access path from bloon, still thinking about solutions. 
 
 ## Anna Lau
 
