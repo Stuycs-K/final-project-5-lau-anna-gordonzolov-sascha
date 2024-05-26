@@ -71,6 +71,9 @@ public class Map{
      turns.add(end);
     money = 0;
     lives = 0;
+    for (Block i : path){
+      i.setPath(true);
+    }
   }
   public int getWidth(){
     return background.width;

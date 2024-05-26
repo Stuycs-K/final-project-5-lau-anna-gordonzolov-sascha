@@ -2,6 +2,8 @@ public class Bloons{
   int level;
   int velo; 
   int value;
+  Block curr;
+  Block next;
   PVector pos;
   PImage balloon;
   public Bloons(int level){
@@ -25,7 +27,12 @@ public class Bloons{
       velo = 1;
     }
   }
-  
+  public Block getCurr(){
+    return curr;
+  }
+  public Block getNext(){
+    return next;
+  }
   public void move(){
   }
   public void levelDown(){
