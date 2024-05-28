@@ -1,20 +1,24 @@
-void draw() {
-}
+PImage m;
+Map map;
+Bloons balloon;
 void keyPressed() {
 }
-void setup() { 
-  PImage m = loadImage("map.png");
-  Map map = new Map(m);
-  size(826,532);
+void setup() {
+  m = loadImage("map.png");
+  map = new Map(m);
+  int w = m.width;
+  int h = m.height;
+  size(826, 532);
   fill(0, 0, 0);
   textSize(36);
   map.display();
   map.displayPath();
-  Bloons balloon = new Bloons(2,map,0,205);
-  balloon.display();
-  balloon.move();
-  balloon.levelDown();
-  balloon.display();
   //path starts at 0,205
   //each tile is 40 w and h
+}
+void draw() {
+  balloon = new Bloons(1,map,0,205);
+  balloon.display();
+  balloon.move();
+  balloon.display();
 }
