@@ -27,7 +27,7 @@ public class Map{
     for (int i = 5; i >= 3; i--) {
       path.add(blocks[i][9]);
     }
-    turns.add(blocks[3][9]);
+    turns.add(blocks[2][9]);
     for (int i = 9; i >= 7; i--) {
       path.add(blocks[2][i]);
     }

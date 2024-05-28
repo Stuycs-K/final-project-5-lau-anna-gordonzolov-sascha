@@ -46,6 +46,22 @@ public class Bloons{
   }
   public void move(){
     ArrayList<Block> turns = m.getTurns();
+    float x = turns.get(0).getX();
+    while (pos.x < x) {
+      pos = new PVector(pos.x + velo,pos.y);
+    }
+    float y = turns.get(1).getY();
+    while (pos.y > y) {
+      pos = new PVector(pos.x, pos.y-velo);
+    } /*
+    x = turns.get(2).getX();
+    while (pos.x > x) {
+      pos = new PVector(pos.x-velo,pos.y);
+    }
+    y = turns.get(3).getY();
+    while (pos.y < y) {
+      pos = new PVector(pos.x,pos.y+velo);
+    } */
     System.out.println(turns);
   }
   public void level(int l){
