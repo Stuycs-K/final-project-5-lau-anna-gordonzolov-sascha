@@ -25,6 +25,10 @@ Made skeletons of potential useful methods: getCurr() and getNext(). Also set al
 ### date 5/27
 
 Created a new class called "rounds". The idea is that each wave will be contained in a "Round" -- I'm oping that this may fix the problem of Round being able to access the path as the rounds will have a path (maybe?). 
+
+### date 5/28
+
+Created a working leveldown for bloons, created monkeys that have a radius that can be displayed with an opacity that makes sense somewhat. 
 ## Anna Lau
 
 ### date 5/22
