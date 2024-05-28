@@ -113,7 +113,6 @@ public class Map{
    public void displayPath(){
       for (Block i : path){
         fill(0);
-        System.out.println(i.toString());
         rect(i.getX(), i.getY(), 862/20, 532/13);
       }
    }
