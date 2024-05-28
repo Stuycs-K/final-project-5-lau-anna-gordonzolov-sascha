@@ -10,9 +10,11 @@ void setup() {
   textSize(36);
   map.display();
   map.displayPath();
-  Bloons balloon = new Bloons(1,map,0,205);
+  Bloons balloon = new Bloons(2,map,0,205);
   balloon.display();
   balloon.move();
+  balloon.levelDown();
+  balloon.display();
   //path starts at 0,205
   //each tile is 40 w and h
 }
