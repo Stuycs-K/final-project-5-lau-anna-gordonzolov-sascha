@@ -16,6 +16,9 @@ class DartMonkey extends Monkeys{
   public void display() {
     image(sprite,pos.x,pos.y);
   }
+  public void displayRad(){
+    circle(pos.x, pos.y, 50);
+  }
   public void attack(){
   }
   public void upgrade(){

@@ -15,6 +15,9 @@ void setup() {
   balloon.move();
   balloon.levelDown();
   balloon.display();
+  DartMonkey mon = new DartMonkey(180, 220);
+  mon.display();
+  mon.displayRad();
   //path starts at 0,205
   //each tile is 40 w and h
 }
