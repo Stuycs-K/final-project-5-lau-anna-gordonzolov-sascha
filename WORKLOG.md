@@ -41,3 +41,6 @@ Created an list of Blocks for the path and started a list of turning points to b
 
 ### date 5/26
 Added a method to access the map through the coonstructor. Have to think more about how to implement move. Resized the images for the Bloons.
+
+### date 5/28
+Coded the move for Bloons to go through the path and reconfigured the BTD file. Need to animate the movement.
