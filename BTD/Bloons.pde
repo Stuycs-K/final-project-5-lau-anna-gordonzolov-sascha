@@ -48,8 +48,31 @@ public class Bloons{
     ArrayList<Block> turns = m.getTurns();
     System.out.println(turns);
   }
+  public void level(int l){
+    level = l;
+    if (level == 4) {
+      balloon = loadImage("yellow.png");
+      velo = 10;
+      value = 20;
+    }
+    else if (level == 3) {
+      balloon = loadImage("green.png");
+      velo = 7;
+      value = 15;
+    }
+    else if (level == 2) {
+      balloon = loadImage("blue.png");
+      velo = 3;
+      value = 10;
+    }
+    else {
+      balloon = loadImage("red.png");
+      velo = 1;
+      value = 5;
+    }
+  }
   public void levelDown(){
-    level --;
+    this.level(level - 1);
     //remove this balloon and replace it with a lower level at the same position
   }
   public boolean atEnd(){
