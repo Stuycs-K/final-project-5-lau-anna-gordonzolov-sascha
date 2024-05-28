@@ -23,4 +23,7 @@ abstract class Monkeys{
   public int buy(){
     return -1;
   }
+  public void setSelect() {
+    isSelected = !isSelected;
+  }
 }

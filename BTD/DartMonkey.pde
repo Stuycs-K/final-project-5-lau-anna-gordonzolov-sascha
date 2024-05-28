@@ -11,6 +11,7 @@ class DartMonkey extends Monkeys{
   public DartMonkey(int x, int y){
     sprite = loadImage("DartMonkey.png");
     pos = new PVector(x,y);
+    isSelected = false;
   }
   public void display() {
     image(sprite,pos.x,pos.y);

@@ -6,12 +6,26 @@
 
 Created Skeleton, worked on writing abstract classes and subclasses. 
 
-### date y
+### 5/23
 
-info
+Having some trouble committing, but displayed the map with coordinates (826, 532).
 
+### 5/24
 
-## GROUP MEMBER 2
+Created getStart() and getEnd(), explicitly found which block was the start block. Switched variable types to make different parts of the code align better. 
+
+### 5/24
+
+Made a visible path for the bloons to stay on, toggleable (maybe?) with the new display() method in map. Also made the path an ordered linked list, such that the start is the head and the end is the tail. 
+
+### date 5/25
+
+Made skeletons of potential useful methods: getCurr() and getNext(). Also set all the elements of path to true for being onpath. Not entirely sure how to access path from bloon, still thinking about solutions. 
+
+### date 5/27
+
+Created a new class called "rounds". The idea is that each wave will be contained in a "Round" -- I'm oping that this may fix the problem of Round being able to access the path as the rounds will have a path (maybe?). 
+## Anna Lau
 
 ### date 5/22
 
@@ -20,3 +34,10 @@ Finished the skeletons for the rest of the classes and wrote constructor for Mon
 ### date 5/23
 
 Coded constructor for DartMonkeys and added the image to display. Coded the move method for Monkeys to be inherited by each of the subclasses.
+Found the images for each Ballon and started their constructors. Started coding the grid and the array for the path.
+
+### date 5/24
+Created an list of Blocks for the path and started a list of turning points to be implemented in the move function for Block.
+
+### date 5/26
+Added a method to access the map through the coonstructor. Have to think more about how to implement move. Resized the images for the Bloons.
