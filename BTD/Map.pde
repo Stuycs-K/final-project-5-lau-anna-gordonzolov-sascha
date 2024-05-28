@@ -31,7 +31,7 @@ public class Map{
     for (int i = 9; i >= 7; i--) {
       path.add(blocks[2][i]);
     }
-    turns.add(blocks[2][7]);
+    turns.add(blocks[2][6]);
     for(int i = 2; i <= 10; i++) {
       path.add(blocks[i][6]);
     }
@@ -47,7 +47,7 @@ public class Map{
     for (int i = 3; i <= 11; i++) {
       path.add(blocks[7][i]);
     }
-    turns.add(blocks[7][11]);
+    turns.add(blocks[7][12]);
     for (int i = 7; i >= 4; i--) {
       path.add(blocks[i][12]);
     }
@@ -63,7 +63,7 @@ public class Map{
      for (int i = 8; i <= 14; i++) {
        path.add(blocks[9][i]);
      }
-     turns.add(blocks[9][14]);
+     turns.add(blocks[9][8]);
      for (int i = 9; i <= 12; i++) {
        path.add(blocks[i][8]);
      }
