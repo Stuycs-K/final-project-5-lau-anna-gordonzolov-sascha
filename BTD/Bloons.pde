@@ -53,7 +53,7 @@ public class Bloons{
     float y = turns.get(1).getY();
     while (pos.y > y) {
       pos = new PVector(pos.x, pos.y-velo);
-    } /*
+    }
     x = turns.get(2).getX();
     while (pos.x > x) {
       pos = new PVector(pos.x-velo,pos.y);
@@ -61,7 +61,39 @@ public class Bloons{
     y = turns.get(3).getY();
     while (pos.y < y) {
       pos = new PVector(pos.x,pos.y+velo);
-    } */
+    }
+    x = turns.get(4).getX();
+    while (pos.x > x) {
+      pos = new PVector(pos.x-velo,pos.y);
+    }
+    y = turns.get(5).getY();
+    while (pos.y > y) {
+      pos = new PVector(pos.x, pos.y-velo);
+    }
+    x = turns.get(6).getX();
+    while (pos.x < x) {
+      pos = new PVector(pos.x+velo,pos.y);
+    }
+    y = turns.get(7).getY();
+    while (pos.y > y) {
+      pos = new PVector(pos.x, pos.y-velo);
+    }
+    x = turns.get(8).getX();
+    while (pos.x < x) {
+      pos = new PVector(pos.x+velo,pos.y);
+    }
+    y = turns.get(9).getY();
+    while (pos.y < y) {
+      pos = new PVector(pos.x,pos.y+velo);
+    }
+    x = turns.get(10).getX();
+    while (pos.x > x) {
+      pos = new PVector(pos.x-velo,pos.y);
+    }
+    y = turns.get(11).getY();
+    while (pos.y < y+100) {
+      pos = new PVector(pos.x,pos.y+velo);
+    }
     System.out.println(turns);
   }
   public void levelDown(){
