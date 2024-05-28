@@ -15,7 +15,7 @@ void setup() {
   balloon.move();
   balloon.levelDown();
   balloon.display();
-  DartMonkey mon = new DartMonkey(180, 220);
+  DartMonkey mon = new DartMonkey(225, 185);
   mon.display();
   mon.displayRad();
   //path starts at 0,205
