@@ -12,6 +12,7 @@ void setup() {
   map.displayPath();
   Bloons balloon = new Bloons(1,map,0,205);
   balloon.display();
+  balloon.move();
   //path starts at 0,205
   //each tile is 40 w and h
 }
