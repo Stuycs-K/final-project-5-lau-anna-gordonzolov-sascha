@@ -22,6 +22,9 @@ Made a visible path for the bloons to stay on, toggleable (maybe?) with the new 
 
 Made skeletons of potential useful methods: getCurr() and getNext(). Also set all the elements of path to true for being onpath. Not entirely sure how to access path from bloon, still thinking about solutions. 
 
+### date 5/27
+
+Created a new class called "rounds". The idea is that each wave will be contained in a "Round" -- I'm oping that this may fix the problem of Round being able to access the path as the rounds will have a path (maybe?). 
 ## Anna Lau
 
 ### date 5/22
