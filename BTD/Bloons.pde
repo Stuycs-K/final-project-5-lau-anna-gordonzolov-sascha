@@ -24,17 +24,17 @@ public class Bloons{
     }
     else if (level == 3) {
       balloon = loadImage("green.png");
-      velo = 3;
+      velo = 3.5;
       value = 15;
     }
     else if (level == 2) {
       balloon = loadImage("blue.png");
-      velo = 2;
+      velo = 3;
       value = 10;
     }
     else {
       balloon = loadImage("red.png");
-      velo = 1;
+      velo = 2.5;
       value = 5;
     }
     m = map;
@@ -53,7 +53,7 @@ public class Bloons{
     image(balloon,pos.x,pos.y);
   }
   public void move(){
-    if (turningpt.size() > 0) {
+    if (turns < 12) {
       PVector dir = PVector.sub(turningpt.get(turns).getPos(),pos);
       dir = dir.div(dir.mag());
       pos.x += dir.x * velo;
@@ -62,7 +62,7 @@ public class Bloons{
         turns++;
       }
     }
-    else if (pos.y <= 450){
+    else if (pos.y <= 550){
       pos.y += velo;
     }
   }
@@ -78,17 +78,17 @@ public class Bloons{
     }
     else if (level == 3) {
       balloon = loadImage("green.png");
-      velo = 3;
+      velo = 3.5;
       value = 15;
     }
     else if (level == 2) {
       balloon = loadImage("blue.png");
-      velo = 2;
+      velo = 3;
       value = 10;
     }
     else {
       balloon = loadImage("red.png");
-      velo = 1;
+      velo = 2.5;
       value = 5;
     }
   }
