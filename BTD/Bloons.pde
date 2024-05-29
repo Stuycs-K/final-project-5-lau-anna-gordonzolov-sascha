@@ -47,16 +47,16 @@ public class Bloons{
   public void move(int dir){
     //1: up, 2: left, 3: down, 4: right
     if (dir == 1) {
-       pos = new PVector(pos.x, pos.y-velo);
+      pos.y -= velo;
     }
     else if (dir == 2) {
-       pos = new PVector(pos.x-velo,pos.y);
+      pos.x -= velo;
     }
     else if (dir == 3) {
-      pos = new PVector(pos.x, pos.y+velo);
+      pos.y += velo;
     }
     else if (dir == 4) {
-      pos = new PVector(pos.x+velo,pos.y);
+      pos.x += velo;
     }
     /*
     ArrayList<Block> turns = m.getTurns();
