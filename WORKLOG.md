@@ -56,4 +56,5 @@ Started the animation of the movement but have to modify the move method to acco
 
 ### date 5/29
 Got a bit of the path to work. Added a lot more accessor methods to access things across classes.
+Finished the path and tested it extensively. Can start adding rounds and shooters tomorrow.
 
