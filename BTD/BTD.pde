@@ -1,11 +1,13 @@
 PImage m;
 Map map;
 Bloons balloon;
+ArrayList<Block> turningpt;
 void keyPressed() {
 }
 void setup() {
   m = loadImage("map.png");
   map = new Map(m);
+  turningpt = map.getTurns();
   int w = m.width;
   int h = m.height;
   size(826, 532);
@@ -15,7 +17,6 @@ void setup() {
   map.displayPath();
   Bloons balloon = new Bloons(2,map,0,205);
   balloon.display();
-  balloon.move();
   balloon.levelDown();
   balloon.display();
   DartMonkey mon = new DartMonkey(225, 185);
@@ -27,6 +28,12 @@ void setup() {
 void draw() {
   balloon = new Bloons(1,map,0,205);
   balloon.display();
-  balloon.move();
+  moveBloon();
   balloon.display();
+}
+
+void moveBloon() {
+  while (balloon.getX() < turningpt.get(0).getX()) {
+    balloon.move(4);
+  }
 }
