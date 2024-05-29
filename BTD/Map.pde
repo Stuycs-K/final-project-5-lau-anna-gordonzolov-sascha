@@ -99,6 +99,12 @@ public class Map{
   }
   public void displaylives(){
   }
+  public Block getThis(){
+    return start;
+  }
+  public Block getNext(float x, float y){
+    return start;
+  }
   public boolean canBePlaced(int[][] size){
     return false;
   }

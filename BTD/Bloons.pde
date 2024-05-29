@@ -8,7 +8,7 @@ public class Bloons{
   PImage balloon;
   Map m;
   //in BTD, call this with (0,205);
-  public Bloons(int level, Map map, int x, int y){
+  public Bloons(int level, Map map){
     if (level > 0 && level < 5) {
       this.level = level;
     }
@@ -33,7 +33,8 @@ public class Bloons{
       value = 5;
     }
     m = map;
-    pos = new PVector(x,y);
+    pos = new PVector(0, 205);
+    curr = map.getStart();
   }
   public Block getCurr(){
     return curr;
