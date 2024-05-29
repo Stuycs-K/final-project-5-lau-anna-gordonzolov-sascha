@@ -17,7 +17,7 @@ void setup() {
   textSize(36);
   map.display();
   map.displayPath();
-  Bloons balloon = new Bloons(2,map,0,205);
+  Bloons balloon = new Bloons(2,map);
   balloon.display();
   balloon.levelDown();
   balloon.display();
@@ -26,13 +26,13 @@ void setup() {
   mon.displayRad();
   //path starts at 0,205
   //each tile is 40 w and h
-  balloon = new Bloons(4,map,0,205);
+  balloon = new Bloons(4,map);
   balloons.add(balloon);
 }
 void draw() {
   map.display();
   for (Bloons b: balloons) {
-    b.move(4);
+    b.move();
     b.display();
   }
 }
