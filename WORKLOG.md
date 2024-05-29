@@ -49,3 +49,7 @@ Added a method to access the map through the coonstructor. Have to think more ab
 ### date 5/28
 Coded the move for Bloons to go through the path and reconfigured the BTD file. Need to animate the movement.
 Started the animation of the movement but have to modify the move method to accomodate the turns in the path.
+
+### date 5/29
+Got a bit of the path to work. Added a lot more accessor methods to access things across classes.
+
