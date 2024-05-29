@@ -32,7 +32,7 @@ void setup() {
 void draw() {
   map.display();
   for (Bloons b: balloons) {
-    b.move(4);
+    b.move();
     b.display();
   }
 }

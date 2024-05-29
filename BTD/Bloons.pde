@@ -7,8 +7,11 @@ public class Bloons{
   PVector pos;
   PImage balloon;
   Map m;
+  LinkedList<Block> path = map.getPath();
+  int pathBlock;
   //in BTD, call this with (0,205);
   public Bloons(int level, Map map){
+    int pathBlock = 0;
     if (level > 0 && level < 5) {
       this.level = level;
     }
@@ -34,7 +37,8 @@ public class Bloons{
     }
     m = map;
     pos = new PVector(0, 205);
-    curr = map.getStart();
+    curr = path.get(pathBlock);
+    next = path.get(pathBlock+1);
   }
   public Block getCurr(){
     return curr;
@@ -46,19 +50,21 @@ public class Bloons{
     //this should be fine? no clue why there are afterimages
     image(balloon,pos.x,pos.y);
   }
-  public void move(int dir){
+  public void move(){
     //1: up, 2: left, 3: down, 4: right
-    if (dir == 1) {
-      pos.y -= velo;
+    if (pos.x % 41 >= 38 || pos.y%41 >= 35) {
+      println("bi");
+      curr = next;
+      next = path.get(pathBlock+2);
+      pathBlock++;
     }
-    else if (dir == 2) {
-      pos.x -= velo;
-    }
-    else if (dir == 3) {
-      pos.y += velo;
-    }
-    else if (dir == 4) {
+    if (next.getX() > pos.x) {
+      println(pos.x%41 + " " + next.getX() + " " + pos.x);
       pos.x += velo;
+    }
+    else if (next.getY() < pos.y) {
+      println(pos.x%41 + " " + next.getX() + " " + pos.x);
+      pos.y -= velo;
     }
   }
   public void level(int l){
