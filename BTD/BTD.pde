@@ -30,6 +30,8 @@ void setup() {
   balloons.add(balloon);
   balloon = new Bloons(2,map);
   balloons.add(balloon);
+  balloon = new Bloons(1,map);
+  balloons.add(balloon);
   //path starts at 0,205
   //each tile is 40 w and h
 }
