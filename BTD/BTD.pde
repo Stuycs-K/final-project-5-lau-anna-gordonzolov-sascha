@@ -2,12 +2,14 @@ PImage m;
 Map map;
 Bloons balloon;
 ArrayList<Block> turningpt;
+ArrayList<Bloons> balloons;
 void keyPressed() {
 }
 void setup() {
   m = loadImage("map.png");
   map = new Map(m);
   turningpt = map.getTurns();
+  balloons = new ArrayList<Bloons>();
   int w = m.width;
   int h = m.height;
   size(826, 532);
@@ -27,13 +29,12 @@ void setup() {
 }
 void draw() {
   balloon = new Bloons(1,map,0,205);
-  balloon.display();
-  moveBloon();
-  balloon.display();
+  balloons.add(balloon);
+  for (Bloons b: balloons) {
+    balloon.move(4);
+    balloon.display();
+  }
 }
 
 void moveBloon() {
-  while (balloon.getX() < turningpt.get(0).getX()) {
-    balloon.move(4);
-  }
 }
