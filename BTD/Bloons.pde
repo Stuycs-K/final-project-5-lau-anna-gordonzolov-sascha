@@ -44,7 +44,21 @@ public class Bloons{
   public void display() {
     image(balloon,pos.x,pos.y);
   }
-  public void move(){
+  public void move(int dir){
+    //1: up, 2: left, 3: down, 4: right
+    if (dir == 1) {
+       pos = new PVector(pos.x, pos.y-velo);
+    }
+    else if (dir == 2) {
+       pos = new PVector(pos.x-velo,pos.y);
+    }
+    else if (dir == 3) {
+      pos = new PVector(pos.x, pos.y+velo);
+    }
+    else if (dir == 4) {
+      pos = new PVector(pos.x+velo,pos.y);
+    }
+    /*
     ArrayList<Block> turns = m.getTurns();
     float x = turns.get(0).getX();
     while (pos.x < x) {
@@ -94,7 +108,7 @@ public class Bloons{
     while (pos.y < y+100) {
       pos = new PVector(pos.x,pos.y+velo);
     }
-    System.out.println(turns);
+    System.out.println(turns); */
   }
   public void level(int l){
     level = l;
@@ -125,5 +139,11 @@ public class Bloons{
   }
   public boolean atEnd(){
     return false;
+  }
+  public float getX() {
+    return pos.x;
+  }
+  public float getY() {
+    return pos.y;
   }
 }
