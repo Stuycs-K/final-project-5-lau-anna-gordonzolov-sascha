@@ -29,6 +29,10 @@ Created a new class called "rounds". The idea is that each wave will be containe
 ### date 5/28
 
 Created a working leveldown for bloons, created monkeys that have a radius that can be displayed with an opacity that makes sense somewhat. 
+
+### date 5/29
+
+Got path to work for the most part!! Figured out how to use the move class more efficiently, we now are containing blocks within bloons. Most of today was pair programming. 
 ## Anna Lau
 
 ### date 5/22
