@@ -17,17 +17,17 @@ public class Bloons{
     }
     if (level == 4) {
       balloon = loadImage("yellow.png");
-      velo = 2.5;
+      velo = 4;
       value = 20;
     }
     else if (level == 3) {
       balloon = loadImage("green.png");
-      velo = 2;
+      velo = 3;
       value = 15;
     }
     else if (level == 2) {
       balloon = loadImage("blue.png");
-      velo = 1.5;
+      velo = 2;
       value = 10;
     }
     else {
@@ -36,7 +36,7 @@ public class Bloons{
       value = 5;
     }
     m = map;
-    pos = new PVector(0, 205);
+    pos = new PVector(0, 204);
     curr = path.get(pathBlock);
     next = path.get(pathBlock+1);
   }
@@ -51,37 +51,34 @@ public class Bloons{
     image(balloon,pos.x,pos.y);
   }
   public void move(){
-    //1: up, 2: left, 3: down, 4: right
-    if (pos.x % 41 >= 38 || pos.y%41 >= 35) {
-      println("bi");
-      curr = next;
-      next = path.get(pathBlock+2);
-      pathBlock++;
+    if (turningpt.size() > 0) {
+      PVector dir = PVector.sub(turningpt.get(0).getPos(),pos);
+      dir = dir.div(dir.mag());
+      pos.x += dir.x * velo;
+      pos.y += dir.y * velo;
+      if (around(pos.x,turningpt.get(0).getX()) && around(pos.y,turningpt.get(0).getY())) {
+        turningpt.remove(0);
+      }
     }
-    if (next.getX() > pos.x) {
-      println(pos.x%41 + " " + next.getX() + " " + pos.x);
-      pos.x += velo;
-    }
-    else if (next.getY() < pos.y) {
-      println(pos.x%41 + " " + next.getX() + " " + pos.x);
-      pos.y -= velo;
-    }
+  }
+  public boolean around(float n1, float n2) {
+    return Math.abs(n1-n2) <= 4;
   }
   public void level(int l){
     level = l;
     if (level == 4) {
       balloon = loadImage("yellow.png");
-      velo = 2.5;
+      velo = 4;
       value = 20;
     }
     else if (level == 3) {
       balloon = loadImage("green.png");
-      velo = 2;
+      velo = 3;
       value = 15;
     }
     else if (level == 2) {
       balloon = loadImage("blue.png");
-      velo = 1.5;
+      velo = 2;
       value = 10;
     }
     else {
