@@ -9,9 +9,11 @@ public class Bloons{
   Map m;
   LinkedList<Block> path = map.getPath();
   int pathBlock;
+  int turns;
   //in BTD, call this with (0,205);
   public Bloons(int level, Map map){
     int pathBlock = 0;
+    turns = 0;
     if (level > 0 && level < 5) {
       this.level = level;
     }
@@ -52,13 +54,16 @@ public class Bloons{
   }
   public void move(){
     if (turningpt.size() > 0) {
-      PVector dir = PVector.sub(turningpt.get(0).getPos(),pos);
+      PVector dir = PVector.sub(turningpt.get(turns).getPos(),pos);
       dir = dir.div(dir.mag());
       pos.x += dir.x * velo;
       pos.y += dir.y * velo;
-      if (around(pos.x,turningpt.get(0).getX()) && around(pos.y,turningpt.get(0).getY())) {
-        turningpt.remove(0);
+      if (around(pos.x,turningpt.get(turns).getX()) && around(pos.y,turningpt.get(turns).getY())) {
+        turns++;
       }
+    }
+    else if (pos.y <= 450){
+      pos.y += velo;
     }
   }
   public boolean around(float n1, float n2) {
