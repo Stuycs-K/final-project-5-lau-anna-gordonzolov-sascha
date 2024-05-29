@@ -33,4 +33,7 @@ public class Block {
   public void setFill(color c) {
     fill(c);
   }
+  public PVector getPos() {
+    return pos;
+  }
 }
