@@ -42,6 +42,7 @@ public class Bloons{
     return next;
   }
   public void display() {
+    //this should be fine? no clue why there are afterimages
     image(balloon,pos.x,pos.y);
   }
   public void move(int dir){
