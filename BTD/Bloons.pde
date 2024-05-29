@@ -62,6 +62,10 @@ public class Bloons{
       println(pos.x%41 + " " + next.getX() + " " + pos.x);
       pos.x += velo;
     }
+    else if (next.getY() < pos.y) {
+      println(pos.x%41 + " " + next.getX() + " " + pos.x);
+      pos.y -= velo;
+    }
   }
   public void level(int l){
     level = l;
