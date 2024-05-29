@@ -1,6 +1,6 @@
 public class Bloons{
   int level;
-  int velo; 
+  float velo; 
   int value;
   Block curr;
   Block next;
@@ -14,17 +14,17 @@ public class Bloons{
     }
     if (level == 4) {
       balloon = loadImage("yellow.png");
-      velo = 10;
+      velo = 2.5;
       value = 20;
     }
     else if (level == 3) {
       balloon = loadImage("green.png");
-      velo = 7;
+      velo = 2;
       value = 15;
     }
     else if (level == 2) {
       balloon = loadImage("blue.png");
-      velo = 3;
+      velo = 1.5;
       value = 10;
     }
     else {
@@ -59,73 +59,22 @@ public class Bloons{
     else if (dir == 4) {
       pos.x += velo;
     }
-    /*
-    ArrayList<Block> turns = m.getTurns();
-    float x = turns.get(0).getX();
-    while (pos.x < x) {
-      pos = new PVector(pos.x + velo,pos.y);
-    }
-    float y = turns.get(1).getY();
-    while (pos.y > y) {
-      pos = new PVector(pos.x, pos.y-velo);
-    }
-    x = turns.get(2).getX();
-    while (pos.x > x) {
-      pos = new PVector(pos.x-velo,pos.y);
-    }
-    y = turns.get(3).getY();
-    while (pos.y < y) {
-      pos = new PVector(pos.x,pos.y+velo);
-    }
-    x = turns.get(4).getX();
-    while (pos.x > x) {
-      pos = new PVector(pos.x-velo,pos.y);
-    }
-    y = turns.get(5).getY();
-    while (pos.y > y) {
-      pos = new PVector(pos.x, pos.y-velo);
-    }
-    x = turns.get(6).getX();
-    while (pos.x < x) {
-      pos = new PVector(pos.x+velo,pos.y);
-    }
-    y = turns.get(7).getY();
-    while (pos.y > y) {
-      pos = new PVector(pos.x, pos.y-velo);
-    }
-    x = turns.get(8).getX();
-    while (pos.x < x) {
-      pos = new PVector(pos.x+velo,pos.y);
-    }
-    y = turns.get(9).getY();
-    while (pos.y < y) {
-      pos = new PVector(pos.x,pos.y+velo);
-    }
-    x = turns.get(10).getX();
-    while (pos.x > x) {
-      pos = new PVector(pos.x-velo,pos.y);
-    }
-    y = turns.get(11).getY();
-    while (pos.y < y+100) {
-      pos = new PVector(pos.x,pos.y+velo);
-    }
-    System.out.println(turns); */
   }
   public void level(int l){
     level = l;
     if (level == 4) {
       balloon = loadImage("yellow.png");
-      velo = 10;
+      velo = 2.5;
       value = 20;
     }
     else if (level == 3) {
       balloon = loadImage("green.png");
-      velo = 7;
+      velo = 2;
       value = 15;
     }
     else if (level == 2) {
       balloon = loadImage("blue.png");
-      velo = 3;
+      velo = 1.5;
       value = 10;
     }
     else {

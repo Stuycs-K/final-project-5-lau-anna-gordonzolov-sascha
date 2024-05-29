@@ -1,8 +1,16 @@
 public class Block {
   private PVector pos;
+  float minX;
+  float maxX;
+  float minY;
+  float maxY;
   private boolean onPath;
   public Block (float x, float y) {
     pos = new PVector(x,y);
+    minX = x;
+    minY = y;
+    maxX = x + 41;
+    maxY = y + 41;
     onPath = false;
   }
   public void display() {
@@ -32,5 +40,8 @@ public class Block {
   }
   public void setPath(boolean on) {
     onPath = on;
+  }
+  public boolean onBlock(float x, float y) {
+    return (x >= minX && x <= maxX && y >= minY && y <= maxY);
   }
 }

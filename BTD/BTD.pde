@@ -26,7 +26,7 @@ void setup() {
   mon.displayRad();
   //path starts at 0,205
   //each tile is 40 w and h
-  balloon = new Bloons(1,map,0,205);
+  balloon = new Bloons(4,map,0,205);
   balloons.add(balloon);
 }
 void draw() {
