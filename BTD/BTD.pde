@@ -24,10 +24,14 @@ void setup() {
   DartMonkey mon = new DartMonkey(225, 185);
   mon.display();
   mon.displayRad();
-  //path starts at 0,205
-  //each tile is 40 w and h
   balloon = new Bloons(4,map);
   balloons.add(balloon);
+  balloon = new Bloons(3,map);
+  balloons.add(balloon);
+  balloon = new Bloons(2,map);
+  balloons.add(balloon);
+  //path starts at 0,205
+  //each tile is 40 w and h
 }
 void draw() {
   map.display();
