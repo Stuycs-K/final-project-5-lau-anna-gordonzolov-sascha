@@ -43,7 +43,11 @@ class DartMonkey extends Monkeys{
       displayRad = !displayRad;
     }
   }
+
   public void attack(Bloons b){
+  }
+  public boolean isInRad(Bloons b){
+    return (b.getPos().dist(this.pos) < this.radius);
   }
   public void upgrade(){
   }
