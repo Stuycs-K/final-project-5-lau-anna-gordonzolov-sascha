@@ -52,6 +52,9 @@ public class Bloons{
     //this should be fine? no clue why there are afterimages
     image(balloon,pos.x,pos.y);
   }
+  public PVector getPos(){
+    return pos;
+  }
   public void move(){
     if (turns < 12) {
       PVector dir = PVector.sub(turningpt.get(turns).getPos(),pos);
