@@ -17,6 +17,10 @@ abstract class Monkeys{
   }
   public void click(){
   }
+  public void display(){
+  }
+  public void displayRad(){
+  }
   public int sell(){
     return -1;
   }

@@ -3,6 +3,7 @@ Map map;
 Bloons balloon;
 ArrayList<Block> turningpt;
 ArrayList<Bloons> balloons;
+ArrayList<Monkeys> monkeys;
 void keyPressed() {
 }
 void setup() {
@@ -10,6 +11,7 @@ void setup() {
   map = new Map(m);
   turningpt = map.getTurns();
   balloons = new ArrayList<Bloons>();
+  monkeys = new ArrayList<Monkeys>();
   int w = m.width;
   int h = m.height;
   size(826, 532);
@@ -22,8 +24,7 @@ void setup() {
   balloon.levelDown();
   balloon.display();
   DartMonkey mon = new DartMonkey(225, 185);
-  mon.display();
-  mon.displayRad();
+  monkeys.add(mon);
   balloon = new Bloons(4,map);
   balloons.add(balloon);
   balloon = new Bloons(3,map);
@@ -37,6 +38,9 @@ void setup() {
 }
 void draw() {
   map.display();
+  for (Monkeys m : monkeys){
+    m.display();
+  }
   for (Bloons b: balloons) {
     b.move();
     b.display();
