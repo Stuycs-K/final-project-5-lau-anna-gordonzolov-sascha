@@ -33,6 +33,7 @@ Created a working leveldown for bloons, created monkeys that have a radius that 
 ### date 5/29
 
 Got path to work for the most part!! Figured out how to use the move class more efficiently, we now are containing blocks within bloons. Most of today was pair programming. 
+Monkeys now show the radius of attack when highlighted!! You can also click anywhere on the screen to get rid of the radius, but you must click on the monkey for it to show. Added necessary classes to overarching monkey class as well. 
 ## Anna Lau
 
 ### date 5/22
