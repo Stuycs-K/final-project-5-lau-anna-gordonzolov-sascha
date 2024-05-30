@@ -5,10 +5,20 @@ class DartMonkey extends Monkeys{
   private int v;
   private int strength;
   private int radius;
+  private boolean displayRad;
+  float minX;
+  float maxX;
+  float minY;
+  float maxY;
   private PVector pos;
   private boolean isSelected;
   private PImage sprite;
   public DartMonkey(int x, int y){
+    displayRad = false;
+    minX = x - 20.5;
+    minY = y - 20.5;
+    maxX = x + 20.5;
+    maxY = y + 20.5;
     sprite = loadImage("DartMonkey.png");
     pos = new PVector(x,y);
     isSelected = false;
@@ -17,10 +27,19 @@ class DartMonkey extends Monkeys{
   public void display() {
     image(sprite,pos.x - 21.5,pos.y - 21.5);
   }
+  public boolean getDisplayRad(){
+    return displayRad;
+  }
   public void displayRad(){
     fill(#d3d3d3, 150);
     circle(pos.x, pos.y, radius);
     this.display();
+  }
+  public void isIn(int x, int y){
+    if (x > minX && x < maxX && y > minY && y < maxY){
+      displayRad = !displayRad;
+      System.out.println("hi");
+    }
   }
   public void attack(){
   }

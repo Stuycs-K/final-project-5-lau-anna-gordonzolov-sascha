@@ -6,6 +6,11 @@ ArrayList<Bloons> balloons;
 ArrayList<Monkeys> monkeys;
 void keyPressed() {
 }
+void mouseClicked(){
+  for (Monkeys m: monkeys){
+    m.isIn(mouseX, mouseY);
+  }
+}
 void setup() {
   m = loadImage("map.png");
   map = new Map(m);
@@ -40,6 +45,9 @@ void draw() {
   map.display();
   for (Monkeys m : monkeys){
     m.display();
+    if (m.getDisplayRad()){
+      m.displayRad();
+    }
   }
   for (Bloons b: balloons) {
     b.move();

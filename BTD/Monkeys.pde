@@ -8,6 +8,7 @@ abstract class Monkeys{
   private PVector pos;
   private boolean isSelected;
   private PImage sprite;
+  private boolean displayRad;
   public abstract void attack();
   public abstract void upgrade();
   public void move(){
@@ -20,6 +21,11 @@ abstract class Monkeys{
   public void display(){
   }
   public void displayRad(){
+  }
+  public void isIn(int x, int y){
+  }
+  public boolean getDisplayRad(){
+    return false;
   }
   public int sell(){
     return -1;
