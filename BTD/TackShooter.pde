@@ -10,7 +10,7 @@ class TackShooter extends Monkeys{
   private PImage sprite;
   public TackShooter(){
   }
-  public void attack(){
+  public void attack(Bloons b){
   }
   public void upgrade(){
   }

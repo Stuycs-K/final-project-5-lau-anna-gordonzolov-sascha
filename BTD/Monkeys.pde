@@ -9,7 +9,7 @@ abstract class Monkeys{
   private boolean isSelected;
   private PImage sprite;
   private boolean displayRad;
-  public abstract void attack();
+  public abstract void attack(Bloons b);
   public abstract void upgrade();
   public void move(){
     if (isSelected) {
