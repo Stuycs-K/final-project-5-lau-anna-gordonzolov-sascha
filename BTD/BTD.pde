@@ -48,8 +48,6 @@ void setup() {
 }
 void draw() {
   map.display();
-  Dart d = new Dart();
-  d.display();
   for (Monkeys m : monkeys){
     m.display();
     if (m.getDisplayRad()){

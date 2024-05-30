@@ -16,6 +16,9 @@ abstract class Monkeys{
       pos = new PVector(mouseX,mouseY);
     }
   }
+  public PVector getPos() {
+    return pos;
+  }
   public void click(){
   }
   public void display(){

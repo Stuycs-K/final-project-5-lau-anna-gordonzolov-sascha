@@ -44,10 +44,7 @@ class DartMonkey extends Monkeys{
     }
   }
 
-  public void attack(Bloons b){
-     PVector distance = PVector.sub(b.getPos(),pos);
-     float angle = distance.heading();
-     
+  public void attack(Bloons b){ 
   }
   public boolean isInRad(Bloons b){
     return (b.getPos().dist(this.pos) < this.radius);
