@@ -35,10 +35,12 @@ class DartMonkey extends Monkeys{
     circle(pos.x, pos.y, radius);
     this.display();
   }
+  public void changeDisplayRad(){
+    displayRad = !displayRad;
+  }
   public void isIn(int x, int y){
     if (x > minX && x < maxX && y > minY && y < maxY){
       displayRad = !displayRad;
-      System.out.println("hi");
     }
   }
   public void attack(){

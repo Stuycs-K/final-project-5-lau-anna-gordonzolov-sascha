@@ -8,7 +8,12 @@ void keyPressed() {
 }
 void mouseClicked(){
   for (Monkeys m: monkeys){
-    m.isIn(mouseX, mouseY);
+    if (!m.getDisplayRad()){
+      m.isIn(mouseX, mouseY);
+    }
+    else{
+      m.changeDisplayRad();
+    }
   }
 }
 void setup() {

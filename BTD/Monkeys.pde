@@ -27,6 +27,8 @@ abstract class Monkeys{
   public boolean getDisplayRad(){
     return false;
   }
+  public void changeDisplayRad(){
+  }
   public int sell(){
     return -1;
   }
