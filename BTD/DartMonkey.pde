@@ -46,7 +46,16 @@ class DartMonkey extends Monkeys{
 
   public void attack(Bloons b){
     Dart d = new Dart(pos.x,pos.y);
+    if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
+      if (b.getLevel() > 1) {
+        b.levelDown();
+      }
+    }
+    d.fly(b);
     d.display();
+  }
+  public boolean around(float n1, float n2) {
+    return Math.abs(n1-n2) <= 4;
   }
   public boolean isInRad(Bloons b){
     return (b.getPos().dist(this.pos) < this.radius);

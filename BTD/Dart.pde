@@ -13,6 +13,7 @@ public class Dart {
   public void pop(Bloons balloon) {
   }
   public void fly(Bloons b) {
+    print("flying");
     PVector dist = PVector.sub(b.getPos(),pos);
     PVector move = dist.div(dist.mag());
     pos.x += move.x * speed;
