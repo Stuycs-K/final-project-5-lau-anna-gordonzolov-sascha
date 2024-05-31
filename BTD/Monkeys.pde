@@ -24,6 +24,9 @@ abstract class Monkeys{
   public boolean isInRad(Bloons b){
     return (b.getPos().dist(this.pos) < this.radius);
   }
+  public Bloons getBlon(){
+    return bloon;
+  }
   public void click(){
   }
   public void display(){

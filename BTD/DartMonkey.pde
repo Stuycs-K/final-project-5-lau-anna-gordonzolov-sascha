@@ -11,6 +11,7 @@ class DartMonkey extends Monkeys{
   float minY;
   float maxY;
   private PVector bloon;
+  private Bloons blon;
   private boolean att;
   private PVector pos;
   private Dart d;
@@ -48,6 +49,9 @@ class DartMonkey extends Monkeys{
   public PVector getBloon(){
     return bloon;
   }
+  public Bloons getBlon(){
+    return blon;
+  }
   public void isIn(int x, int y){
     if (x > minX && x < maxX && y > minY && y < maxY){
       displayRad = !displayRad;
@@ -63,6 +67,7 @@ class DartMonkey extends Monkeys{
     }*/
     att = true;
     bloon = b.getPos();
+    blon = b;
     //d.fly(b);
     d.display();
   }
