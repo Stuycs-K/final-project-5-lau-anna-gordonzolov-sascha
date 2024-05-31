@@ -33,7 +33,7 @@ void setup() {
   balloon.display();
   balloon.levelDown();
   balloon.display();
-  DartMonkey mon = new DartMonkey(225, 185);
+  DartMonkey mon = new DartMonkey(309, 269);
   monkeys.add(mon);
   balloon = new Bloons(4,map);
   balloons.add(balloon);
