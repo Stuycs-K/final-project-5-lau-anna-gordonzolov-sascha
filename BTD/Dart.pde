@@ -12,9 +12,10 @@ public class Dart {
   }
   public void pop(Bloons balloon) {
   }
-  public void fly(Bloons b) {
-    print("flying");
-    PVector dist = PVector.sub(b.getPos(),pos);
+  public void fly(PVector b) {
+    this.display();
+    //print("flying");
+    PVector dist = PVector.sub(b,pos);
     PVector move = dist.div(dist.mag());
     pos.x += move.x * speed;
     pos.y += move.y * speed;
