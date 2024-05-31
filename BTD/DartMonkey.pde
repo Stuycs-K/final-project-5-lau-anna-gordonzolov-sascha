@@ -44,11 +44,16 @@ class DartMonkey extends Monkeys{
     }
   }
 
-  public void attack(Bloons b){ 
+  public void attack(Bloons b){
+    Dart d = new Dart(pos.x,pos.y);
+    d.display();
   }
   public boolean isInRad(Bloons b){
     return (b.getPos().dist(this.pos) < this.radius);
   }
   public void upgrade(){
+  }
+  public PVector getPos() {
+    return pos;
   }
 }
