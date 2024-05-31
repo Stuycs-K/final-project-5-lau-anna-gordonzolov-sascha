@@ -91,11 +91,6 @@ public class Bloons{
       velo = 3;
       value = 10;
     }
-    else if (level == 1){
-      balloon = loadImage("red.png");
-      velo = 2.5;
-      value = 5;
-    }
     else if (level == 0){
       exists = false;
       pos.x = 1000;
