@@ -19,6 +19,9 @@ abstract class Monkeys{
   public PVector getPos() {
     return pos;
   }
+  public boolean isInRad(Bloons b){
+    return (b.getPos().dist(this.pos) < this.radius);
+  }
   public void click(){
   }
   public void display(){

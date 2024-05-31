@@ -53,6 +53,12 @@ void draw() {
     if (m.getDisplayRad()){
       m.displayRad();
     }
+    for (Bloons b: balloons) {
+      if (m.isInRad(b)) {
+        m.attack(b);
+        break;
+      }
+    }
   }
   for (Bloons b: balloons) {
     b.move();
