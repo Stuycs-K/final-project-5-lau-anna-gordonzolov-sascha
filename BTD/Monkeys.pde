@@ -3,6 +3,7 @@ abstract class Monkeys{
   private int sell;
   private int size;
   private int v;
+  private boolean att;
   private int strength;
   private int radius;
   private PVector pos;
@@ -26,6 +27,9 @@ abstract class Monkeys{
   }
   public Bloons getBlon(){
     return bloon;
+  }
+  public void setAtt(){
+    att = false;
   }
   public void click(){
   }

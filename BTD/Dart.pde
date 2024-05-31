@@ -13,6 +13,10 @@ public class Dart {
   public void pop(Bloons balloon) {
   }
   public void fly(Monkeys mon, Bloons bloon) {
+    if (pos.x < bloon.getPos().x + 12 && pos.x > bloon.getPos().x - 12 && pos.y < bloon.getPos().y + 20.5 && pos.y > bloon.getPos().y - 20.5){
+      bloon.levelDown();
+      mon.setAtt();
+    }
     this.display();
     //print("flying");
     PVector dist = PVector.sub(bloon.getPos(),mon.getPos());

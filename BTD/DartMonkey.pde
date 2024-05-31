@@ -77,6 +77,9 @@ class DartMonkey extends Monkeys{
   public boolean getAtt(){
     return att;
   }
+  public void setAtt(){
+    att = false;
+  }
   public boolean isInRad(Bloons b){
     return (b.getPos().dist(this.pos) < this.radius);
   }
