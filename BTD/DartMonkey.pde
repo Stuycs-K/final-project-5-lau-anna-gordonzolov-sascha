@@ -10,10 +10,14 @@ class DartMonkey extends Monkeys{
   float maxX;
   float minY;
   float maxY;
+  private Bloons bloon;
+  private boolean att;
   private PVector pos;
+  private Dart d;
   private boolean isSelected;
   private PImage sprite;
   public DartMonkey(int x, int y){
+    att = false;
     displayRad = false;
     minX = x - 20.5;
     minY = y - 20.5;
@@ -38,24 +42,35 @@ class DartMonkey extends Monkeys{
   public void changeDisplayRad(){
     displayRad = !displayRad;
   }
+  public Dart getDart(){
+    return d;
+  }
+  public Bloons getBloon(){
+    return bloon;
+  }
   public void isIn(int x, int y){
     if (x > minX && x < maxX && y > minY && y < maxY){
       displayRad = !displayRad;
     }
   }
-
+  
   public void attack(Bloons b){
-    Dart d = new Dart(pos.x,pos.y);
-    if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
+    d = new Dart(pos.x,pos.y);
+    /*if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
       if (b.getLevel() > 1) {
         b.levelDown();
       }
-    }
-    d.fly(b);
+    }*/
+    att = true;
+    bloon = b;
+    //d.fly(b);
     d.display();
   }
   public boolean around(float n1, float n2) {
     return Math.abs(n1-n2) <= 4;
+  }
+  public boolean getAtt(){
+    return att;
   }
   public boolean isInRad(Bloons b){
     return (b.getPos().dist(this.pos) < this.radius);

@@ -9,6 +9,8 @@ abstract class Monkeys{
   private boolean isSelected;
   private PImage sprite;
   private boolean displayRad;
+  private Bloons bloon;
+  private Dart d;
   public abstract void attack(Bloons b);
   public abstract void upgrade();
   public void move(){
@@ -34,6 +36,15 @@ abstract class Monkeys{
     return false;
   }
   public void changeDisplayRad(){
+  }
+  public boolean getAtt(){
+    return false;
+  }
+  public Bloons getBloon(){
+    return bloon;
+  }
+  public Dart getDart(){
+    return d;
   }
   public int sell(){
     return -1;
