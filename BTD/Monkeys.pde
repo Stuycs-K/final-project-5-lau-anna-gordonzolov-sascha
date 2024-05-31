@@ -10,6 +10,7 @@ abstract class Monkeys{
   private boolean isSelected;
   private PImage sprite;
   private boolean displayRad;
+  private int timer;
   private Bloons bloon;
   private Dart d;
   public abstract void attack(Bloons b);

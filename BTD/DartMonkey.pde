@@ -10,6 +10,7 @@ class DartMonkey extends Monkeys{
   float maxX;
   float minY;
   float maxY;
+  private int timer;
   private PVector bloon;
   private Bloons blon;
   private boolean att;
@@ -18,6 +19,7 @@ class DartMonkey extends Monkeys{
   private boolean isSelected;
   private PImage sprite;
   public DartMonkey(int x, int y){
+    timer = 0;
     att = false;
     displayRad = false;
     minX = x - 20.5;
@@ -59,17 +61,23 @@ class DartMonkey extends Monkeys{
   }
   
   public void attack(Bloons b){
-    d = new Dart(pos.x,pos.y);
-    /*if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
-      if (b.getLevel() > 1) {
-        b.levelDown();
-      }
-    }*/
-    att = true;
-    bloon = b.getPos();
-    blon = b;
-    //d.fly(b);
-    d.display();
+    if (timer == 0){
+      d = new Dart(pos.x,pos.y);
+      /*if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
+        if (b.getLevel() > 1) {
+          b.levelDown();
+        }
+      }*/
+      att = true;
+      bloon = b.getPos();
+      blon = b;
+      //d.fly(b);
+      d.display();
+      timer = 20;
+    }
+    else{
+      timer --;
+    }
   }
   public boolean around(float n1, float n2) {
     return Math.abs(n1-n2) <= 4;
