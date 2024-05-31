@@ -4,7 +4,7 @@ class DartMonkey extends Monkeys{
   private int size;
   private int v;
   private int strength;
-  private int radius;
+  private float diameter;
   private boolean displayRad;
   float minX;
   float maxX;
@@ -29,17 +29,20 @@ class DartMonkey extends Monkeys{
     sprite = loadImage("DartMonkey.png");
     pos = new PVector(x,y);
     isSelected = false;
-    radius = 200;
+    diameter = 200;
   }
   public void display() {
     image(sprite,pos.x - 21.5,pos.y - 21.5);
+  }
+  public float getRad() {
+    return diameter;
   }
   public boolean getDisplayRad(){
     return displayRad;
   }
   public void displayRad(){
     fill(#d3d3d3, 150);
-    circle(pos.x, pos.y, radius);
+    circle(pos.x, pos.y, diameter);
     this.display();
   }
   public void changeDisplayRad(){
@@ -89,7 +92,10 @@ class DartMonkey extends Monkeys{
     att = false;
   }
   public boolean isInRad(Bloons b){
-    return (b.getPos().dist(this.pos) < this.radius);
+    if (b.getPos().dist(this.pos) < diameter/2) {
+      print("jf");
+    }
+    return (b.getPos().dist(this.pos) < diameter/2);
   }
   public void upgrade(){
   }
