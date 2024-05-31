@@ -108,4 +108,7 @@ public class Bloons{
   public float getY() {
     return pos.y;
   }
+  public int getLevel() {
+    return level;
+  }
 }
