@@ -67,3 +67,5 @@ Finished the path and tested it extensively. Can start adding rounds and shooter
 ### date 5/30
 Started moving the darts, have to get them moving in the right trajectory.
 
+### date 5/31
+Made it so that the monkeys could only shoot in the range. Also created a demo branch.

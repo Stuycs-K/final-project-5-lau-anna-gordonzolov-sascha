@@ -35,6 +35,8 @@ void setup() {
   balloon.display();
   DartMonkey mon = new DartMonkey(309, 269);
   monkeys.add(mon);
+  mon = new DartMonkey(225, 185);
+  monkeys.add(mon);
   balloon = new Bloons(4,map);
   balloons.add(balloon);
   balloon = new Bloons(3,map);
