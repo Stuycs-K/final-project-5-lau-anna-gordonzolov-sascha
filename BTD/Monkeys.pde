@@ -20,6 +20,9 @@ abstract class Monkeys{
       pos = new PVector(mouseX,mouseY);
     }
   }
+  public float getRad() {
+    return radius;
+  }
   public PVector getPos() {
     return pos;
   }

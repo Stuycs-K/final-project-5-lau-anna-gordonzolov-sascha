@@ -14,4 +14,7 @@ class TackShooter extends Monkeys{
   }
   public void upgrade(){
   }
+  public float getRad() {
+    return radius;
+  }
 }
