@@ -40,8 +40,8 @@ abstract class Monkeys{
   public boolean getAtt(){
     return false;
   }
-  public PVector getBloon(){
-    return bloon.getPos();
+  public Bloons getBloon(){
+    return bloon;
   }
   public Dart getDart(){
     return d;

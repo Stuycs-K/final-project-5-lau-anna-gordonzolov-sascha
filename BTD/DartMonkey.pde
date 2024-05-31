@@ -10,7 +10,7 @@ class DartMonkey extends Monkeys{
   float maxX;
   float minY;
   float maxY;
-  private PVector bloon;
+  private Bloons bloon;
   private boolean att;
   private PVector pos;
   private Dart d;
@@ -45,7 +45,7 @@ class DartMonkey extends Monkeys{
   public Dart getDart(){
     return d;
   }
-  public PVector getBloon(){
+  public Bloons getBloon(){
     return bloon;
   }
   public void isIn(int x, int y){
@@ -62,7 +62,7 @@ class DartMonkey extends Monkeys{
       }
     }*/
     att = true;
-    bloon = b.getPos();
+    bloon = b;
     //d.fly(b);
     d.display();
   }
