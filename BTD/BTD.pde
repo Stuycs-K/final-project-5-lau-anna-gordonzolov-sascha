@@ -59,7 +59,7 @@ void draw() {
         break;
       }
       if (m.getAtt()){
-        m.getDart().fly(m.getBloon());
+        m.getDart().fly(m.getPos(), m.getBloon());
       }
     }
   }
