@@ -35,12 +35,12 @@ void setup() {
   balloon.display();
   DartMonkey mon = new DartMonkey(225, 185);
   monkeys.add(mon);
-  /*balloon = new Bloons(4,map);
+  balloon = new Bloons(4,map);
   balloons.add(balloon);
   balloon = new Bloons(3,map);
   balloons.add(balloon);
   balloon = new Bloons(2,map);
-  balloons.add(balloon);*/
+  balloons.add(balloon);
   balloon = new Bloons(1,map);
   balloons.add(balloon);
   //path starts at 0,205
@@ -64,8 +64,10 @@ void draw() {
     }
   }
   for (Bloons b: balloons) {
-    b.move();
-    b.display();
+    if (b.exists){
+      b.move();
+      b.display();
+    }
   }
 }
 
