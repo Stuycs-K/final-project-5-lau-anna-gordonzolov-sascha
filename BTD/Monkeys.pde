@@ -3,12 +3,15 @@ abstract class Monkeys{
   private int sell;
   private int size;
   private int v;
+  private boolean att;
   private int strength;
   private int radius;
   private PVector pos;
   private boolean isSelected;
   private PImage sprite;
   private boolean displayRad;
+  private Bloons bloon;
+  private Dart d;
   public abstract void attack(Bloons b);
   public abstract void upgrade();
   public void move(){
@@ -22,6 +25,12 @@ abstract class Monkeys{
   public boolean isInRad(Bloons b){
     return (b.getPos().dist(this.pos) < this.radius);
   }
+  public Bloons getBlon(){
+    return bloon;
+  }
+  public void setAtt(){
+    att = false;
+  }
   public void click(){
   }
   public void display(){
@@ -34,6 +43,15 @@ abstract class Monkeys{
     return false;
   }
   public void changeDisplayRad(){
+  }
+  public boolean getAtt(){
+    return false;
+  }
+  public PVector getBloon(){
+    return bloon.getPos();
+  }
+  public Dart getDart(){
+    return d;
   }
   public int sell(){
     return -1;

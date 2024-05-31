@@ -2,6 +2,7 @@ public class Bloons{
   int level;
   float velo; 
   int value;
+  boolean exists;
   Block curr;
   Block next;
   PVector pos;
@@ -12,6 +13,7 @@ public class Bloons{
   int turns;
   //in BTD, call this with (0,205);
   public Bloons(int level, Map map){
+    exists = true;
     int pathBlock = 0;
     turns = 0;
     if (level > 0 && level < 5) {
@@ -88,6 +90,11 @@ public class Bloons{
       balloon = loadImage("blue.png");
       velo = 3;
       value = 10;
+    }
+    else if (level == 0){
+      exists = false;
+      pos.x = 1000;
+      pos.y = 1000;
     }
     else {
       balloon = loadImage("red.png");

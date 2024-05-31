@@ -54,15 +54,20 @@ void draw() {
       m.displayRad();
     }
     for (Bloons b: balloons) {
-      if (m.isInRad(b)) {
+      if (m.isInRad(b) && !m.getAtt()) {
         m.attack(b);
         break;
+      }
+      if (m.getAtt()){
+        m.getDart().fly(m, m.getBlon());
       }
     }
   }
   for (Bloons b: balloons) {
-    b.move();
-    b.display();
+    if (b.exists){
+      b.move();
+      b.display();
+    }
   }
 }
 
