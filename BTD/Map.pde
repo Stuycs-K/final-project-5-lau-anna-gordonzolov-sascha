@@ -91,8 +91,11 @@ public class Map{
         blocks[i][j].display();
       }
     }
+    displayMoney();
   }
   public void displayMoney(){
+    textSize(100);
+    text("money", 100,100);
   }
   public void displaylives(){
   }
