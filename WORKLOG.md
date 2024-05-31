@@ -37,6 +37,8 @@ Monkeys now show the radius of attack when highlighted!! You can also click anyw
 
 ### date 5/30
 Mostly pair programming, working on dart class.
+
+Got the darts working!!!! Took me a while -- I'm tired. Essentially how it works is that each monkey has a single bloon that they attack at a time. Once the bloon is hit, the monkey is able to retarget another bloon and attack is able to be called again until another bloon is located. Also made it so that when bloons are popped to nothing, they no longer "exist" and are moved 1000 pixels from the screen.
 ## Anna Lau
 
 ### date 5/22
