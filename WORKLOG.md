@@ -73,3 +73,6 @@ Started moving the darts, have to get them moving in the right trajectory.
 
 ### date 5/31
 Made it so that the monkeys could only shoot in the range. Also created a demo branch.
+
+### date 6/1
+Displayed the money and lives on the map. Made the money increase for every popped bloon.
