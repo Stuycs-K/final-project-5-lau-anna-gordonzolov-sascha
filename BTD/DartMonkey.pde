@@ -18,7 +18,9 @@ class DartMonkey extends Monkeys{
   private Dart d;
   private boolean isSelected;
   private PImage sprite;
-  public DartMonkey(int x, int y){
+  private Map m;
+  public DartMonkey(int x, int y, Map map){
+    m = map;
     timer = 0;
     att = false;
     displayRad = false;
@@ -65,7 +67,7 @@ class DartMonkey extends Monkeys{
   
   public void attack(Bloons b){
     if (timer == 0){
-      d = new Dart(pos.x,pos.y);
+      d = new Dart(pos.x,pos.y, m);
       /*if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
         if (b.getLevel() > 1) {
           b.levelDown();
