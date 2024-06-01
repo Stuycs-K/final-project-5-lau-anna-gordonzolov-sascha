@@ -87,11 +87,6 @@ public class Map{
   }
   public void display(){
     image(background, 0, 0);
-    for (int i = 0; i < blocks.length; i++) {
-      for (int j = 0; j < blocks[0].length; j++) {
-        blocks[i][j].display();
-      }
-    }
     displayMoney();
     displayLives();
   }
