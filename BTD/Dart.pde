@@ -3,9 +3,11 @@ public class Dart {
   private int size = 1;
   private PImage sprite;
   private PVector pos;
-  public Dart(float x, float y) {
+  private Map m;
+  public Dart(float x, float y, Map map) {
      sprite = loadImage("dart.png");
      pos = new PVector(x,y);
+     m = map;
   }
   public void display() {
     image(sprite,pos.x,pos.y);
@@ -14,6 +16,7 @@ public class Dart {
   }
   public void fly(Monkeys mon, Bloons bloon) {
     if (pos.x < bloon.getPos().x + 12 && pos.x > bloon.getPos().x - 12 && pos.y < bloon.getPos().y + 20.5 && pos.y > bloon.getPos().y - 20.5){
+      m.addMoney(bloon.getValue());
       bloon.levelDown();
       mon.setAtt();
     }

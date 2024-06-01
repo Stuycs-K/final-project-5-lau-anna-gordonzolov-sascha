@@ -112,6 +112,9 @@ public class Map{
   public Block getThis(){
     return start;
   }
+  public void addMoney(int n) {
+    money += n;
+  }
   public Block getNext(float x, float y){
     return start;
   }

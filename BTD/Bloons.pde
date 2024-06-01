@@ -54,6 +54,9 @@ public class Bloons{
     //this should be fine? no clue why there are afterimages
     image(balloon,pos.x,pos.y);
   }
+  public int getValue() {
+    return value;
+  }
   public PVector getPos(){
     return pos;
   }
