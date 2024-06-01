@@ -1,4 +1,4 @@
-import java.util.*;
+  import java.util.*;
 public class Map{
   private int money;
   private int lives;
