@@ -28,7 +28,6 @@ void setup() {
   fill(0, 0, 0);
   textSize(36);
   map.display();
-  map.displayPath();
   Bloons balloon = new Bloons(2,map);
   balloon.display();
   balloon.levelDown();
