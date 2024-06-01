@@ -9,6 +9,7 @@ public class Map{
   private LinkedList<Block> path;
   private ArrayList<Block> turns;
   PFont font;
+  PFont sfont;
   public Map(PImage map){
     background = map;
     blocks = new Block[13][20];
@@ -93,16 +94,37 @@ public class Map{
   public void displayMoney(){
     PImage coins = loadImage("money.png");
     image(coins,90,10);
-    textSize(20);
-    text("$" + money, 120,30);
+    sfont = createFont("honey.ttf", 16);
+    textFont(sfont);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text("$", 117+x,30);
+        text("$", 117,30+x);
+    }
+    fill(255);
+    text("$", 117,30);
+    font = createFont("honey.ttf", 20);
+    textFont(font);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text(money, 126+x,30);
+        text(money, 126,30+x);
+    }
+    fill(255);
+    text(money, 126,30);
   }
   public void displayLives(){
     PImage health = loadImage("health.png");
     image(health,10,10);
     font = createFont("honey.ttf", 20);
-    fill(255,255,255);
-    textFont(font);
-    text(lives,40,30);
+    textFont(font);  
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text(lives, 40+x,30);
+        text(lives, 40,30+x);
+    }
+    fill(255);
+    text(lives, 40,30);
   }
   public Block getThis(){
     return start;
