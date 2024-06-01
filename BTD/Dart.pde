@@ -21,7 +21,6 @@ public class Dart {
       mon.setAtt();
     }
     this.display();
-    //print("flying");
     PVector dist = PVector.sub(bloon.getPos(),mon.getPos());
     PVector move = dist.div(dist.mag());
     pos.x += move.x * speed;
