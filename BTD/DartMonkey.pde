@@ -94,9 +94,6 @@ class DartMonkey extends Monkeys{
     att = false;
   }
   public boolean isInRad(Bloons b){
-    if (b.getPos().dist(this.pos) < diameter/2) {
-      print("jf");
-    }
     return (b.getPos().dist(this.pos) < diameter/2);
   }
   public void upgrade(){
