@@ -8,6 +8,7 @@ public class Map{
   private Block[][] blocks;
   private LinkedList<Block> path;
   private ArrayList<Block> turns;
+  PFont font;
   public Map(PImage map){
     background = map;
     blocks = new Block[13][20];
@@ -69,8 +70,8 @@ public class Map{
      }
      turns.add(blocks[12][8]);
      turns.add(end);
-    money = 0;
-    lives = 0;
+    money = 650;
+    lives = 40;
   }
   public int getWidth(){
     return background.width;
@@ -92,12 +93,21 @@ public class Map{
       }
     }
     displayMoney();
+    displayLives();
   }
   public void displayMoney(){
-    textSize(100);
-    text("money", 100,100);
+    PImage coins = loadImage("money.png");
+    image(coins,90,10);
+    textSize(20);
+    text("$" + money, 120,30);
   }
-  public void displaylives(){
+  public void displayLives(){
+    PImage health = loadImage("health.png");
+    image(health,10,10);
+    font = createFont("honey.ttf", 20);
+    fill(255,255,255);
+    textFont(font);
+    text(lives,40,30);
   }
   public Block getThis(){
     return start;
