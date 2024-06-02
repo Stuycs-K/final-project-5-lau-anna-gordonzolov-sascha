@@ -95,7 +95,7 @@ public class Map{
   }
   public void displayMoney(){
     textSize(100);
-    text("money", 100,100);
+    //text("money", 100,100);
   }
   public void displaylives(){
   }
