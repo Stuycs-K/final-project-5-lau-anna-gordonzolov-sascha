@@ -90,8 +90,9 @@ void draw() {
       m.displayRad();
     }
     for (Bloons b : rounds.get(curr).getIn()) {
-      if (b.atEnd()){
+      if (b.doesExist() && b.atEnd()){
         b.level(0);
+        map.minus(b.getValue());
       }
       if (b.doesExist()) {
         if (m.isInRad(b) && !m.getAtt()) {
