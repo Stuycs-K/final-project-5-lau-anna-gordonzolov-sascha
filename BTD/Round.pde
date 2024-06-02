@@ -1,13 +1,13 @@
 import java.util.*;
 public class Round{
   private int num;
-  private int timer;
+  private float timer;
   private ArrayList<Bloons> in;
-  private ArrayList<Bloons> curr;
   private Map map;
   private int place;
-  public Round(int n, Map m, ArrayList<Bloons> balloons){
-    curr = balloons;
+  boolean done;
+  public Round(int n, Map m){
+    done = false;
     place = 0;
     in = new ArrayList<Bloons>();
     map = m;
@@ -25,27 +25,57 @@ public class Round{
       }
     }
   }
+  public ArrayList<Bloons> getIn(){
+    return in;
+  }
   public int getSize(){
     return in.size() - place;
   }
+  public boolean nextRound(){
+    return done;
+  }
   public void play(){
-    for (int i = 0; i < place; i++){
-      if(in.get(i).doesExist()){
-        in.get(i).display();
-        in.get(i).move();
+    if (num == 1){
+      for (int i = 0; i < place; i++){
+        if(in.get(i).doesExist()){
+          in.get(i).display();
+          in.get(i).move();
+        }
       }
-    }
-    if (rounds.get(0).getSize() > 0){
-      if (timer == 0){
-        in.get(place).exist();
-        in.get(place).display();
-        in.get(place).move();
-        curr.add(in.get(place));
-        timer = 10;
-        place ++;
+      if (rounds.get(0).getSize() > 0){
+        if (timer == 0){
+          in.get(place).exist();
+          in.get(place).display();
+          in.get(place).move();
+          timer = 18;
+          place ++;
+        }
+        else{
+          timer -= 1;
+        }
       }
       else{
-        timer --;
+        done = true;
+      }
+    }
+    if (num == 2){
+      for (int i = 0; i < place; i++){
+        if(in.get(i).doesExist()){
+          in.get(i).display();
+          in.get(i).move();
+        }
+      }
+      if (rounds.get(0).getSize() > 0){
+        if (timer == 0){
+          in.get(place).exist();
+          in.get(place).display();
+          in.get(place).move();
+          timer = 11;
+          place ++;
+        }
+        else{
+          timer -= 1;
+        }
       }
     }
   }
