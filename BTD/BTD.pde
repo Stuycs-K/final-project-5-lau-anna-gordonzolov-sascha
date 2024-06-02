@@ -4,6 +4,7 @@ Bloons balloon;
 ArrayList<Block> turningpt;
 ArrayList<Bloons> balloons;
 ArrayList<Monkeys> monkeys;
+ArrayList<Round> rounds;
 void keyPressed() {
 }
 void mouseClicked(){
@@ -36,14 +37,16 @@ void setup() {
   monkeys.add(mon);
   mon = new TackShooter(225, 349, map);
   monkeys.add(mon);
-  balloon = new Bloons(4,map);
+  Round one = new Round(1, map);
+  rounds.add(one);
+  /*balloon = new Bloons(4,map);
   balloons.add(balloon);
   balloon = new Bloons(3,map);
   balloons.add(balloon);
   balloon = new Bloons(2,map);
   balloons.add(balloon);
   balloon = new Bloons(1,map);
-  balloons.add(balloon);
+  balloons.add(balloon);*/
   //path starts at 0,205
   //each tile is 40 w and h
 }
@@ -77,12 +80,14 @@ void draw() {
       }
     }
   }
-  for (Bloons b: balloons) {
+  rounds.get(0).play();
+  /*for (Bloons b: balloons) {
     if (b.exists){
       b.move();
       b.display();
     }
-  }
+  }*/
+  
 }
 
 void moveBloon() {

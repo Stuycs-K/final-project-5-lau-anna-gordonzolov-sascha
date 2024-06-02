@@ -109,6 +109,9 @@ public class Bloons{
     this.level(level - 1);
     //remove this balloon and replace it with a lower level at the same position
   }
+  public void exist(){
+    exists = true;
+  }
   public boolean atEnd(){
     return false;
   }
