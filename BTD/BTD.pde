@@ -81,7 +81,7 @@ void setup() {
 }
 void draw() {
   map.display();
-  if (start){
+  if (start && curr < rounds.size()){
     rounds.get(curr).play();  
   }
   for (Monkeys m : monkeys) {
