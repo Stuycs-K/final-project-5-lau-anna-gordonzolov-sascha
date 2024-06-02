@@ -43,6 +43,9 @@ Got the darts working!!!! Took me a while -- I'm tired. Essentially how it works
 ### date 5/31
 Got a demo branch to work for stuff at home using switch. Fixed radius stuff through pair programming. 
 
+### date 6/1
+I'm calling it 6/1 even if it's now 3 in the morning. I got rounds to work!! They're pretty cool -- it actually uses the rounds class. You can currently skip rounds with enter and play normally by passing rounds with space. I also made a bunch of additional qol changes that were missing. Spent a long time getting the timing to work for the bloons -- it's sorta complicated! My solution wasn't great - I ended up doing some work with the numbers and then truncated the timer so that rounding errors wouldn't mess with any results. There are currently 3 working rounds (the first three).  
+
 ## Anna Lau
 
 ### date 5/22
