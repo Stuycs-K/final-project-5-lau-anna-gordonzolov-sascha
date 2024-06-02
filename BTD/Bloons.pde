@@ -116,7 +116,7 @@ public class Bloons{
     return exists;
   }
   public boolean atEnd(){
-    return false;
+    return (pos.y > 532);
   }
   public float getX() {
     return pos.x;

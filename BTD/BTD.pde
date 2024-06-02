@@ -12,6 +12,12 @@ void keyPressed() {
       curr ++;
     }
   }
+  if (key == 10) {
+    for (Bloons b : rounds.get(curr).getIn()){
+      b.level(0);
+    }
+    curr ++;
+  }
 }
 void mouseClicked() {
   for (Monkeys m : monkeys) {
@@ -48,6 +54,8 @@ void setup() {
   rounds.add(one);
   Round two = new Round(2, map);
   rounds.add(two);
+  Round three = new Round(3, map);
+  rounds.add(three);
   /*balloon = new Bloons(4,map);
    balloons.add(balloon);
    balloon = new Bloons(3,map);
@@ -68,6 +76,9 @@ void draw() {
       m.displayRad();
     }
     for (Bloons b : rounds.get(curr).getIn()) {
+      if (b.atEnd()){
+        b.level(0);
+      }
       if (b.doesExist()) {
         if (m.isInRad(b) && !m.getAtt()) {
           m.attack(b);
