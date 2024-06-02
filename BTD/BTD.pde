@@ -9,17 +9,25 @@ ArrayList<Round> rounds;
 int curr;
 void keyPressed() {
   if (key == 32) {
-    start = true;
-    if (rounds.get(curr).nextRound()) {
-      curr ++;
+    if (!start){
+      start = true;
+    }
+    else{
+      if (rounds.get(curr).nextRound()) {
+        curr ++;
+      }
     }
   }
   if (key == 10) {
-    start = true;
-    for (Bloons b : rounds.get(curr).getIn()){
-      b.level(0);
+    if (!start){
+      start = true;
     }
-    curr ++;
+    else{
+      for (Bloons b : rounds.get(curr).getIn()){
+        b.level(0);
+      }
+      curr ++;
+    }
   }
 }
 void mouseClicked() {

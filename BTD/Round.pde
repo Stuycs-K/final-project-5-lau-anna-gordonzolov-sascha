@@ -48,10 +48,10 @@ public class Round{
     return num;
   }
   public boolean nextRound(){
-    boolean check = false;
+    boolean check = true;
     for (Bloons b : in){
       if (b.doesExist()){
-        check = true;
+        check = false;
       }
     }
     return check;
