@@ -1,4 +1,4 @@
-  import java.util.*;
+import java.util.*;
 public class Map{
   private int money;
   private int lives;
@@ -88,14 +88,12 @@ public class Map{
   }
   public void display(){
     image(background, 0, 0);
-    displayMoney();
-    displayLives();
+    //displayMoney();
+    //displayLives();
   }
   public void displayMoney(){
-<<<<<<< HEAD
     textSize(100);
     //text("money", 100,100);
-=======
     PImage coins = loadImage("money.png");
     image(coins,90,10);
     sfont = createFont("honey.ttf", 16);
@@ -116,7 +114,6 @@ public class Map{
     }
     fill(255);
     text(money, 126,30);
->>>>>>> 48d535bfd9fc3f33614f5c420a5e08e619dfd8aa
   }
   public void displayLives(){
     PImage health = loadImage("health.png");
@@ -151,7 +148,7 @@ public class Map{
   }
   void mousePressed() {
   }
-   public void displayPath(){
+  public void displayPath(){
       for (Block i : path){
         fill(0);
         rect(i.getX(), i.getY(), 862/20, 532/13);

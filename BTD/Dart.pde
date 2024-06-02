@@ -44,7 +44,7 @@ public class Dart {
   }
   public void fly(Bloons bloon, Monkeys mon, int n, float x, float y) {
     if (pos.x < bloon.getPos().x + 12 && pos.x > bloon.getPos().x - 12 && pos.y < bloon.getPos().y + 20.5 && pos.y > bloon.getPos().y - 20.5){
-      m.addMoney(bloon.getValue());
+      m.addMoney(1);
       bloon.levelDown();
       mon.setAtt();
     }

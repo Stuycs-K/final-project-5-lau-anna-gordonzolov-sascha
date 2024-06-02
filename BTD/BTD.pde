@@ -1,4 +1,4 @@
-PImage m;
+PImage p;
 Map map;
 Bloons balloon;
 ArrayList<Block> turningpt;
@@ -17,13 +17,13 @@ void mouseClicked(){
   }
 }
 void setup() {
-  m = loadImage("map.png");
-  map = new Map(m);
+  p = loadImage("map.png");
+  map = new Map(p);
   turningpt = map.getTurns();
   balloons = new ArrayList<Bloons>();
   monkeys = new ArrayList<Monkeys>();
-  int w = m.width;
-  int h = m.height;
+  int w = p.width;
+  int h = p.height;
   size(826, 532);
   fill(0, 0, 0);
   textSize(36);
@@ -34,7 +34,7 @@ void setup() {
   balloon.display();
   Monkeys mon = new DartMonkey(309, 269, map);
   monkeys.add(mon);
-  mon = new TackShooter(225, 185, map);
+  mon = new TackShooter(225, 349, map);
   monkeys.add(mon);
   balloon = new Bloons(4,map);
   balloons.add(balloon);

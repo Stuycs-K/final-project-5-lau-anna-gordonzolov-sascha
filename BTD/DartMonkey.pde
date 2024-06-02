@@ -76,7 +76,7 @@ class DartMonkey extends Monkeys{
       att = true;
       bloon = b.getPos();
       blon = b;
-      timer = 20;
+      timer = 40;
     }
     else{
       timer --;
@@ -90,6 +90,9 @@ class DartMonkey extends Monkeys{
   }
   public void setAtt(){
     att = false;
+  }
+  public boolean isInRad(Bloons b){
+    return (b.getPos().dist(this.pos) < diameter/2);
   }
   public void upgrade(){
   }

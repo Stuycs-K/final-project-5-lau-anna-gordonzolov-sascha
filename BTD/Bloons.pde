@@ -55,7 +55,7 @@ public class Bloons{
     image(balloon,pos.x,pos.y);
   }
   public int getValue() {
-    return value;
+    return value; //each pop is $1
   }
   public PVector getPos(){
     return pos;
