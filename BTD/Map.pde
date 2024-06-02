@@ -1,4 +1,4 @@
-import java.util.*;
+  import java.util.*;
 public class Map{
   private int money;
   private int lives;
@@ -8,6 +8,8 @@ public class Map{
   private Block[][] blocks;
   private LinkedList<Block> path;
   private ArrayList<Block> turns;
+  PFont font;
+  PFont sfont;
   public Map(PImage map){
     background = map;
     blocks = new Block[13][20];
@@ -69,8 +71,8 @@ public class Map{
      }
      turns.add(blocks[12][8]);
      turns.add(end);
-    money = 0;
-    lives = 0;
+    money = 650;
+    lives = 40;
   }
   public int getWidth(){
     return background.width;
@@ -86,21 +88,54 @@ public class Map{
   }
   public void display(){
     image(background, 0, 0);
-    for (int i = 0; i < blocks.length; i++) {
-      for (int j = 0; j < blocks[0].length; j++) {
-        blocks[i][j].display();
-      }
-    }
     displayMoney();
+    displayLives();
   }
   public void displayMoney(){
+<<<<<<< HEAD
     textSize(100);
     //text("money", 100,100);
+=======
+    PImage coins = loadImage("money.png");
+    image(coins,90,10);
+    sfont = createFont("honey.ttf", 16);
+    textFont(sfont);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text("$", 117+x,30);
+        text("$", 117,30+x);
+    }
+    fill(255);
+    text("$", 117,30);
+    font = createFont("honey.ttf", 20);
+    textFont(font);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text(money, 126+x,30);
+        text(money, 126,30+x);
+    }
+    fill(255);
+    text(money, 126,30);
+>>>>>>> 48d535bfd9fc3f33614f5c420a5e08e619dfd8aa
   }
-  public void displaylives(){
+  public void displayLives(){
+    PImage health = loadImage("health.png");
+    image(health,10,10);
+    font = createFont("honey.ttf", 20);
+    textFont(font);  
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text(lives, 40+x,30);
+        text(lives, 40,30+x);
+    }
+    fill(255);
+    text(lives, 40,30);
   }
   public Block getThis(){
     return start;
+  }
+  public void addMoney(int n) {
+    money += n;
   }
   public Block getNext(float x, float y){
     return start;

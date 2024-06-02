@@ -22,22 +22,22 @@ public class Bloons{
     if (level == 4) {
       balloon = loadImage("yellow.png");
       velo = 4;
-      value = 20;
+      value = 4;
     }
     else if (level == 3) {
       balloon = loadImage("green.png");
       velo = 3.5;
-      value = 15;
+      value = 3;
     }
     else if (level == 2) {
       balloon = loadImage("blue.png");
       velo = 3;
-      value = 10;
+      value = 2;
     }
     else {
       balloon = loadImage("red.png");
       velo = 2.5;
-      value = 5;
+      value = 1;
     }
     m = map;
     pos = new PVector(0, 204);
@@ -53,6 +53,9 @@ public class Bloons{
   public void display() {
     //this should be fine? no clue why there are afterimages
     image(balloon,pos.x,pos.y);
+  }
+  public int getValue() {
+    return value;
   }
   public PVector getPos(){
     return pos;
@@ -79,17 +82,17 @@ public class Bloons{
     if (level == 4) {
       balloon = loadImage("yellow.png");
       velo = 4;
-      value = 20;
+      value = 4;
     }
     else if (level == 3) {
       balloon = loadImage("green.png");
       velo = 3.5;
-      value = 15;
+      value = 3;
     }
     else if (level == 2) {
       balloon = loadImage("blue.png");
       velo = 3;
-      value = 10;
+      value = 2;
     }
     else if (level == 0){
       exists = false;
@@ -99,7 +102,7 @@ public class Bloons{
     else {
       balloon = loadImage("red.png");
       velo = 2.5;
-      value = 5;
+      value = 1;
     }
   }
   public void levelDown(){

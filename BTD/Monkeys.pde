@@ -21,7 +21,7 @@ abstract class Monkeys{
     }
   }
   public float getRad() {
-    return radius;
+    return radius/2;
   }
   public PVector getPos() {
     return pos;
@@ -57,6 +57,9 @@ abstract class Monkeys{
   public Dart getDart(){
     return d;
   }
+  public Dart getDart(int n){
+    return d;
+  }
   public int sell(){
     return -1;
   }
@@ -65,5 +68,8 @@ abstract class Monkeys{
   }
   public void setSelect() {
     isSelected = !isSelected;
+  }
+  public int type() {
+    return 0;
   }
 }
