@@ -41,7 +41,7 @@ public class Round{
         in.get(place).display();
         in.get(place).move();
         curr.add(in.get(place));
-        timer = 20;
+        timer = 10;
         place ++;
       }
       else{

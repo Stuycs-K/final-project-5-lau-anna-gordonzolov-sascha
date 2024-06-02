@@ -5,7 +5,7 @@ class DartMonkey extends Monkeys{
   private int v;
   private int strength;
   private float diameter;
-  private boolean displayDia;
+  private boolean displayRad;
   float minX;
   float maxX;
   float minY;
@@ -23,7 +23,7 @@ class DartMonkey extends Monkeys{
     m = map;
     timer = 0;
     att = false;
-    displayDia = false;
+    displayRad = false;
     minX = x - 20.5;
     minY = y - 20.5;
     maxX = x + 20.5;
@@ -36,19 +36,19 @@ class DartMonkey extends Monkeys{
   public void display() {
     image(sprite,pos.x - 21.5,pos.y - 21.5);
   }
-  public float getDia() {
+  public float getRad() {
     return diameter;
   }
-  public boolean getDisplayDia(){
-    return displayDia;
+  public boolean getDisplayRad(){
+    return displayRad;
   }
-  public void displayDia(){
+  public void displayRad(){
     fill(#d3d3d3, 150);
     circle(pos.x, pos.y, diameter);
     this.display();
   }
-  public void changeDisplayDia(){
-    displayDia = !displayDia;
+  public void changeDisplayRad(){
+    displayRad = !displayRad;
   }
   public Dart getDart(){
     return d;
@@ -61,7 +61,7 @@ class DartMonkey extends Monkeys{
   }
   public void isIn(int x, int y){
     if (x > minX && x < maxX && y > minY && y < maxY){
-      displayDia = !displayDia;
+      displayRad = !displayRad;
     }
   }
   
@@ -91,7 +91,7 @@ class DartMonkey extends Monkeys{
   public void setAtt(){
     att = false;
   }
-  public boolean isInDia(Bloons b){
+  public boolean isInRad(Bloons b){
     return (b.getPos().dist(this.pos) < diameter/2);
   }
   public void upgrade(){

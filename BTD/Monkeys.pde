@@ -5,7 +5,7 @@ abstract class Monkeys{
   private int v;
   private boolean att;
   private int strength;
-  private int diameter;
+  private int radius;
   private PVector pos;
   private boolean isSelected;
   private PImage sprite;
@@ -39,14 +39,14 @@ abstract class Monkeys{
   }
   public void display(){
   }
-  public void displayDia(){
+  public void displayRad(){
   }
   public void isIn(int x, int y){
   }
-  public boolean getDisplayDia(){
+  public boolean getDisplayRad(){
     return false;
   }
-  public void changeDisplayDia(){
+  public void changeDisplayRad(){
   }
   public boolean getAtt(){
     return false;

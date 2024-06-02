@@ -9,11 +9,11 @@ void keyPressed() {
 }
 void mouseClicked(){
   for (Monkeys m: monkeys){
-    if (!m.getDisplayDia()){
+    if (!m.getDisplayRad()){
       m.isIn(mouseX, mouseY);
     }
     else{
-      m.changeDisplayDia();
+      m.changeDisplayRad();
     }
   }
 }
@@ -55,12 +55,12 @@ void draw() {
   map.display();
   for (Monkeys m : monkeys){
     m.display();
-    if (m.getDisplayDia()){
-      m.displayDia();
+    if (m.getDisplayRad()){
+      m.displayRad();
     }
     for (Bloons b: balloons) {
       if (b.doesExist()){
-        if (m.isInDia(b) && !m.getAtt()) {
+        if (m.isInRad(b) && !m.getAtt()) {
           m.attack(b);
           break;
         }
