@@ -1,6 +1,7 @@
 PImage p;
 Map map;
 Bloons balloon;
+boolean start;
 ArrayList<Block> turningpt;
 //ArrayList<Bloons> balloons;
 ArrayList<Monkeys> monkeys;
@@ -8,11 +9,13 @@ ArrayList<Round> rounds;
 int curr;
 void keyPressed() {
   if (key == 32) {
+    start = true;
     if (rounds.get(curr).nextRound()) {
       curr ++;
     }
   }
   if (key == 10) {
+    start = true;
     for (Bloons b : rounds.get(curr).getIn()){
       b.level(0);
     }
@@ -29,6 +32,7 @@ void mouseClicked() {
   }
 }
 void setup() {
+  start = false;
   curr = 0;
   p = loadImage("map.png");
   map = new Map(p);
@@ -69,7 +73,9 @@ void setup() {
 }
 void draw() {
   map.display();
-  rounds.get(curr).play();  
+  if (start){
+    rounds.get(curr).play();  
+  }
   for (Monkeys m : monkeys) {
     m.display();
     if (m.getDisplayRad()) {
