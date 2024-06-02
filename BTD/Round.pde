@@ -4,7 +4,10 @@ public class Round{
   private int timer;
   private ArrayList<Bloons> in;
   private Map map;
+  private int place;
   public Round(int n, Map m){
+    place = 0;
+    in = new ArrayList<Bloons>();
     map = m;
     num = n;
     if (n == 1){
@@ -25,9 +28,11 @@ public class Round{
   }
   public void play(){
     if (timer == 0){
-      in.get(0).exist();
-      in.remove(0);
+      in.get(place).exist();
+      in.get(place).display();
+      in.get(place).move();
       timer = 10;
+      place ++;
     }
     else{
       timer --;

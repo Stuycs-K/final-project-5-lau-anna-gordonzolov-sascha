@@ -21,6 +21,7 @@ void setup() {
   p = loadImage("map.png");
   map = new Map(p);
   turningpt = map.getTurns();
+  rounds = new ArrayList<Round>();
   balloons = new ArrayList<Bloons>();
   monkeys = new ArrayList<Monkeys>();
   int w = p.width;
@@ -80,7 +81,9 @@ void draw() {
       }
     }
   }
-  rounds.get(0).play();
+  if (rounds.get(0).getSize() > 0){
+    rounds.get(0).play();
+  }
   /*for (Bloons b: balloons) {
     if (b.exists){
       b.move();
