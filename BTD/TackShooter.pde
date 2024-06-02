@@ -5,7 +5,7 @@ class TackShooter extends Monkeys{
   private int v;
   private int strength;
   private float diameter;
-  private boolean displayRad;
+  private boolean displayDia;
   float minX;
   float maxX;
   float minY;
@@ -23,7 +23,7 @@ class TackShooter extends Monkeys{
     m = map;
     timer = 0;
     att = false;
-    displayRad = false;
+    displayDia = false;
     minX = x - 20.5;
     minY = y - 20.5;
     maxX = x + 20.5;
@@ -36,19 +36,19 @@ class TackShooter extends Monkeys{
   public void display() {
     image(sprite,pos.x - 21.5,pos.y - 21.5);
   }
-  public float getRad() {
+  public float getDia() {
     return diameter;
   }
-  public boolean getDisplayRad(){
-    return displayRad;
+  public boolean getDisplayDia(){
+    return displayDia;
   }
-  public void displayRad(){
+  public void displayDia(){
     fill(#d3d3d3, 150);
     circle(pos.x, pos.y, diameter);
     this.display();
   }
-  public void changeDisplayRad(){
-    displayRad = !displayRad;
+  public void changeDisplayDia(){
+    displayDia = !displayDia;
   }
   public Dart getDart(int n){
     return d[n];
@@ -61,7 +61,7 @@ class TackShooter extends Monkeys{
   }
   public void isIn(int x, int y){
     if (x > minX && x < maxX && y > minY && y < maxY){
-      displayRad = !displayRad;
+      displayDia = !displayDia;
     }
   }
   
@@ -99,7 +99,7 @@ class TackShooter extends Monkeys{
   public void setAtt(){
     att = false;
   }
-  public boolean isInRad(Bloons b){
+  public boolean isInDia(Bloons b){
     return (b.getPos().dist(this.pos) < diameter/2);
   }
   public void upgrade(){

@@ -48,7 +48,7 @@ public class Dart {
       bloon.levelDown();
       mon.setAtt();
     }
-    if (pos.dist(mon.getPos()) > mon.getRad()/2) {
+    if (pos.dist(mon.getPos()) > mon.getDia()/2) {
       pos.x = x;
       pos.y = y;
       mon.setAtt();
