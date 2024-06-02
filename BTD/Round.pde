@@ -1,12 +1,13 @@
 import java.util.*;
 public class Round{
   private int num;
-  private float timer;
+  private int timer;
   private ArrayList<Bloons> in;
   private Map map;
   private int place;
   boolean done;
   public Round(int n, Map m){
+    timer = 0;
     done = false;
     place = 0;
     in = new ArrayList<Bloons>();
@@ -31,6 +32,9 @@ public class Round{
   public int getSize(){
     return in.size() - place;
   }
+  public int getNum(){
+    return num;
+  }
   public boolean nextRound(){
     return done;
   }
@@ -42,7 +46,7 @@ public class Round{
           in.get(i).move();
         }
       }
-      if (rounds.get(0).getSize() > 0){
+      if (rounds.get(num - 1).getSize() > 0){
         if (timer == 0){
           in.get(place).exist();
           in.get(place).display();
@@ -65,7 +69,7 @@ public class Round{
           in.get(i).move();
         }
       }
-      if (rounds.get(0).getSize() > 0){
+      if (rounds.get(num - 1).getSize() > 0){
         if (timer == 0){
           in.get(place).exist();
           in.get(place).display();

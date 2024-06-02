@@ -5,7 +5,7 @@ ArrayList<Block> turningpt;
 //ArrayList<Bloons> balloons;
 ArrayList<Monkeys> monkeys;
 ArrayList<Round> rounds;
-private int curr;
+int curr;
 void keyPressed() {
   if (key == 32) {
     if (rounds.get(curr).nextRound()) {
@@ -61,7 +61,7 @@ void setup() {
 }
 void draw() {
   map.display();
-  rounds.get(curr).play();
+  rounds.get(curr).play();  
   for (Monkeys m : monkeys) {
     m.display();
     if (m.getDisplayRad()) {
