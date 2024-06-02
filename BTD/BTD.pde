@@ -81,9 +81,7 @@ void draw() {
       }
     }
   }
-  if (rounds.get(0).getSize() > 0){
-    rounds.get(0).play();
-  }
+  rounds.get(0).play();
   /*for (Bloons b: balloons) {
     if (b.exists){
       b.move();

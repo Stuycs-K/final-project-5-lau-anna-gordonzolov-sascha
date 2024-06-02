@@ -24,18 +24,23 @@ public class Round{
     }
   }
   public int getSize(){
-    return in.size();
+    return in.size() - place;
   }
   public void play(){
-    if (timer == 0){
-      in.get(place).exist();
-      in.get(place).display();
-      in.get(place).move();
-      timer = 10;
-      place ++;
+    for (int i = 0; i < place; i++){
+      in.get(i).display();
+      in.get(i).move();
     }
-    else{
-      timer --;
+    if (rounds.get(0).getSize() > 0){
+      if (timer == 0){
+        in.get(place).display();
+        in.get(place).move();
+        timer = 10;
+        place ++;
+      }
+      else{
+        timer --;
+      }
     }
   }
 } 
