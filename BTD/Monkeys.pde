@@ -21,7 +21,7 @@ abstract class Monkeys{
     }
   }
   public float getRad() {
-    return radius;
+    return radius/2;
   }
   public PVector getPos() {
     return pos;

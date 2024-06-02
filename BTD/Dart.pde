@@ -11,7 +11,7 @@ public class Dart {
       speed = 15;
     }
     else if (type == 2) {
-      speed = 5;
+      speed = 2;
     }
      sprite = loadImage("dart.png");
      pos = new PVector(x,y);
@@ -48,9 +48,10 @@ public class Dart {
       bloon.levelDown();
       mon.setAtt();
     }
-    if (pos.dist(mon.getPos()) > mon.getRad()) {
+    if (pos.dist(mon.getPos()) > mon.getRad()/2) {
       pos.x = x;
       pos.y = y;
+      mon.setAtt();
     }
     this.display();
     pos.x += cos((PI/4)*n) * speed;
