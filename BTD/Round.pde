@@ -5,10 +5,8 @@ public class Round{
   private ArrayList<Bloons> in;
   private Map map;
   private int place;
-  boolean done;
   public Round(int n, Map m){
     timer = 0;
-    done = false;
     place = 0;
     in = new ArrayList<Bloons>();
     map = m;
@@ -50,7 +48,13 @@ public class Round{
     return num;
   }
   public boolean nextRound(){
-    return done;
+    boolean check = true;
+    for (Bloons b : in){
+      if (b.doesExist()){
+        check = false;
+      }
+    }
+    return check;
   }
   public void play(){
     if (num == 1){
@@ -72,9 +76,6 @@ public class Round{
           timer -= 1;
         }
       }
-      else{
-        done = true;
-      }
     }
     if (num == 2){
       for (int i = 0; i < place; i++){
@@ -94,9 +95,6 @@ public class Round{
         else{
           timer -= 1;
         }
-      }
-      else{
-        done = true;
       }
     }
     if (num == 3){
@@ -149,9 +147,6 @@ public class Round{
             timer += float(30)/39;
           }
         }
-        else{
-        done = true;
-      }
       }
     }
   }
