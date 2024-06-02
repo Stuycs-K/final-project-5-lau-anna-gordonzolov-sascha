@@ -120,11 +120,7 @@ public class Round{
           }
         }
         else if (place < 15){
-          println(timer + " ");
-          if (place == 10){
-            timer += float(1)/6;
-          }
-          if (Math.abs(timer - 0.01) < 0){
+          if (Math.abs(timer) < 0.01){
             in.get(place).exist();
             in.get(place).display();
             in.get(place).move();
@@ -133,13 +129,13 @@ public class Round{
           }
           else{
             timer -= 1;
+          }
+          if (place == 10){
+            timer += float(2)/12;
           }
         }
         else if (place < 35){
-          if (place == 15){
-            timer += float(40)/39;
-          }
-          if (timer == 0){
+          if (Math.abs(timer) < 0.01){
             in.get(place).exist();
             in.get(place).display();
             in.get(place).move();
@@ -148,6 +144,9 @@ public class Round{
           }
           else{
             timer -= 1;
+          }
+          if (place == 15){
+            timer += float(30)/39;
           }
         }
         else{
