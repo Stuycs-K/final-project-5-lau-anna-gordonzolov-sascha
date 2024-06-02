@@ -67,7 +67,7 @@ class DartMonkey extends Monkeys{
   
   public void attack(Bloons b){
     if (timer == 0){
-      d = new Dart(pos.x,pos.y, m);
+      d = new Dart(pos.x,pos.y, m, 1);
       /*if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
         if (b.getLevel() > 1) {
           b.levelDown();
@@ -76,8 +76,6 @@ class DartMonkey extends Monkeys{
       att = true;
       bloon = b.getPos();
       blon = b;
-      //d.fly(b);
-      d.display();
       timer = 20;
     }
     else{
@@ -100,5 +98,8 @@ class DartMonkey extends Monkeys{
   }
   public PVector getPos() {
     return pos;
+  }
+  public int type() {
+    return 1;
   }
 }
