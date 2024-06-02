@@ -38,7 +38,7 @@ void setup() {
   monkeys.add(mon);
   mon = new TackShooter(225, 349, map);
   monkeys.add(mon);
-  Round one = new Round(1, map);
+  Round one = new Round(1, map, balloons);
   rounds.add(one);
   /*balloon = new Bloons(4,map);
   balloons.add(balloon);

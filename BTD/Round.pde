@@ -3,9 +3,11 @@ public class Round{
   private int num;
   private int timer;
   private ArrayList<Bloons> in;
+  private ArrayList<Bloons> curr;
   private Map map;
   private int place;
-  public Round(int n, Map m){
+  public Round(int n, Map m, ArrayList<Bloons> balloons){
+    curr = balloons;
     place = 0;
     in = new ArrayList<Bloons>();
     map = m;
@@ -33,8 +35,10 @@ public class Round{
     }
     if (rounds.get(0).getSize() > 0){
       if (timer == 0){
+        in.get(place).exist();
         in.get(place).display();
         in.get(place).move();
+        curr.add(in.get(place));
         timer = 10;
         place ++;
       }
