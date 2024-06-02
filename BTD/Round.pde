@@ -30,8 +30,10 @@ public class Round{
   }
   public void play(){
     for (int i = 0; i < place; i++){
-      in.get(i).display();
-      in.get(i).move();
+      if(in.get(i).doesExist()){
+        in.get(i).display();
+        in.get(i).move();
+      }
     }
     if (rounds.get(0).getSize() > 0){
       if (timer == 0){
