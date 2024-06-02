@@ -13,7 +13,7 @@ public class Bloons{
   int turns;
   //in BTD, call this with (0,205);
   public Bloons(int level, Map map){
-    exists = true;
+    exists = false;
     int pathBlock = 0;
     turns = 0;
     if (level > 0 && level < 5) {
@@ -111,6 +111,9 @@ public class Bloons{
   }
   public void exist(){
     exists = true;
+  }
+  public boolean doesExist(){
+    return exists;
   }
   public boolean atEnd(){
     return false;
