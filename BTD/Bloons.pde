@@ -13,7 +13,7 @@ public class Bloons{
   int turns;
   //in BTD, call this with (0,205);
   public Bloons(int level, Map map){
-    exists = true;
+    exists = false;
     int pathBlock = 0;
     turns = 0;
     if (level > 0 && level < 5) {
@@ -55,7 +55,7 @@ public class Bloons{
     image(balloon,pos.x,pos.y);
   }
   public int getValue() {
-    return value;
+    return value; //each pop is $1
   }
   public PVector getPos(){
     return pos;
@@ -109,8 +109,14 @@ public class Bloons{
     this.level(level - 1);
     //remove this balloon and replace it with a lower level at the same position
   }
+  public void exist(){
+    exists = true;
+  }
+  public boolean doesExist(){
+    return exists;
+  }
   public boolean atEnd(){
-    return false;
+    return (pos.y > 532);
   }
   public float getX() {
     return pos.x;
