@@ -32,9 +32,9 @@ void setup() {
   balloon.display();
   balloon.levelDown();
   balloon.display();
-  DartMonkey mon = new DartMonkey(309, 269, map);
+  Monkeys mon = new DartMonkey(309, 269, map);
   monkeys.add(mon);
-  mon = new DartMonkey(225, 185, map);
+  mon = new TackShooter(225, 185, map);
   monkeys.add(mon);
   balloon = new Bloons(4,map);
   balloons.add(balloon);
@@ -60,7 +60,20 @@ void draw() {
         break;
       }
       if (m.getAtt()){
-        m.getDart().fly(m, m.getBlon());
+        if (m.type() == 1) {
+          m.getDart().fly(m, m.getBlon());
+        }
+        else if (m.type() == 2) {
+          m.getDart(0).fly(m.getBlon(),m,0, m.getDart(0).getogX(), m.getDart(0).getogY());
+          m.getDart(1).fly(m.getBlon(),m,1, m.getDart(1).getogX(), m.getDart(1).getogY());
+          m.getDart(2).fly(m.getBlon(),m,2, m.getDart(2).getogX(), m.getDart(2).getogY());
+          m.getDart(3).fly(m.getBlon(),m,3, m.getDart(3).getogX(), m.getDart(3).getogY());
+          m.getDart(4).fly(m.getBlon(),m,4, m.getDart(4).getogX(), m.getDart(4).getogY());
+          m.getDart(5).fly(m.getBlon(),m,5, m.getDart(5).getogX(), m.getDart(5).getogY());
+          m.getDart(6).fly(m.getBlon(),m,6, m.getDart(6).getogX(), m.getDart(6).getogY());
+          m.getDart(7).fly(m.getBlon(),m,7, m.getDart(7).getogX(), m.getDart(7).getogY());
+          m.display();
+        }
       }
     }
   }
