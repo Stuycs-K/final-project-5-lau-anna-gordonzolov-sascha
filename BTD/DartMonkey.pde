@@ -19,6 +19,7 @@ class DartMonkey extends Monkeys{
   private boolean isSelected;
   private PImage sprite;
   private Map m;
+  float angle = 0;
   public DartMonkey(int x, int y, Map map){
     m = map;
     timer = 0;
@@ -34,7 +35,12 @@ class DartMonkey extends Monkeys{
     diameter = 200;
   }
   public void display() {
+    //pushMatrix();
+    //translate(-pos.x,-pos.y);
+    rotate(angle);
+    //translate(pos.x,pos.y);
     image(sprite,pos.x - 21.5,pos.y - 21.5);
+    //popMatrix();
   }
   public float getRad() {
     return diameter;
@@ -74,6 +80,8 @@ class DartMonkey extends Monkeys{
         }
       }*/
       att = true;
+      PVector dir = PVector.sub(pos,b.getPos());
+      angle += 2 * PI -  dir.heading();
       bloon = b.getPos();
       blon = b;
       timer = 40;
