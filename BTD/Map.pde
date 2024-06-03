@@ -146,7 +146,15 @@ public class Map{
     return turns;
   }
   public void minus(int n) {
-    lives -= n;
+    if (lives - n < 0){
+      lives = 0;
+    }
+    else{
+      lives -= n;
+    }
+  }
+  public int getLives(){
+    return lives;
   }
   void mousePressed() {
   }

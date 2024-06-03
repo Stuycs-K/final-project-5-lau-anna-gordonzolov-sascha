@@ -35,7 +35,7 @@ void keyPressed() {
     won = !won;
   }
   if (key == 108) {
-    lost = !lost;
+    map.minus(1);
   }
 }
 void mouseClicked() {
@@ -88,6 +88,9 @@ void setup() {
   //each tile is 40 w and h
 }
 void draw() {
+  if (map.getLives() == 0){
+    lost = true;
+  }
   map.display();
   if (!won && !lost) {
     map.display();
@@ -103,7 +106,7 @@ void draw() {
       image(lose,250,10);
     }
   }
-  if (start){
+  if (start && !lost && !won){
     rounds.get(curr).play();  
   }
   for (Monkeys m : monkeys) {
