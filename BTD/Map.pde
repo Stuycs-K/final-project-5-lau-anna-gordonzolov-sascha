@@ -89,6 +89,7 @@ public class Map{
   }
   public void changeTitle(String str) {
   }
+
   public void display(){
     image(background, 0, 0);
     displayMoney();
@@ -109,6 +110,13 @@ public class Map{
     } 
     fill(255);
     text(title, xpos,80);
+    fill(#89CFF0);
+    rect(662.5,110,70,80,10);
+    PImage d = loadImage("sDartMonkey.png");
+    image(d,680,110);
+    rect(747.5,110,70,80,10);
+    d = loadImage("sTackShooter.png");
+    image(d,760,120);
   }
   public void displayMoney(){
     textSize(100);
