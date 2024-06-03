@@ -7,6 +7,8 @@ ArrayList<Block> turningpt;
 ArrayList<Monkeys> monkeys;
 ArrayList<Round> rounds;
 int curr;
+boolean won = false;
+boolean lost = false;
 void keyPressed() {
   if (key == 32) {
     if (!start){
@@ -28,6 +30,12 @@ void keyPressed() {
       }
       curr ++;
     }
+  }
+  if (key == 118) {
+    won = !won;
+  }
+  if (key == 108) {
+    lost = !lost;
   }
 }
 void mouseClicked() {
@@ -81,7 +89,21 @@ void setup() {
 }
 void draw() {
   map.display();
-  if (start && curr < rounds.size()){
+  if (!won && !lost) {
+    map.display();
+  }
+  else {
+    if (won) {
+      PImage win = loadImage("victory.png");
+      image(win,160,100);
+    }
+    if (lost) {
+      map.noLives();
+      PImage lose = loadImage("defeat.png");
+      image(lose,250,10);
+    }
+  }
+  if (start){
     rounds.get(curr).play();  
   }
   for (Monkeys m : monkeys) {
