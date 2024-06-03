@@ -2,6 +2,7 @@ import java.util.*;
 public class Round{
   private int num;
   private float timer;
+  private boolean play;
   private ArrayList<Bloons> in;
   private Map map;
   private int place;
@@ -54,9 +55,10 @@ public class Round{
         check = false;
       }
     }
-    return check;
+    return check && play;
   }
   public void play(){
+    play = true;
     if (num == 1){
       for (int i = 0; i < place; i++){
         if(in.get(i).doesExist()){
