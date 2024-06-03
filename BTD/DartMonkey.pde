@@ -37,7 +37,7 @@ class DartMonkey extends Monkeys{
   public void display() {
     //pushMatrix();
     //translate(-pos.x,-pos.y);
-    rotate(angle);
+    //rotate(angle);
     //translate(pos.x,pos.y);
     image(sprite,pos.x - 21.5,pos.y - 21.5);
     //popMatrix();

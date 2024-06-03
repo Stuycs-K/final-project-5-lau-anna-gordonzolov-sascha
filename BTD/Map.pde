@@ -9,7 +9,9 @@ public class Map{
   private LinkedList<Block> path;
   private ArrayList<Block> turns;
   PFont font;
+  private String title;
   public Map(PImage map){
+    title = "TOWERS";
     background = map;
     blocks = new Block[13][20];
     path = new LinkedList<Block>();
@@ -85,10 +87,28 @@ public class Map{
   public Block getEnd(){
     return end;
   }
+  public void changeTitle(String str) {
+  }
   public void display(){
     image(background, 0, 0);
     displayMoney();
     displayLives();
+    displaySide();
+  }
+  public void displaySide() {
+    stroke(#AD7C48);
+    fill(#C19960);
+    rect(650,0,176,532,10);
+    fill(#AD7C48);
+    rect(660,50,156,40,10);
+    fill(0,0,0);
+    float xpos = 660 + ((156 - 13*title.length())/2.0);
+    for(int x = -1; x < 2; x++){
+        text(title, xpos+x,80);
+        text(title, xpos,80+x);
+    } 
+    fill(255);
+    text(title, xpos,80);
   }
   public void displayMoney(){
     textSize(100);
