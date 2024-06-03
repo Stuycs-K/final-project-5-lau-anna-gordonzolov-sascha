@@ -95,8 +95,8 @@ public class Map{
     //text("money", 100,100);
     PImage coins = loadImage("money.png");
     image(coins,90,10);
-    sfont = createFont("honey.ttf", 16);
-    textFont(sfont);
+    font = createFont("honey.ttf", 16);
+    textFont(font);
     fill(0,0,0);
     for(int x = -1; x < 2; x++){
         text("$", 117+x,30);
@@ -129,6 +129,9 @@ public class Map{
   }
   public void addMoney(int n) {
     money += n;
+  }
+  public void noLives() {
+    lives = 0;
   }
   public Block getNext(float x, float y){
     return start;
