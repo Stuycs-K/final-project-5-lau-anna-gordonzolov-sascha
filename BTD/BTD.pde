@@ -32,7 +32,7 @@ void keyPressed() {
     }
   }
   if (key == 118) {
-    won = !won;
+    won = true;
   }
   if (key == 108) {
     map.minus(1);
@@ -91,6 +91,7 @@ void draw() {
   if (map.getLives() == 0){
     lost = true;
   }
+  won = !lost && rounds.size() == curr + 1 && rounds.get(curr).nextRound();
   map.display();
   if (!won && !lost) {
     map.display();
