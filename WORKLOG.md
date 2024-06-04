@@ -93,3 +93,6 @@ Fixed the laggy display and implemented subtraction of lives. Also added prelimi
 
 ## date 6/3
 Started setting up the sidebar.
+
+## date 6/4
+Got the drag and drop for the towers working. Configured the money and made it so that users could only buy towers that they can afford.
