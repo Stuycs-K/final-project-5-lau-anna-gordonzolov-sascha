@@ -166,6 +166,12 @@ public class Map{
   public Block getThis(){
     return start;
   }
+  public int getMoney() {
+    return money;
+  }
+  public void subMoney(int n) {
+    money -= n;
+  }
   public void addMoney(int n) {
     money += n;
   }

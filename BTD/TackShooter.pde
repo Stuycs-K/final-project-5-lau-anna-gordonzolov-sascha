@@ -32,6 +32,10 @@ class TackShooter extends Monkeys{
     pos = new PVector(x,y);
     isSelected = false;
     diameter = 100;
+    cost = 230;
+  }
+  public int getCost() {
+    return cost;
   }
   public void display() {
     image(sprite,pos.x - 21.5,pos.y - 21.5);
@@ -41,6 +45,11 @@ class TackShooter extends Monkeys{
   }
   public boolean getDisplayRad(){
     return displayRad;
+  }
+  public void move(){
+    if (isSelected) {
+      pos = new PVector(mouseX,mouseY);
+    }
   }
   public void changeSel() {
     isSelected = !isSelected;

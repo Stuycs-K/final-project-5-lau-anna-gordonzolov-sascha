@@ -49,11 +49,30 @@ void mouseClicked() {
     }
   }
   print(mouseX + " " + mouseY);
-  if (mouseX >= 660 && mouseX <= 730 && mouseY >= 110 && mouseY <= 170 && !selected) {
-    monk = new DartMonkey(mouseX, mouseY, map);
+  if (!selected) {
+    if (mouseX >= 660 && mouseX <= 730 && mouseY >= 110 && mouseY <= 170) {
+      if (map.getMoney() >= 200) {
+        monk = new DartMonkey(mouseX, mouseY, map);
+        monk.changeSel();
+        selected = !selected;
+      }
+    }
+    else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 110 && mouseY <= 170) {
+      if (map.getMoney() >= 230) {
+        monk = new TackShooter(mouseX, mouseY, map);
+        monk.changeSel();
+        selected = !selected;
+      }
+    }
+  }
+  else if (selected) {
+    map.subMoney(monk.getCost());
     monk.changeSel();
+    monkeys.add(monk);
+    monk = null;
     selected = !selected;
   }
+  print(monk);
 }
 void setup() {
   start = false;
@@ -75,10 +94,6 @@ void setup() {
   balloon.display();
   balloon.levelDown();
   balloon.display();
-  Monkeys mon = new DartMonkey(309, 269, map);
-  monkeys.add(mon);
-  mon = new TackShooter(225, 349, map);
-  monkeys.add(mon);
   Round one = new Round(1, map);
   rounds.add(one);
   Round two = new Round(2, map);

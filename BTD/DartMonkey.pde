@@ -33,6 +33,10 @@ class DartMonkey extends Monkeys{
     pos = new PVector(x,y);
     isSelected = false;
     diameter = 200;
+    cost = 200;
+  }
+  public int getCost() {
+    return cost;
   }
   public void changeSel() {
     isSelected = !isSelected;

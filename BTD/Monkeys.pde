@@ -63,6 +63,9 @@ abstract class Monkeys{
   public Dart getDart(int n){
     return d;
   }
+  public int getCost() {
+    return cost;
+  }
   public int sell(){
     return -1;
   }
