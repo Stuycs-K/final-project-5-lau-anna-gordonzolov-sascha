@@ -9,6 +9,8 @@ ArrayList<Round> rounds;
 int curr;
 boolean won = false;
 boolean lost = false;
+Monkeys monk;
+boolean selected;
 void keyPressed() {
   if (key == 32) {
     if (!start){
@@ -46,9 +48,16 @@ void mouseClicked() {
       m.changeDisplayRad();
     }
   }
+  print(mouseX + " " + mouseY);
+  if (mouseX >= 660 && mouseX <= 730 && mouseY >= 110 && mouseY <= 170 && !selected) {
+    monk = new DartMonkey(mouseX, mouseY, map);
+    monk.changeSel();
+    selected = !selected;
+  }
 }
 void setup() {
   start = false;
+  selected = false;
   curr = 0;
   p = loadImage("map.png");
   map = new Map(p);
@@ -109,6 +118,10 @@ void draw() {
   }
   if (start && !lost && !won){
     rounds.get(curr).play();  
+  }
+  if (monk != null) {
+    monk.display();
+    monk.move();
   }
   for (Monkeys m : monkeys) {
     m.display();

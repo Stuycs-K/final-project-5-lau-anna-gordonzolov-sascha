@@ -111,12 +111,23 @@ public class Map{
     fill(255);
     text(title, xpos,80);
     fill(#89CFF0);
-    rect(662.5,110,70,80,10);
+    rect(660,110,70,80,10);
     PImage d = loadImage("sDartMonkey.png");
-    image(d,680,110);
-    rect(747.5,110,70,80,10);
+    image(d,680,112);
+    fill(255);
+    textSize(16);
+    text("$",675,185);
+    textSize(20);
+    text(200,685,185);
+    fill(#89CFF0);
+    rect(745,110,70,80,10);
     d = loadImage("sTackShooter.png");
     image(d,760,120);
+    fill(255);
+    textSize(16);
+    text("$",755,185);
+    textSize(20);
+    text(280,765,185);
   }
   public void displayMoney(){
     textSize(100);

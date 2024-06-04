@@ -20,6 +20,9 @@ abstract class Monkeys{
       pos = new PVector(mouseX,mouseY);
     }
   }
+  public void changeSel() {
+    isSelected = !isSelected;
+  }
   public float getRad() {
     return radius/2;
   }
