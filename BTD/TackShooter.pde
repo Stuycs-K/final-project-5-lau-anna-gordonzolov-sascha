@@ -32,6 +32,10 @@ class TackShooter extends Monkeys{
     pos = new PVector(x,y);
     isSelected = false;
     diameter = 100;
+    cost = 230;
+  }
+  public int getCost() {
+    return cost;
   }
   public void display() {
     image(sprite,pos.x - 21.5,pos.y - 21.5);

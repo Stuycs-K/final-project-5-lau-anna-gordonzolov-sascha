@@ -51,15 +51,22 @@ void mouseClicked() {
   print(mouseX + " " + mouseY);
   if (!selected) {
     if (mouseX >= 660 && mouseX <= 730 && mouseY >= 110 && mouseY <= 170) {
-      monk = new DartMonkey(mouseX, mouseY, map);
+      if (map.getMoney() >= 200) {
+        monk = new DartMonkey(mouseX, mouseY, map);
+        monk.changeSel();
+        selected = !selected;
+      }
     }
     else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 110 && mouseY <= 170) {
-      monk = new TackShooter(mouseX, mouseY, map);
+      if (map.getMoney() >= 230) {
+        monk = new TackShooter(mouseX, mouseY, map);
+        monk.changeSel();
+        selected = !selected;
+      }
     }
-    monk.changeSel();
-    selected = !selected;
   }
   else if (selected) {
+    map.subMoney(monk.getCost());
     monk.changeSel();
     monkeys.add(monk);
     monk = null;
