@@ -86,3 +86,6 @@ Finished tackshooter and tested it.
 
 ### date 6/2
 Fixed the laggy display and implemented subtraction of lives. Also added preliminary win and defeat screens.
+
+## date 6/3
+Started setting up the sidebar.
