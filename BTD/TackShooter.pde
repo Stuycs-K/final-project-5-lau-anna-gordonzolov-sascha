@@ -42,6 +42,11 @@ class TackShooter extends Monkeys{
   public boolean getDisplayRad(){
     return displayRad;
   }
+  public void move(){
+    if (isSelected) {
+      pos = new PVector(mouseX,mouseY);
+    }
+  }
   public void changeSel() {
     isSelected = !isSelected;
   }
