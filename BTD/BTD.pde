@@ -48,7 +48,6 @@ void mouseClicked() {
       m.changeDisplayRad();
     }
   }
-  print(mouseX + " " + mouseY);
   if (!selected) {
     if (mouseX >= 660 && mouseX <= 730 && mouseY >= 110 && mouseY <= 170) {
       if (map.getMoney() >= 200) {
@@ -72,7 +71,6 @@ void mouseClicked() {
     monk = null;
     selected = !selected;
   }
-  print(monk);
 }
 void setup() {
   start = false;
