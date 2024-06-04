@@ -48,6 +48,10 @@ I'm calling it 6/1 even if it's now 3 in the morning. I got rounds to work!! The
 
 ### date 6/2
 Fixed next round! Now when playing normally (pressing space to traverse rounds) all the bloons must stop existing before the next round can start. 
+Made it so that victory plays when the last round ends, loss plays when lives hits 0.
+
+### date 6/3
+Too much pain to work :(
 
 ## Anna Lau
 
