@@ -9,6 +9,8 @@ public class Map{
   private LinkedList<Block> path;
   private ArrayList<Block> turns;
   PFont font;
+  PImage coins = loadImage("money.png");
+  PImage health = loadImage("health.png");
   private String title;
   private float titleS;
   public Map(PImage map){
@@ -137,7 +139,6 @@ public class Map{
   public void displayMoney(){
     textSize(100);
     //text("money", 100,100);
-    PImage coins = loadImage("money.png");
     image(coins,90,10);
     font = createFont("honey.ttf", 16);
     textFont(font);
@@ -158,7 +159,6 @@ public class Map{
     text(money, 126,30);
   }
   public void displayLives(){
-    PImage health = loadImage("health.png");
     image(health,10,10); 
     fill(0,0,0);
     for(int x = -1; x < 2; x++){
