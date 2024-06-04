@@ -34,6 +34,9 @@ class DartMonkey extends Monkeys{
     isSelected = false;
     diameter = 200;
   }
+  public void changeSel() {
+    isSelected = !isSelected;
+  }
   public void display() {
     //pushMatrix();
     //translate(-pos.x,-pos.y);
@@ -41,6 +44,11 @@ class DartMonkey extends Monkeys{
     //translate(pos.x,pos.y);
     image(sprite,pos.x - 21.5,pos.y - 21.5);
     //popMatrix();
+  }
+  public void move(){
+    if (isSelected) {
+      pos = new PVector(mouseX,mouseY);
+    }
   }
   public float getRad() {
     return diameter;

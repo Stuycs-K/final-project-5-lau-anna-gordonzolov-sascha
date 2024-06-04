@@ -42,6 +42,9 @@ class TackShooter extends Monkeys{
   public boolean getDisplayRad(){
     return displayRad;
   }
+  public void changeSel() {
+    isSelected = !isSelected;
+  }
   public void displayRad(){
     fill(#d3d3d3, 150);
     circle(pos.x, pos.y, diameter);
