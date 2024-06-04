@@ -112,6 +112,12 @@ void setup() {
   //each tile is 40 w and h
 }
 void draw() {
+  if (mouseX >= 660 && mouseX <= 730 && mouseY >= 110 && mouseY <= 170) {
+    map.changeTitle("DART MONKEY",18);
+  }
+  else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 110 && mouseY <= 170) {
+    map.changeTitle("TACK SHOOTER",18);
+  }
   if (map.getLives() == 0){
     lost = true;
   }

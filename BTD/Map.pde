@@ -10,8 +10,10 @@ public class Map{
   private ArrayList<Block> turns;
   PFont font;
   private String title;
+  private float titleS;
   public Map(PImage map){
     title = "TOWERS";
+    titleS = 20;
     background = map;
     blocks = new Block[13][20];
     path = new LinkedList<Block>();
@@ -87,7 +89,9 @@ public class Map{
   public Block getEnd(){
     return end;
   }
-  public void changeTitle(String str) {
+  public void changeTitle(String str, int size) {
+    title = str;
+    titleS = size;
   }
 
   public void display(){
@@ -102,8 +106,9 @@ public class Map{
     rect(650,0,176,532,10);
     fill(#AD7C48);
     rect(660,50,156,40,10);
+    textSize(titleS);
     fill(0,0,0);
-    float xpos = 660 + ((156 - 13*title.length())/2.0);
+    float xpos = 660 + ((156 - (titleS *0.65)*title.length())/2.0);
     for(int x = -1; x < 2; x++){
         text(title, xpos+x,80);
         text(title, xpos,80+x);
