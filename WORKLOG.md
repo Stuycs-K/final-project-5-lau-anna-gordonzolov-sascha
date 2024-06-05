@@ -56,6 +56,9 @@ Too much pain to work :(
 ### date 6/4
 Reduced lag with displaying money and lives through making the font globally assigned once. Fixed problems with radius by creating a function that allows you to reassign coordinates to a monkey (might not exist in tack but works for dart). 
 
+### date 6/5
+Found website sprite sheet:https://www.spriters-resource.com/pc_computer/bloonstowerdefense6/ 
+
 ## Anna Lau
 
 ### date 5/22
@@ -94,8 +97,11 @@ Finished tackshooter and tested it.
 ### date 6/2
 Fixed the laggy display and implemented subtraction of lives. Also added preliminary win and defeat screens.
 
-## date 6/3
+### date 6/3
 Started setting up the sidebar.
 
-## date 6/4
+### date 6/4
 Got the drag and drop for the towers working. Configured the money and made it so that users could only buy towers that they can afford.
+
+### date 6/5
+Changed the dart for tackshooter.
