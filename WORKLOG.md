@@ -56,6 +56,9 @@ Too much pain to work :(
 ### date 6/4
 Reduced lag with displaying money and lives through making the font globally assigned once. Fixed problems with radius by creating a function that allows you to reassign coordinates to a monkey (might not exist in tack but works for dart). 
 
+### date 6/5
+Found website sprite sheet:https://www.spriters-resource.com/pc_computer/bloonstowerdefense6/ 
+
 ## Anna Lau
 
 ### date 5/22
