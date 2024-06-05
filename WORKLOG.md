@@ -53,6 +53,9 @@ Made it so that victory plays when the last round ends, loss plays when lives hi
 ### date 6/3
 Too much pain to work :(
 
+### date 6/4
+Reduced lag with displaying money and lives through making the font globally assigned once. Fixed problems with radius by creating a function that allows you to reassign coordinates to a monkey (might not exist in tack but works for dart). 
+
 ## Anna Lau
 
 ### date 5/22
