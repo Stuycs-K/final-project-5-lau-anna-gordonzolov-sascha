@@ -60,6 +60,11 @@ abstract class Monkeys{
   public Dart getDart(){
     return d;
   }
+  public String box(){
+    return ("");
+  }
+  public void setCor(float x, float y){
+  }
   public Dart getDart(int n){
     return d;
   }

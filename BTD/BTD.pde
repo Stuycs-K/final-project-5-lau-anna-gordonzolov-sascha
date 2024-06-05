@@ -41,7 +41,10 @@ void keyPressed() {
   }
 }
 void mouseClicked() {
+  print (mouseX + " " + mouseY + "     ");
   for (Monkeys m : monkeys) {
+    print(m.box());
+    print(m.getDisplayRad());
     if (!m.getDisplayRad()) {
       m.isIn(mouseX, mouseY);
     } else {
@@ -65,6 +68,7 @@ void mouseClicked() {
     }
   }
   else if (selected) {
+    monk.setCor(mouseX, mouseY);
     map.subMoney(monk.getCost());
     monk.changeSel();
     monkeys.add(monk);
