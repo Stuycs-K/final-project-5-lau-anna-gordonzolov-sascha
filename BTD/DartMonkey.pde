@@ -6,6 +6,7 @@ class DartMonkey extends Monkeys{
   private int strength;
   private float diameter;
   private boolean displayRad;
+  private float dir;
   float minX;
   float maxX;
   float minY;
@@ -128,6 +129,9 @@ class DartMonkey extends Monkeys{
     maxX = x + 20.5;
     maxY = y + 20.5;
     pos = new PVector(x,y);
+  }
+  public void dartRotate(){
+    rotate(0.5);
   }
   public int type() {
     return 1;

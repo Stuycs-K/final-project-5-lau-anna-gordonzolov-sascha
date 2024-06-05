@@ -23,6 +23,8 @@ abstract class Monkeys{
   public void changeSel() {
     isSelected = !isSelected;
   }
+  public void dartRotate(){
+  }
   public float getRad() {
     return radius/2;
   }

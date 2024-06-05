@@ -31,7 +31,7 @@ class TackShooter extends Monkeys{
     sprite = loadImage("tack.png");
     pos = new PVector(x,y);
     isSelected = false;
-    diameter = 200;
+    diameter = 130;
     cost = 230;
   }
   public int getCost() {
@@ -118,6 +118,13 @@ class TackShooter extends Monkeys{
   }
   public PVector getPos() {
     return pos;
+  }
+  public void setCor(float x, float y){
+    minX = x - 20.5;
+    minY = y - 20.5;
+    maxX = x + 20.5;
+    maxY = y + 20.5;
+    pos = new PVector(x,y);
   }
   public int type() {
     return 2;
