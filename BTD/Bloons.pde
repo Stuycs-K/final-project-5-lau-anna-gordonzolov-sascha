@@ -63,30 +63,16 @@ public class Bloons{
   }
   public void level(int l){
     level = l;
-    if (level == 4) {
-      balloon = loadImage("yellow.png");
-      velo = 4;
-      value = 4;
+    if (level >= 1) {
+      balloon = sprites[level-1];
+      velo = 2.5 + 0.5 * (level - 1);
+      value = level;
+      m = map;
     }
-    else if (level == 3) {
-      balloon = loadImage("green.png");
-      velo = 3.5;
-      value = 3;
-    }
-    else if (level == 2) {
-      balloon = loadImage("blue.png");
-      velo = 3;
-      value = 2;
-    }
-    else if (level == 0){
+    else {
       exists = false;
       pos.x = 1000;
       pos.y = 1000;
-    }
-    else {
-      balloon = loadImage("red.png");
-      velo = 2.5;
-      value = 1;
     }
   }
   public void levelDown(){
