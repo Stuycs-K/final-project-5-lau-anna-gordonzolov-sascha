@@ -11,6 +11,7 @@ public class Bloons{
   LinkedList<Block> path = map.getPath();
   int pathBlock;
   int turns;
+  PImage[] sprites = new PImage[]{loadImage("red.png"), loadImage("blue.png"), loadImage("green.png"), loadImage("yellow.png")};
   //in BTD, call this with (0,205);
   public Bloons(int level, Map map){
     exists = false;
@@ -19,26 +20,9 @@ public class Bloons{
     if (level > 0 && level < 5) {
       this.level = level;
     }
-    if (level == 4) {
-      balloon = loadImage("yellow.png");
-      velo = 4;
-      value = 4;
-    }
-    else if (level == 3) {
-      balloon = loadImage("green.png");
-      velo = 3.5;
-      value = 3;
-    }
-    else if (level == 2) {
-      balloon = loadImage("blue.png");
-      velo = 3;
-      value = 2;
-    }
-    else {
-      balloon = loadImage("red.png");
-      velo = 2.5;
-      value = 1;
-    }
+    balloon = sprites[level-1];
+    velo = 2.5 + 0.5 * (level - 1);
+    value = level;
     m = map;
     pos = new PVector(0, 204);
     curr = path.get(pathBlock);
