@@ -105,3 +105,6 @@ Got the drag and drop for the towers working. Configured the money and made it s
 
 ### date 6/5
 Changed the dart for tackshooter.
+
+### date 6/6
+Changed the Bloon constructor and the level down method to accomodate more Bloon levels later on.
