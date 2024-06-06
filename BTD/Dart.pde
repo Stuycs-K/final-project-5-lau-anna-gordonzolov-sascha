@@ -9,11 +9,12 @@ public class Dart {
   public Dart(float x, float y, Map map, int type) {
     if (type == 1) {
       speed = 15;
+      sprite = loadImage("dart.png");
     }
     else if (type == 2) {
       speed = 2;
+      sprite = loadImage("nail.png");
     }
-     sprite = loadImage("dart.png");
      pos = new PVector(x,y);
      m = map;
      ogX = x;

@@ -6,6 +6,7 @@ class DartMonkey extends Monkeys{
   private int strength;
   private float diameter;
   private boolean displayRad;
+  private float dir;
   float minX;
   float maxX;
   float minY;
@@ -102,6 +103,9 @@ class DartMonkey extends Monkeys{
       timer --;
     }
   }
+  public String box(){
+    return (minX + " " + maxX + " " + minY + " " + maxY);
+  }
   public boolean around(float n1, float n2) {
     return Math.abs(n1-n2) <= 4;
   }
@@ -118,6 +122,16 @@ class DartMonkey extends Monkeys{
   }
   public PVector getPos() {
     return pos;
+  }
+  public void setCor(float x, float y){
+    minX = x - 20.5;
+    minY = y - 20.5;
+    maxX = x + 20.5;
+    maxY = y + 20.5;
+    pos = new PVector(x,y);
+  }
+  public void dartRotate(){
+    rotate(0.5);
   }
   public int type() {
     return 1;
