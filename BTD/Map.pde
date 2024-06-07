@@ -25,7 +25,7 @@ public class Map{
         blocks[i][j] = new Block(map.width * j /20, map.height * i /13);
       }
     }
-    start = blocks[5][0];
+    start = new Block(map.width * 1/4, map.height * -1 / 13);
     end = blocks[12][9];
     for (int i = 0; i <= 9; i++) {
       path.add(blocks[5][i]);
@@ -90,6 +90,15 @@ public class Map{
   }
   public Block getEnd(){
     return end;
+  }
+  public boolean canPlace(float x, float y){
+    boolean can = true;
+    for (Block i : path){
+      if (i.isIn(x, y)){
+        can = false;
+      }
+    }
+    return can;
   }
   public void changeTitle(String str, int size) {
     title = str;

@@ -66,6 +66,11 @@ class DartMonkey extends Monkeys{
     circle(pos.x, pos.y, diameter);
     this.display();
   }
+  public void displayRadRed(){
+    fill(#FF0000, 150);
+    circle(pos.x, pos.y, diameter);
+    this.display();
+  }
   public void changeDisplayRad(){
     displayRad = !displayRad;
   }

@@ -46,6 +46,8 @@ abstract class Monkeys{
   }
   public void displayRad(){
   }
+  public void displayRadRed(){
+  }
   public void isIn(int x, int y){
   }
   public boolean getDisplayRad(){
