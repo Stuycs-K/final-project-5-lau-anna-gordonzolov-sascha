@@ -92,26 +92,12 @@ void setup() {
   fill(0, 0, 0);
   textSize(36);
   map.display();
-  Bloons balloon = new Bloons(2, map);
-  balloon.display();
-  balloon.levelDown();
-  balloon.display();
   Round one = new Round(1, map);
   rounds.add(one);
   Round two = new Round(2, map);
   rounds.add(two);
   Round three = new Round(3, map);
   rounds.add(three);
-  /*balloon = new Bloons(4,map);
-   balloons.add(balloon);
-   balloon = new Bloons(3,map);
-   balloons.add(balloon);
-   balloon = new Bloons(2,map);
-   balloons.add(balloon);
-   balloon = new Bloons(1,map);
-   balloons.add(balloon);*/
-  //path starts at 0,205
-  //each tile is 40 w and h
 }
 void draw() {
   if (mouseX >= 660 && mouseX <= 730 && mouseY >= 110 && mouseY <= 170) {

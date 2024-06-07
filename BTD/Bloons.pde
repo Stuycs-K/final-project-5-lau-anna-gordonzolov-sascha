@@ -11,7 +11,7 @@ public class Bloons{
   LinkedList<Block> path = map.getPath();
   int pathBlock;
   int turns;
-  PImage[] sprites = new PImage[]{loadImage("red.png"), loadImage("blue.png"), loadImage("green.png"), loadImage("yellow.png")};
+  PImage[] sprites = new PImage[]{loadImage("red.png"), loadImage("blue.png"), loadImage("green.png"), loadImage("yellow.png"), loadImage("pink.png")};
   //in BTD, call this with (0,205);
   public Bloons(int level, Map map){
     exists = false;
