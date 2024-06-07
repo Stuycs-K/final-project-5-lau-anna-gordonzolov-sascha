@@ -67,7 +67,7 @@ void mouseClicked() {
       }
     }
   }
-  else if (selected) {
+  else if (selected && map.canPlace(mouseX, mouseY)) {
     monk.setCor(mouseX, mouseY);
     map.subMoney(monk.getCost());
     monk.changeSel();

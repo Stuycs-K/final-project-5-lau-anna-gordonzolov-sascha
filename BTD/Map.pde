@@ -91,6 +91,11 @@ public class Map{
   public Block getEnd(){
     return end;
   }
+  public boolean canPlace(float x, float y){
+    boolean can = true;
+    
+    return can;
+  }
   public void changeTitle(String str, int size) {
     title = str;
     titleS = size;
