@@ -72,37 +72,33 @@ public class Round{
   public void play(){
     play = true;
     if (num == 1){
-      for (int i = 0; i < place; i++){
-        if(in.get(i).doesExist()){
-          in.get(i).display();
-          in.get(i).move();
+      for (ArrayList<Bloons> bb : in){
+        for (Bloons b : bb){  
+          if(b.doesExist()){
+            b.display();
+            b.move();
+          }
         }
       }
       if (rounds.get(num - 1).getSize() > 0){
-        if (timer == 0){
-          in.get(place).exist();
-          in.get(place).display();
-          in.get(place).move();
-          timer = 18;
+        if (timer % 18 == 0){
+          in.get(0).get(place).exist();
+          timer ++;
           place ++;
         }
         else{
-          timer -= 1;
+          timer ++;
         }
       }
     }
     if (num == 2){
       for (int i = 0; i < place; i++){
         if(in.get(i).doesExist()){
-          in.get(i).display();
-          in.get(i).move();
         }
       }
       if (rounds.get(num - 1).getSize() > 0){
         if (timer == 0){
           in.get(place).exist();
-          in.get(place).display();
-          in.get(place).move();
           timer = 11;
           place ++;
         }
