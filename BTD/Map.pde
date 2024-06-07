@@ -93,7 +93,7 @@ public class Map{
   }
   public boolean canPlace(float x, float y){
     boolean can = true;
-    
+    for (int 
     return can;
   }
   public void changeTitle(String str, int size) {

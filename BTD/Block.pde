@@ -21,6 +21,9 @@ public class Block {
   public float getX() {
     return pos.x;
   }
+  public boolean isIn(float x, float y){
+    return (x > minX && x < maxX && y > minY && y < maxY);
+  }
   public float getY() {
     return pos.y;
   }
