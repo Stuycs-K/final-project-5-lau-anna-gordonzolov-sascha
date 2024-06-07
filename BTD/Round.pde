@@ -3,43 +3,53 @@ public class Round{
   private int num;
   private float timer;
   private boolean play;
-  private ArrayList<Bloons> in;
+  private ArrayList<ArrayList<Bloons>> in;
   private Map map;
   private int place;
   public Round(int n, Map m){
     timer = 0;
     place = 0;
-    in = new ArrayList<Bloons>();
+    in = new ArrayList<ArrayList<Bloons>>();
     map = m;
     num = n;
     if (n == 1){
+      ArrayList<Bloons> temp = new ArrayList<Bloons>();
       for (int i = 0; i < 20; i++){
         Bloons b = new Bloons(1, map);
-        in.add(b);
+        temp.add(b);
       }
+      in.add(temp);
     }
     if (n == 2){
+      ArrayList<Bloons> temp = new ArrayList<Bloons>();
       for (int i = 0; i < 35; i++){
         Bloons b = new Bloons(1, map);
-        in.add(b);
+        temp.add(b);
       }
+      in.add(temp);
     }
     if (n == 3){
+      ArrayList<Bloons> temp = new ArrayList<Bloons>();
       for (int i = 0; i < 10; i++){
         Bloons b = new Bloons(1, map);
-        in.add(b);
+        temp.add(b);
       }
+      in.add(temp);
+      temp.clear();
       for (int i = 0; i < 5; i++){
         Bloons b = new Bloons(2, map);
-        in.add(b);
+        temp.add(b);
       }
+      in.add(temp);
+      temp.clear();
       for (int i = 0; i < 15; i++){
         Bloons b = new Bloons(1, map);
-        in.add(b);
+        temp.add(b);
       }
+      in.add(temp);
     }
   }
-  public ArrayList<Bloons> getIn(){
+  public ArrayList<ArrayList<Bloons>> getIn(){
     return in;
   }
   public int getSize(){
@@ -50,9 +60,11 @@ public class Round{
   }
   public boolean nextRound(){
     boolean check = true;
-    for (Bloons b : in){
-      if (b.doesExist()){
-        check = false;
+    for (ArrayList<Bloons> bb : in){
+      for (Bloons b : bb){  
+        if (b.doesExist()){
+          check = false;
+        }
       }
     }
     return check && play;
