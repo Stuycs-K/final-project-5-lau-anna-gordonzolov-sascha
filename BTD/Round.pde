@@ -91,7 +91,7 @@ public class Round{
         }
       }
     }
-    if (num == 2){
+    /*if (num == 2){
       for (int i = 0; i < place; i++){
         if(in.get(i).doesExist()){
         }
@@ -158,6 +158,6 @@ public class Round{
           }
         }
       }
-    }
+    }*/
   }
 } 

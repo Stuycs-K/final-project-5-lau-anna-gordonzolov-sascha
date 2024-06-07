@@ -27,8 +27,10 @@ void keyPressed() {
       start = true;
     }
     else{
-      for (Bloons b : rounds.get(curr).getIn()){
-        b.level(0);
+      for (ArrayList<Bloons> bb : rounds.get(curr).getIn()){
+        for (Bloons b : bb){
+           b.level(0);
+        }
       }
       curr ++;
     }
@@ -151,32 +153,34 @@ void draw() {
     if (m.getDisplayRad()) {
       m.displayRad();
     }
-    for (Bloons b : rounds.get(curr).getIn()) {
-      if (b.doesExist() && b.atEnd()){
-        b.level(0);
-        map.minus(b.getValue());
-      }
-      if (b.doesExist()) {
-        if (m.isInRad(b) && !m.getAtt()) {
-          m.attack(b);
-          break;
-        }
-        if (m.getAtt()) {
-          if (m.type() == 1) {
-            m.getDart().fly(m, m.getBlon());
-          } else if (m.type() == 2) {
-            m.getDart(0).fly(m.getBlon(), m, 0, m.getDart(0).getogX(), m.getDart(0).getogY());
-            m.getDart(1).fly(m.getBlon(), m, 1, m.getDart(1).getogX(), m.getDart(1).getogY());
-            m.getDart(2).fly(m.getBlon(), m, 2, m.getDart(2).getogX(), m.getDart(2).getogY());
-            m.getDart(3).fly(m.getBlon(), m, 3, m.getDart(3).getogX(), m.getDart(3).getogY());
-            m.getDart(4).fly(m.getBlon(), m, 4, m.getDart(4).getogX(), m.getDart(4).getogY());
-            m.getDart(5).fly(m.getBlon(), m, 5, m.getDart(5).getogX(), m.getDart(5).getogY());
-            m.getDart(6).fly(m.getBlon(), m, 6, m.getDart(6).getogX(), m.getDart(6).getogY());
-            m.getDart(7).fly(m.getBlon(), m, 7, m.getDart(7).getogX(), m.getDart(7).getogY());
-            m.display();
+    for (ArrayList<Bloons> bb : rounds.get(curr).getIn()){
+        for (Bloons b : bb){
+          if (b.doesExist() && b.atEnd()){
+            b.level(0);
+            map.minus(b.getValue());
+          }
+          if (b.doesExist()) {
+            if (m.isInRad(b) && !m.getAtt()) {
+              m.attack(b);
+              break;
+            }
+            if (m.getAtt()) {
+              if (m.type() == 1) {
+                m.getDart().fly(m, m.getBlon());
+              } else if (m.type() == 2) {
+                m.getDart(0).fly(m.getBlon(), m, 0, m.getDart(0).getogX(), m.getDart(0).getogY());
+                m.getDart(1).fly(m.getBlon(), m, 1, m.getDart(1).getogX(), m.getDart(1).getogY());
+                m.getDart(2).fly(m.getBlon(), m, 2, m.getDart(2).getogX(), m.getDart(2).getogY());
+                m.getDart(3).fly(m.getBlon(), m, 3, m.getDart(3).getogX(), m.getDart(3).getogY());
+                m.getDart(4).fly(m.getBlon(), m, 4, m.getDart(4).getogX(), m.getDart(4).getogY());
+                m.getDart(5).fly(m.getBlon(), m, 5, m.getDart(5).getogX(), m.getDart(5).getogY());
+                m.getDart(6).fly(m.getBlon(), m, 6, m.getDart(6).getogX(), m.getDart(6).getogY());
+                m.getDart(7).fly(m.getBlon(), m, 7, m.getDart(7).getogX(), m.getDart(7).getogY());
+                m.display();
+              }
+            }
           }
         }
-      }
     }
   }
   /*for (Bloons b: balloons) {
