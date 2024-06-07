@@ -93,7 +93,11 @@ public class Map{
   }
   public boolean canPlace(float x, float y){
     boolean can = true;
-    for (int 
+    for (Block i : path){
+      if (i.isIn(x, y)){
+        can = false;
+      }
+    }
     return can;
   }
   public void changeTitle(String str, int size) {
