@@ -1,7 +1,7 @@
 import java.util.*;
 public class Round{
   private int num;
-  private float timer;
+  private int timer;
   private boolean play;
   private ArrayList<ArrayList<Bloons>> in;
   private Map map;
@@ -72,6 +72,7 @@ public class Round{
   public void play(){
     play = true;
     if (num == 1){
+      print(timer);
       for (ArrayList<Bloons> bb : in){
         for (Bloons b : bb){  
           if(b.doesExist()){
