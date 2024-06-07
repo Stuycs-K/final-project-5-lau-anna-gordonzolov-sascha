@@ -58,6 +58,10 @@ Reduced lag with displaying money and lives through making the font globally ass
 
 ### date 6/5
 Found website sprite sheet:https://www.spriters-resource.com/pc_computer/bloonstowerdefense6/ 
+Too sick to work :(
+
+### date 6/6
+Made the path start earlier so that it actually looks like the bloons come from somewhere instead of instantly spawning! (I think? Maybe it's a placebo??) You can now no longer place monkeys on path blocks, and added sketches of functions for the map to look different (red/grey) when a monkey can or can not be placed. 
 
 ## Anna Lau
 
