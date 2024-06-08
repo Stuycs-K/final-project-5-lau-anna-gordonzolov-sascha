@@ -13,9 +13,7 @@ public class Map{
   PImage health = loadImage("health.png");
   private String title;
   private float titleS;
-  private int curr;
   public Map(PImage map){
-    curr = 0;
     title = "TOWERS";
     titleS = 20;
     background = map;
@@ -87,9 +85,6 @@ public class Map{
   public int getHeight(){
     return background.height;
   }
-  public int getCurr() {
-    return curr;
-  }
   public void addCurr() {
     curr++;
   }
@@ -157,20 +152,42 @@ public class Map{
     rect(660,110,70,80,10);
     PImage d = loadImage("sDartMonkey.png");
     image(d,680,112);
-    fill(255);
-    textSize(16);
-    text("$",675,185);
     textSize(20);
-    text(200,685,185);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text(200, 685+x,185);
+        text(200, 685,185+x);
+    } 
+    fill(255);
+    text(200, 685,185);
+    textSize(16);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text("$", 675+x,185);
+        text("$", 675,185+x);
+    } 
+    fill(255);
+    text("$", 675,185);
     fill(#89CFF0);
     rect(745,110,70,80,10);
     d = loadImage("sTackShooter.png");
     image(d,760,120);
-    fill(255);
-    textSize(16);
-    text("$",755,185);
     textSize(20);
-    text(280,765,185);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text(280, 765+x,185);
+        text(280, 765,185+x);
+    } 
+    fill(255);
+    text(280, 765,185);
+    textSize(16);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text("$", 755+x,185);
+        text("$", 755,185+x);
+    } 
+    fill(255);
+    text("$", 755,185);
     stroke(#556915);
     fill(#71E709);
     rect(660,410,156,100,10);
@@ -182,6 +199,37 @@ public class Map{
     } 
     fill(255);
     text("START", 680,475);
+    if (upgrade) {
+      stroke(#556915);
+      fill(#71E709);
+      rect(660,300,156,100,10);
+      d = loadImage("upgrade.png");
+      image(d,700,330);
+      textSize(18);
+      fill(0,0,0);
+      for(int x = -1; x < 2; x++){
+          text("LARGER RADIUS", 665+x,325);
+          text("LARGER RADIUS", 665,325+x);
+      } 
+      fill(255);
+      text("LARGER RADIUS", 665,325);
+      textSize(20);
+      fill(0,0,0);
+      for(int x = -1; x < 2; x++){
+          text(150, 730+x,395);
+          text(150, 730,395+x);
+      } 
+      fill(255);
+      text(150, 730,395);
+      textSize(16);
+      fill(0,0,0);
+      for(int x = -1; x < 2; x++){
+          text("$", 720+x,395);
+          text("$", 720,395+x);
+      } 
+      fill(255);
+      text("$", 720,395);
+    }
   }
   public void displayMoney(){
     textSize(100);

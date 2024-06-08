@@ -13,6 +13,7 @@ boolean won = false;
 boolean lost = false;
 Monkeys monk;
 boolean selected;
+boolean upgrade;
 void keyPressed() {
   if (key == 10) {
     if (!start){
@@ -34,13 +35,20 @@ void keyPressed() {
 }
 void mouseClicked() {
   for (Monkeys m : monkeys) {
-    print(m.box());
-    print(m.getDisplayRad());
     if (!m.getDisplayRad()) {
-      m.isIn(mouseX, mouseY);
-    } else {
+      m.changeisIn(mouseX, mouseY);
+    }
+    else if (m.isIn(mouseX,mouseY)) {
+      m.changeUpgrade();
       m.changeDisplayRad();
     }
+    if (upgrade) {
+    //rect(660,300,156,100,10);
+    if (mouseX >= 660 && mouseX <= 816 && mouseY >= 300 && mouseY <= 400) {
+      m.addRad(15);
+      map.subMoney(150);
+    }
+  }
   }
   if (!selected) {
     if (mouseX >= 660 && mouseX <= 730 && mouseY >= 110 && mouseY <= 170) {
@@ -73,7 +81,7 @@ void mouseClicked() {
     }
     else{
       if (rounds.get(curr).nextRound()) {
-        map.addCurr();
+        curr++;
       }
     }
   }
@@ -82,6 +90,7 @@ void setup() {
   start = false;
   selected = false;
   curr = 0;
+  upgrade = false;
   p = loadImage("map.png");
   pop = new SoundFile(this, "pop.mp3");
   map = new Map(p);
@@ -89,12 +98,7 @@ void setup() {
   rounds = new ArrayList<Round>();
   //balloons = new ArrayList<Bloons>();
   monkeys = new ArrayList<Monkeys>();
-  int w = p.width;
-  int h = p.height;
   size(826, 532);
-  fill(0, 0, 0);
-  textSize(36);
-  map.display();
   Round one = new Round(1, map);
   rounds.add(one);
   Round two = new Round(2, map);
@@ -103,7 +107,6 @@ void setup() {
   rounds.add(three);
 }
 void draw() {
-  curr = map.getCurr();
   if (mouseX >= 660 && mouseX <= 730 && mouseY >= 110 && mouseY <= 170) {
     map.changeTitle("DART MONKEY",18);
   }
