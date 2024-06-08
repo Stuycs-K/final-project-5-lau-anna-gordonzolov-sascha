@@ -112,3 +112,6 @@ Changed the dart for tackshooter.
 
 ### date 6/6
 Changed the Bloon constructor and the level down method to accomodate more Bloon levels later on.
+
+### date 6/7
+Added new Bloon types and added a popping sound effect.
