@@ -817,5 +817,38 @@ public class Round{
       }
       timer++;
     }
+    if (num == 12){
+      for (ArrayList<Bloons> bb : in){
+        for (Bloons b : bb){  
+          if(b.doesExist()){
+            b.display();
+            b.move();
+          }
+          if (b.doesExist() && b.atEnd()){
+            map.minus(b.getValue());
+            b.level(0);
+          }
+        }
+      }
+      if (timer < 10 * 10){
+        if (timer % 10 == 0){
+          in.get(0).get(place.get(0)).exist();
+          place.set(0, place.get(0) + 1);
+        }
+      }
+      if (timer >= 114 && timer < (114 + 15 * 8)){
+        if((timer - 114) % 8 == 0){
+          in.get(1).get(place.get(1)).exist();
+          place.set(1, place.get(1) + 1);
+        }
+      }
+      if (timer >= 285 && timer < (285 + 5 * 12)){
+        if ((timer - 285) % 12 == 0){
+          in.get(2).get(place.get(2)).exist();
+          place.set(2, place.get(2) + 1);
+        }
+      }
+      timer++;
+    }
   }
 } 
