@@ -73,7 +73,7 @@ void mouseClicked() {
     }
     else{
       if (rounds.get(curr).nextRound()) {
-        curr ++;
+        map.addCurr();
       }
     }
   }
@@ -103,6 +103,7 @@ void setup() {
   rounds.add(three);
 }
 void draw() {
+  curr = map.getCurr();
   if (mouseX >= 660 && mouseX <= 730 && mouseY >= 110 && mouseY <= 170) {
     map.changeTitle("DART MONKEY",18);
   }
