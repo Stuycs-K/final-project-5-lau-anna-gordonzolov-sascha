@@ -8,10 +8,10 @@ public class Round{
   private ArrayList<Integer> place;
   public Round(int n, Map m){
     timer = 0;
-    in = new ArrayList<ArrayList<Bloons>>();
     map = m;
     num = n;
     if (n == 1){
+      in = new ArrayList<ArrayList<Bloons>>(Collections.nCopies(1, null));
       place = new ArrayList<Integer>(Collections.nCopies(1, 0));
       place.set(0, 0);
       ArrayList<Bloons> temp = new ArrayList<Bloons>();
@@ -19,9 +19,10 @@ public class Round{
         Bloons b = new Bloons(1, map);
         temp.add(b);
       }
-      in.add(temp);
+      in.set(0, temp);
     }
     if (n == 2){
+      in = new ArrayList<ArrayList<Bloons>>(Collections.nCopies(1, null));
       place = new ArrayList<Integer>(Collections.nCopies(1, 0));
       place.set(0, 0);
       ArrayList<Bloons> temp = new ArrayList<Bloons>();
@@ -29,28 +30,30 @@ public class Round{
         Bloons b = new Bloons(1, map);
         temp.add(b);
       }
-      in.add(temp);
+      in.set(0, temp);
     }
     if (n == 3){
+      in = new ArrayList<ArrayList<Bloons>>(Collections.nCopies(3, null));
       place = new ArrayList<Integer>(Collections.nCopies(3, 0));
       ArrayList<Bloons> temp = new ArrayList<Bloons>();
       for (int i = 0; i < 10; i++){
         Bloons b = new Bloons(1, map);
         temp.add(b);
       }
-      in.add(temp);
+      in.set(0, temp);
       temp.clear();
       for (int i = 0; i < 5; i++){
         Bloons b = new Bloons(2, map);
         temp.add(b);
       }
-      in.add(temp);
+      in.set(1, temp);;
       temp.clear();
       for (int i = 0; i < 15; i++){
         Bloons b = new Bloons(1, map);
         temp.add(b);
       }
-      in.add(temp);
+      in.set(2, temp);
+      print(in.get(2).size());
     }
   }
   public ArrayList<ArrayList<Bloons>> getIn(){
@@ -140,7 +143,7 @@ public class Round{
           place.set(0, place.get(0) + 1);
         }
       }
-      if (timer >= 114 && timer < 159){
+      /*if (timer >= 114 && timer < 159){
         if((timer - 114) % 9 == 0){
           in.get(1).get(place.get(1)).exist();
           place.set(1, place.get(1) + 1);
@@ -151,7 +154,7 @@ public class Round{
           in.get(2).get(place.get(2)).exist();
           place.set(2, place.get(2) + 2);
         }
-      }
+      }*/
       timer++;
     }
   }
