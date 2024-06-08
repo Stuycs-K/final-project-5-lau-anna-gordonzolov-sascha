@@ -13,7 +13,7 @@ boolean won = false;
 boolean lost = false;
 Monkeys monk;
 boolean selected;
-boolean upgraded;
+boolean clicked;
 void keyPressed() {
   if (key == 10) {
     if (!start){
@@ -46,19 +46,27 @@ void keyPressed() {
   }
 }
 void mouseClicked() {
-  for (Monkeys m : monkeys) {
+  for (int i = 0; i < monkeys.size(); i++) {
+    Monkeys m = monkeys.get(i);
     if (m.isIn(mouseX,mouseY)) {
       m.changeUpgrade();
       m.changeDisplayRad();
-      upgraded = !upgraded;
+      clicked = !clicked;
     }
     if (m.getUpgrade()) {
     //rect(660,300,156,100,10);
     if (mouseX >= 660 && mouseX <= 816 && mouseY >= 300 && mouseY <= 400) {
       if (map.getMoney() >= 150) {
         m.addRad(15);
+        m.addUpgrade();
         map.subMoney(150);
       }
+    }
+    //rect(660,190,156,100,10);
+    if (mouseX >= 660 && mouseX <= 816 && mouseY >= 190 && mouseY <= 290) {
+      map.addMoney(m.getCost() + m.countUpgrades() * 150);
+      monkeys.remove(m);
+      clicked = !clicked;
     }
   }
   }
@@ -102,7 +110,7 @@ void setup() {
   start = false;
   selected = false;
   curr = 0;
-  upgraded = false;
+  clicked = false;
   p = loadImage("map.png");
   pop = new SoundFile(this, "pop.mp3");
   map = new Map(p);
@@ -137,17 +145,6 @@ void draw() {
   map.display();
   if (!won && !lost) {
     map.display();
-  }
-  else {
-    if (won) {
-      PImage win = loadImage("victory.png");
-      image(win,160,100);
-    }
-    if (lost) {
-      map.noLives();
-      PImage lose = loadImage("defeat.png");
-      image(lose,250,10);
-    }
   }
   if (start && !lost && !won){
     rounds.get(curr).play();  
@@ -191,6 +188,15 @@ void draw() {
         }
     }
   }
+  if (won) {
+      PImage win = loadImage("victory.png");
+      image(win,160,100);
+    }
+    if (lost) {
+      map.noLives();
+      PImage lose = loadImage("defeat.png");
+      image(lose,250,10);
+    }
 }
 
 void moveBloon() {

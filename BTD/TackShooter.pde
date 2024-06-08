@@ -6,10 +6,10 @@ class TackShooter extends Monkeys{
   private int strength;
   private float diameter;
   private boolean displayRad;
-  float minX;
-  float maxX;
-  float minY;
-  float maxY;
+  private float minX;
+  private float maxX;
+  private float minY;
+  private float maxY;
   private int timer;
   private PVector bloon;
   private Bloons blon;
@@ -20,9 +20,11 @@ class TackShooter extends Monkeys{
   private PImage sprite;
   private Map m;
   private boolean upgrade;
+  private int upgrades;
   public TackShooter(int x, int y, Map map){
     upgrade = false;
     m = map;
+    upgrades = 0;
     timer = 0;
     att = false;
     displayRad = false;
@@ -52,6 +54,12 @@ class TackShooter extends Monkeys{
     if (isSelected) {
       pos = new PVector(mouseX,mouseY);
     }
+  }
+  public void addUpgrade() {
+    upgrades++;
+  }
+  public int countUpgrades() {
+    return upgrades;
   }
   public void changeSel() {
     isSelected = !isSelected;

@@ -138,56 +138,56 @@ public class Map{
     fill(#C19960);
     rect(650,0,176,532,10);
     fill(#AD7C48);
-    rect(660,50,156,40,10);
+    rect(660,20,156,40,10);
     textSize(titleS);
     fill(0,0,0);
     float xpos = 660 + ((156 - (titleS *0.65)*title.length())/2.0);
     for(int x = -1; x < 2; x++){
-        text(title, xpos+x,80);
-        text(title, xpos,80+x);
+        text(title, xpos+x,50);
+        text(title, xpos,50+x);
     } 
     fill(255);
-    text(title, xpos,80);
+    text(title, xpos,50);
     fill(#89CFF0);
-    rect(660,110,70,80,10);
+    rect(660,80,70,80,10);
     PImage d = loadImage("sDartMonkey.png");
-    image(d,680,112);
+    image(d,680,82);
     textSize(20);
     fill(0,0,0);
     for(int x = -1; x < 2; x++){
-        text(200, 685+x,185);
-        text(200, 685,185+x);
+        text(200, 685+x,155);
+        text(200, 685,155+x);
     } 
     fill(255);
-    text(200, 685,185);
+    text(200, 685,155);
     textSize(16);
     fill(0,0,0);
     for(int x = -1; x < 2; x++){
-        text("$", 675+x,185);
-        text("$", 675,185+x);
+        text("$", 675+x,155);
+        text("$", 675,155+x);
     } 
     fill(255);
-    text("$", 675,185);
+    text("$", 675,155);
     fill(#89CFF0);
-    rect(745,110,70,80,10);
+    rect(745,80,70,80,10);
     d = loadImage("sTackShooter.png");
-    image(d,760,120);
+    image(d,760,90);
     textSize(20);
     fill(0,0,0);
     for(int x = -1; x < 2; x++){
-        text(280, 765+x,185);
-        text(280, 765,185+x);
+        text(280, 765+x,155);
+        text(280, 765,155+x);
     } 
     fill(255);
-    text(280, 765,185);
+    text(280, 765,155);
     textSize(16);
     fill(0,0,0);
     for(int x = -1; x < 2; x++){
-        text("$", 755+x,185);
-        text("$", 755,185+x);
+        text("$", 755+x,155);
+        text("$", 755,155+x);
     } 
     fill(255);
-    text("$", 755,185);
+    text("$", 755,155);
     stroke(#556915);
     fill(#71E709);
     rect(660,410,156,100,10);
@@ -199,7 +199,7 @@ public class Map{
     } 
     fill(255);
     text("START", 680,475);
-    if (upgraded) {
+    if (clicked) {
       stroke(#556915);
       fill(#71E709);
       rect(660,300,156,100,10);
@@ -229,6 +229,19 @@ public class Map{
       } 
       fill(255);
       text("$", 720,395);
+      stroke(#556915);
+      fill(#71E709);
+      rect(660,190,156,100,10);
+      d = loadImage("sell.png");
+      image(d,700,220);
+      textSize(18);
+      fill(0,0,0);
+      for(int x = -1; x < 2; x++){
+          text("SELL", 715+x,215);
+          text("SELL", 715,215+x);
+      } 
+      fill(255);
+      text("SELL", 715,215);
     }
   }
   public void displayMoney(){

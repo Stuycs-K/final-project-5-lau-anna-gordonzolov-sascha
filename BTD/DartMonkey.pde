@@ -22,10 +22,12 @@ class DartMonkey extends Monkeys{
   private Map m;
   float angle = 0;
   boolean upgrade;
+  int upgrades;
   public DartMonkey(int x, int y, Map map){
     upgrade = false;
     m = map;
     timer = 0;
+    upgrades = 0;
     att = false;
     displayRad = false;
     minX = x - 20.5;
@@ -62,6 +64,12 @@ class DartMonkey extends Monkeys{
   }
   public boolean getUpgrade() {
     return upgrade;
+  }
+  public void addUpgrade() {
+    upgrades++;
+  }
+  public int countUpgrades() {
+    return upgrades;
   }
   public boolean getDisplayRad(){
     return displayRad;

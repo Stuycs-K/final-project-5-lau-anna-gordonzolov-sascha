@@ -27,6 +27,11 @@ abstract class Monkeys{
   }
   public void dartRotate(){
   }
+  public void addUpgrade() {
+  }
+  public int countUpgrades() {
+    return 0;
+  }
   public boolean getUpgrade() {
     return true;
   }
