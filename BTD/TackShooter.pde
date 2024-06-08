@@ -85,14 +85,14 @@ class TackShooter extends Monkeys{
   public void attack(Bloons b){
     if (timer == 0){
       d = new Dart[8];
-      d[0] = new Dart(pos.x,pos.y-10.75,map, 2);
-      d[1] = new Dart(pos.x-21.5/4,pos.y-21.5*0.75,map, 2);
-      d[2] = new Dart(pos.x-10.75,pos.y-21.5,map, 2);
-      d[3] = new Dart(pos.x-21.5*0.75,pos.y-21.5*0.75,map, 2);
-      d[4] = new Dart(pos.x-21.5,pos.y-10.75,map, 2);
-      d[5] = new Dart(pos.x-21.5*0.75,pos.y-21.5/4,map, 2);
-      d[6] = new Dart(pos.x-10.75,pos.y-21.5/4,map, 2);
-      d[7] = new Dart(pos.x,pos.y,map, 2);
+      d[0] = new Dart(pos.x+5,pos.y-10.75+5,map, 2,0);
+      d[1] = new Dart(pos.x-21.5/4+5,pos.y-21.5*0.75+5,map, 2,1);
+      d[2] = new Dart(pos.x-10.75+5,pos.y-21.5+4,map, 2,2);
+      d[3] = new Dart(pos.x-21.5*0.75+5,pos.y-21.5*0.75+5,map, 2,3);
+      d[4] = new Dart(pos.x-21.5+5,pos.y-10.75+5, map, 2,4);
+      d[5] = new Dart(pos.x-21.5*0.75+5,pos.y-21.5/4+5,map, 2,5);
+      d[6] = new Dart(pos.x-10.75+5,pos.y-21.5/4+5,map, 2,6);
+      d[7] = new Dart(pos.x+5,pos.y+5,map, 2,7);
       /*if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
         if (b.getLevel() > 1) {
           b.levelDown();

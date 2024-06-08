@@ -1,5 +1,5 @@
 public class Dart {
-  private int speed;
+  private float speed;
   private int size = 1;
   private PImage sprite;
   private PVector pos;
@@ -7,14 +7,14 @@ public class Dart {
   private float ogX;
   private float ogY;
   private boolean popped = false;
-  public Dart(float x, float y, Map map, int type) {
+  public Dart(float x, float y, Map map, int type, int num) {
     if (type == 1) {
       speed = 15;
       sprite = loadImage("dart.png");
     }
     else if (type == 2) {
-      speed = 2;
-      sprite = loadImage("nail.png");
+      speed = 0.5;
+      sprite = loadImage("nail" + num + ".png");
     }
      pos = new PVector(x,y);
      m = map;
