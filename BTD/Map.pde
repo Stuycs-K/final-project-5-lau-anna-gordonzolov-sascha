@@ -13,7 +13,9 @@ public class Map{
   PImage health = loadImage("health.png");
   private String title;
   private float titleS;
+  private int curr;
   public Map(PImage map){
+    curr = 0;
     title = "TOWERS";
     titleS = 20;
     background = map;
@@ -85,6 +87,12 @@ public class Map{
   public int getHeight(){
     return background.height;
   }
+  public int getCurr() {
+    return curr;
+  }
+  public void addCurr() {
+    curr++;
+  }
   public Block getStart(){
     return start;
   }
@@ -110,6 +118,25 @@ public class Map{
     displayMoney();
     displayLives();
     displaySide();
+    displayRounds();
+  }
+  public void displayRounds() {
+    textSize(10);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text("ROUND", 607+x,15);
+        text("ROUND", 607,15+x);
+    } 
+    fill(255);
+    text("ROUND", 607,15);
+    textSize(20);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text(curr + 1 + "/" + 15, 604+x,32);
+        text(curr + 1 + "/" + 15, 604,32+x);
+    } 
+    fill(255);
+    text(curr + 1 + "/" + 15, 604,32);
   }
   public void displaySide() {
     stroke(#AD7C48);
