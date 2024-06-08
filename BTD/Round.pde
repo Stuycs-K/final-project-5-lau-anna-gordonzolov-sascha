@@ -878,5 +878,68 @@ public class Round{
       }
       timer++;
     }
+    if (num == 14){
+      for (ArrayList<Bloons> bb : in){
+        for (Bloons b : bb){  
+          if(b.doesExist()){
+            b.display();
+            b.move();
+          }
+          if (b.doesExist() && b.atEnd()){
+            map.minus(b.getValue());
+            b.level(0);
+          }
+        }
+      }
+      if (timer < 18 * 11){
+        if (timer % 11 == 0){
+          in.get(0).get(place.get(0)).exist();
+          place.set(0, place.get(0) + 1);
+        }
+      }
+      if (timer >= 57 && timer < (57 + 5 * 1)){
+        if((timer - 57) % 1 == 0){
+          in.get(1).get(place.get(1)).exist();
+          place.set(1, place.get(1) + 1);
+        }
+      }
+      if (timer >= 114 && timer < (114 + 5 * 1)){
+        if ((timer - 114) % 1 == 0){
+          in.get(2).get(place.get(2)).exist();
+          place.set(2, place.get(2) + 1);
+        }
+      }
+      if (timer >= 171 && timer < (171 + 4 * 1)){
+        if ((timer - 171) % 1 == 0){
+          in.get(3).get(place.get(3)).exist();
+          place.set(3, place.get(3) + 1);
+        }
+      }
+      if (timer >= 190 && timer < (190 + 31 * 11)){
+        if ((timer - 190) % 11 == 0){
+          in.get(4).get(place.get(4)).exist();
+          place.set(4, place.get(4) + 1);
+        }
+      }
+      if (timer >= 319 && timer < (319 + 10 * 1)){
+        if((timer - 319) % 1 == 0){
+          in.get(5).get(place.get(5)).exist();
+          place.set(5, place.get(5) + 1);
+        }
+      }
+      if (timer >= 397 && timer < (397 + 5 * 1)){
+        if ((timer - 397) % 1 == 0){
+          in.get(6).get(place.get(6)).exist();
+          place.set(6, place.get(6) + 1);
+        }
+      }
+      if (timer >= 474 && timer < (474 + 5 * 1)){
+        if ((timer - 474) % 1 == 0){
+          in.get(7).get(place.get(7)).exist();
+          place.set(7, place.get(7) + 1);
+        }
+      }
+      timer++;
+    }
   }
 } 
