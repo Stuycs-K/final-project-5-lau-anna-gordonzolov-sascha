@@ -21,7 +21,9 @@ class DartMonkey extends Monkeys{
   private PImage sprite;
   private Map m;
   float angle = 0;
+  boolean upgrade;
   public DartMonkey(int x, int y, Map map){
+    upgrade = false;
     m = map;
     timer = 0;
     att = false;
@@ -58,6 +60,9 @@ class DartMonkey extends Monkeys{
   public float getRad() {
     return diameter;
   }
+  public boolean getUpgrade() {
+    return upgrade;
+  }
   public boolean getDisplayRad(){
     return displayRad;
   }
@@ -82,12 +87,6 @@ class DartMonkey extends Monkeys{
   }
   public Bloons getBlon(){
     return blon;
-  }
-  public void changeisIn(int x, int y){
-    if (x > minX && x < maxX && y > minY && y < maxY){
-      displayRad = !displayRad;
-      upgrade = !upgrade;
-    }
   }
   public boolean isIn(int x, int y) {
     return x > minX && x < maxX && y > minY && y < maxY;

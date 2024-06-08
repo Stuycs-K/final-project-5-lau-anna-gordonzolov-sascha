@@ -21,12 +21,14 @@ abstract class Monkeys{
     }
   }
   public void changeUpgrade() {
-    upgrade = !upgrade;
   }
   public void changeSel() {
     isSelected = !isSelected;
   }
   public void dartRotate(){
+  }
+  public boolean getUpgrade() {
+    return true;
   }
   public float getRad() {
     return radius/2;
@@ -55,8 +57,6 @@ abstract class Monkeys{
   public void displayRad(){
   }
   public void displayRadRed(){
-  }
-  public void changeisIn(int x, int y){
   }
   public boolean getDisplayRad(){
     return false;

@@ -19,7 +19,9 @@ class TackShooter extends Monkeys{
   private boolean isSelected;
   private PImage sprite;
   private Map m;
+  private boolean upgrade;
   public TackShooter(int x, int y, Map map){
+    upgrade = false;
     m = map;
     timer = 0;
     att = false;
@@ -64,6 +66,9 @@ class TackShooter extends Monkeys{
     circle(pos.x, pos.y, diameter);
     this.display();
   }
+  public boolean getUpgrade() {
+    return upgrade;
+  }
   public void changeDisplayRad(){
     displayRad = !displayRad;
   }
@@ -76,12 +81,7 @@ class TackShooter extends Monkeys{
   public Bloons getBlon(){
     return blon;
   }
-  public void changeisIn(int x, int y){
-    if (x > minX && x < maxX && y > minY && y < maxY){
-      displayRad = !displayRad;
-      upgrade = !upgrade;
-    }
-  }
+
   public boolean isIn(int x, int y) {
     return x > minX && x < maxX && y > minY && y < maxY;
   }

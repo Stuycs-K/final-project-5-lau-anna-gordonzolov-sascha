@@ -199,7 +199,7 @@ public class Map{
     } 
     fill(255);
     text("START", 680,475);
-    if (upgrade) {
+    if (upgraded) {
       stroke(#556915);
       fill(#71E709);
       rect(660,300,156,100,10);

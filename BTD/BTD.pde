@@ -13,7 +13,7 @@ boolean won = false;
 boolean lost = false;
 Monkeys monk;
 boolean selected;
-boolean upgrade;
+boolean upgraded;
 void keyPressed() {
   if (key == 10) {
     if (!start){
@@ -35,14 +35,12 @@ void keyPressed() {
 }
 void mouseClicked() {
   for (Monkeys m : monkeys) {
-    if (!m.getDisplayRad()) {
-      m.changeisIn(mouseX, mouseY);
-    }
-    else if (m.isIn(mouseX,mouseY)) {
+    if (m.isIn(mouseX,mouseY)) {
       m.changeUpgrade();
       m.changeDisplayRad();
+      upgraded = !upgraded;
     }
-    if (upgrade) {
+    if (m.getUpgrade()) {
     //rect(660,300,156,100,10);
     if (mouseX >= 660 && mouseX <= 816 && mouseY >= 300 && mouseY <= 400) {
       m.addRad(15);
@@ -90,7 +88,7 @@ void setup() {
   start = false;
   selected = false;
   curr = 0;
-  upgrade = false;
+  upgraded = false;
   p = loadImage("map.png");
   pop = new SoundFile(this, "pop.mp3");
   map = new Map(p);
