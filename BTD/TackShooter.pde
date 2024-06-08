@@ -76,12 +76,21 @@ class TackShooter extends Monkeys{
   public Bloons getBlon(){
     return blon;
   }
-  public void isIn(int x, int y){
+  public void changeisIn(int x, int y){
     if (x > minX && x < maxX && y > minY && y < maxY){
       displayRad = !displayRad;
+      upgrade = !upgrade;
     }
   }
-  
+  public boolean isIn(int x, int y) {
+    return x > minX && x < maxX && y > minY && y < maxY;
+  }
+  public void changeUpgrade() {
+    upgrade = !upgrade;
+  }
+  public void addRad(int n) {
+    diameter += 2*n;
+  }
   public void attack(Bloons b){
     if (timer == 0){
       d = new Dart[8];
