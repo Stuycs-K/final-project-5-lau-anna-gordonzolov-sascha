@@ -55,8 +55,10 @@ void mouseClicked() {
     if (m.getUpgrade()) {
     //rect(660,300,156,100,10);
     if (mouseX >= 660 && mouseX <= 816 && mouseY >= 300 && mouseY <= 400) {
-      m.addRad(15);
-      map.subMoney(150);
+      if (map.getMoney() >= 150) {
+        m.addRad(15);
+        map.subMoney(150);
+      }
     }
   }
   }
