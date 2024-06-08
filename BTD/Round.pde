@@ -83,8 +83,10 @@ public class Round{
       }
       boolean temp = false;
       for (ArrayList<Bloons> bb : in){
-        if (bb.size() > 0){
-          temp = true;
+        for (Bloons b : bb){
+          if (!b.doesExist()){
+            temp = true;
+          }
         }
       }
       if (temp){
