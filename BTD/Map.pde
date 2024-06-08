@@ -144,6 +144,17 @@ public class Map{
     text("$",755,185);
     textSize(20);
     text(280,765,185);
+    stroke(#556915);
+    fill(#71E709);
+    rect(660,410,156,100,10);
+    textSize(40);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text("START", 680+x,475);
+        text("START", 680,475+x);
+    } 
+    fill(255);
+    text("START", 680,475);
   }
   public void displayMoney(){
     textSize(100);
