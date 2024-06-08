@@ -91,8 +91,8 @@ public class Round{
         temp2.add(b);
       }
       in.set(1, temp2);
-      ArrayList<Bloons> temp3 = new ArrayList<Bloons>(12);
-      for (int i = 0; i < 12; i++){
+      ArrayList<Bloons> temp3 = new ArrayList<Bloons>(15);
+      for (int i = 0; i < 15; i++){
         Bloons b = new Bloons(2, map);
         temp3.add(b);
       }
@@ -574,6 +574,39 @@ public class Round{
       }
       if (timer >= 290 && timer < (290 + 6 * 10)){
         if ((timer - 290) % 6 == 0){
+          in.get(2).get(place.get(2)).exist();
+          place.set(2, place.get(2) + 1);
+        }
+      }
+      timer++;
+    }
+    if (num == 5){
+      for (ArrayList<Bloons> bb : in){
+        for (Bloons b : bb){  
+          if(b.doesExist()){
+            b.display();
+            b.move();
+          }
+          if (b.doesExist() && b.atEnd()){
+            map.minus(b.getValue());
+            b.level(0);
+          }
+        }
+      }
+      if (timer < 9 * 12){
+        if (timer % 9 == 0){
+          in.get(0).get(place.get(0)).exist();
+          place.set(0, place.get(0) + 1);
+        }
+      }
+      if (timer >= 114 && timer < (114 + 5 * 9)){
+        if((timer - 114) % 9 == 0){
+          in.get(1).get(place.get(1)).exist();
+          place.set(1, place.get(1) + 1);
+        }
+      }
+      if (timer >= 172 && timer < (172 + 11 * 15)){
+        if ((timer - 172) % 11 == 0){
           in.get(2).get(place.get(2)).exist();
           place.set(2, place.get(2) + 1);
         }
