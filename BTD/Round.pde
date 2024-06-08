@@ -81,7 +81,13 @@ public class Round{
           }
         }
       }
-      if (rounds.get(num - 1).getSize() > 0){
+      boolean temp = false;
+      for (ArrayList<Bloons> bb : in){
+        if (bb.size() > 0){
+          temp = true;
+        }
+      }
+      if (temp){
         if (timer % 18 == 0){
           in.get(0).get(place).exist();
           timer ++;
