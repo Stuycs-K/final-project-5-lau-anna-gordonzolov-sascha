@@ -1067,6 +1067,44 @@ public class Round{
       }
       timer++;
     }
-    
+    if (num == 19){
+      for (ArrayList<Bloons> bb : in){
+        for (Bloons b : bb){  
+          if(b.doesExist()){
+            b.display();
+            b.move();
+          }
+          if (b.doesExist() && b.atEnd()){
+            map.minus(b.getValue());
+            b.level(0);
+          }
+        }
+      }
+      if (timer < 10 * 6){
+        if (timer % 6 == 0){
+          in.get(0).get(place.get(0)).exist();
+          place.set(0, place.get(0) + 1);
+        }
+      }
+      if (timer >= 57 && timer < (57 + 5 * 9)){
+        if((timer - 57) % 9 == 0){
+          in.get(1).get(place.get(1)).exist();
+          place.set(1, place.get(1) + 1);
+        }
+      }
+      if (timer >= 119 && timer < (119 + 15 * 10)){
+        if ((timer - 119) % 10 == 0){
+          in.get(2).get(place.get(2)).exist();
+          place.set(2, place.get(2) + 1);
+        }
+      }
+      if (timer >= 270 && timer < (270 + 4 * 11)){
+        if ((timer - 270) % 11 == 0){
+          in.get(3).get(place.get(3)).exist();
+          place.set(3, place.get(3) + 1);
+        }
+      }
+      timer++;
+    }
   }
 } 
