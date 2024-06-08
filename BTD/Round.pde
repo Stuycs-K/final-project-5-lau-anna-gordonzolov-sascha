@@ -705,8 +705,8 @@ public class Round{
           place.set(0, place.get(0) + 1);
         }
       }
-      if (timer >= 228 && timer < (228 + 2 * 1)){
-        if((timer - 228) % 1 == 0){
+      if (timer >= 228 && timer < (228 + 2 * 6)){
+        if((timer - 228) % 6 == 0){
           in.get(1).get(place.get(1)).exist();
           place.set(1, place.get(1) + 1);
         }
@@ -982,6 +982,39 @@ public class Round{
         if ((timer - 351) % 12 == 0){
           in.get(4).get(place.get(4)).exist();
           place.set(4, place.get(4) + 1);
+        }
+      }
+      timer++;
+    }
+    if (num == 16){
+      for (ArrayList<Bloons> bb : in){
+        for (Bloons b : bb){  
+          if(b.doesExist()){
+            b.display();
+            b.move();
+          }
+          if (b.doesExist() && b.atEnd()){
+            map.minus(b.getValue());
+            b.level(0);
+          }
+        }
+      }
+      if (timer < 20 * 11){
+        if (timer % 11 == 0){
+          in.get(0).get(place.get(0)).exist();
+          place.set(0, place.get(0) + 1);
+        }
+      }
+      if (timer >= 4 && timer < (4 + 20 * 11)){
+        if((timer - 4) % 11 == 0){
+          in.get(1).get(place.get(1)).exist();
+          place.set(1, place.get(1) + 1);
+        }
+      }
+      if (timer >= 292 && timer < (292 + 8 * 4)){
+        if ((timer - 292) % 4 == 0){
+          in.get(2).get(place.get(2)).exist();
+          place.set(2, place.get(2) + 1);
         }
       }
       timer++;

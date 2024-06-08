@@ -108,7 +108,7 @@ void setup() {
   balloon.display();
   balloon.levelDown();
   balloon.display();
-  for (int i = 1; i < 16; i++){
+  for (int i = 1; i < 21; i++){
     Round temp = new Round(i, map);
     rounds.add(temp);
   }
