@@ -20,10 +20,15 @@ abstract class Monkeys{
       pos = new PVector(mouseX,mouseY);
     }
   }
+  public void changeUpgrade() {
+  }
   public void changeSel() {
     isSelected = !isSelected;
   }
   public void dartRotate(){
+  }
+  public boolean getUpgrade() {
+    return true;
   }
   public float getRad() {
     return radius/2;
@@ -40,6 +45,11 @@ abstract class Monkeys{
   public void setAtt(){
     att = false;
   }
+  public boolean isIn(int x, int y) {
+    return true;
+  }
+  public void addRad(int n) {
+  }
   public void click(){
   }
   public void display(){
@@ -47,8 +57,6 @@ abstract class Monkeys{
   public void displayRad(){
   }
   public void displayRadRed(){
-  }
-  public void isIn(int x, int y){
   }
   public boolean getDisplayRad(){
     return false;

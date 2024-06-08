@@ -20,7 +20,12 @@ public class Bloons{
     if (level > 0 && level < 5) {
       this.level = level;
     }
-    balloon = sprites[level-1];
+    if (level <= 4){
+      balloon = sprites[level-1];
+    }
+    else{
+      balloon = sprites[4];
+    }
     velo = 2.5 + 0.5 * (level - 1);
     value = level;
     m = map;
