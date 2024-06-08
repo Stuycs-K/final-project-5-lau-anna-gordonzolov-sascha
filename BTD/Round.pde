@@ -144,7 +144,7 @@ public class Round{
       ArrayList<Bloons> temp4 = new ArrayList<Bloons>(10);
       for (int i = 0; i < 10; i++){
         Bloons b = new Bloons(2, map);
-        temp3.add(b);
+        temp4.add(b);
       }
       in.set(3, temp4);
     }
@@ -172,7 +172,7 @@ public class Round{
       ArrayList<Bloons> temp4 = new ArrayList<Bloons>(12);
       for (int i = 0; i < 12; i++){
         Bloons b = new Bloons(3, map);
-        temp3.add(b);
+        temp4.add(b);
       }
       in.set(3, temp4);
     }
@@ -207,6 +207,157 @@ public class Round{
         temp3.add(b);
       }
       in.set(2, temp3);
+    }
+    if (n == 11){
+      in = new ArrayList<ArrayList<Bloons>>(Collections.nCopies(4, null));
+      place = new ArrayList<Integer>(Collections.nCopies(4, 0));
+      ArrayList<Bloons> temp1 = new ArrayList<Bloons>(3);
+      for (int i = 0; i < 3; i++){
+        Bloons b = new Bloons(4, map);
+        temp1.add(b);
+      }
+      in.set(0, temp1);
+      ArrayList<Bloons> temp2 = new ArrayList<Bloons>(12);
+      for (int i = 0; i < 12; i++){
+        Bloons b = new Bloons(3, map);
+        temp2.add(b);
+      }
+      in.set(1, temp2);
+      ArrayList<Bloons> temp3 = new ArrayList<Bloons>(10);
+      for (int i = 0; i < 10; i++){
+        Bloons b = new Bloons(2, map);
+        temp3.add(b);
+      }
+      in.set(2, temp3);
+      ArrayList<Bloons> temp4 = new ArrayList<Bloons>(10);
+      for (int i = 0; i < 10; i++){
+        Bloons b = new Bloons(1, map);
+        temp4.add(b);
+      }
+      in.set(3, temp4);
+    }
+    if (n == 12){
+      in = new ArrayList<ArrayList<Bloons>>(Collections.nCopies(3, null));
+      place = new ArrayList<Integer>(Collections.nCopies(3, 0));
+      ArrayList<Bloons> temp1 = new ArrayList<Bloons>(10);
+      for (int i = 0; i < 10; i++){
+        Bloons b = new Bloons(3, map);
+        temp1.add(b);
+      }
+      in.set(0, temp1);
+      ArrayList<Bloons> temp2 = new ArrayList<Bloons>(15);
+      for (int i = 0; i < 15; i++){
+        Bloons b = new Bloons(2, map);
+        temp2.add(b);
+      }
+      in.set(1, temp2);
+      ArrayList<Bloons> temp3 = new ArrayList<Bloons>(5);
+      for (int i = 0; i < 5; i++){
+        Bloons b = new Bloons(4, map);
+        temp3.add(b);
+      }
+      in.set(2, temp3);
+    }
+    if (n == 13){
+      in = new ArrayList<ArrayList<Bloons>>(Collections.nCopies(2, null));
+      place = new ArrayList<Integer>(Collections.nCopies(2, 0));
+      ArrayList<Bloons> temp1 = new ArrayList<Bloons>(50);
+      for (int i = 0; i < 50; i++){
+        Bloons b = new Bloons(2, map);
+        temp1.add(b);
+      }
+      in.set(0, temp1);
+      ArrayList<Bloons> temp2 = new ArrayList<Bloons>(23);
+      for (int i = 0; i < 23; i++){
+        Bloons b = new Bloons(3, map);
+        temp2.add(b);
+      }
+    }
+    if (n == 14){
+      in = new ArrayList<ArrayList<Bloons>>(Collections.nCopies(8, null));
+      place = new ArrayList<Integer>(Collections.nCopies(8, 0));
+      ArrayList<Bloons> temp1 = new ArrayList<Bloons>(18);
+      for (int i = 0; i < 18; i++){
+        Bloons b = new Bloons(1, map);
+        temp1.add(b);
+      }
+      in.set(0, temp1);
+      ArrayList<Bloons> temp2 = new ArrayList<Bloons>(5);
+      for (int i = 0; i < 5; i++){
+        Bloons b = new Bloons(2, map);
+        temp2.add(b);
+      }
+      in.set(1, temp2);
+      ArrayList<Bloons> temp3 = new ArrayList<Bloons>(5);
+      for (int i = 0; i < 5; i++){
+        Bloons b = new Bloons(3, map);
+        temp3.add(b);
+      }
+      in.set(2, temp3);
+      ArrayList<Bloons> temp4 = new ArrayList<Bloons>(4);
+      for (int i = 0; i < 4; i++){
+        Bloons b = new Bloons(4, map);
+        temp4.add(b);
+      }
+      in.set(3, temp4);
+      ArrayList<Bloons> temp5 = new ArrayList<Bloons>(31);
+      for (int i = 0; i < 31; i++){
+        Bloons b = new Bloons(1, map);
+        temp5.add(b);
+      }
+      in.set(4, temp5);
+      ArrayList<Bloons> temp6 = new ArrayList<Bloons>(10);
+      for (int i = 0; i < 10; i++){
+        Bloons b = new Bloons(2, map);
+        temp6.add(b);
+      }
+      in.set(5, temp6);
+      ArrayList<Bloons> temp7 = new ArrayList<Bloons>(5);
+      for (int i = 0; i < 5; i++){
+        Bloons b = new Bloons(3, map);
+        temp7.add(b);
+      }
+      in.set(6, temp7);
+      ArrayList<Bloons> temp8 = new ArrayList<Bloons>(5);
+      for (int i = 0; i < 5; i++){
+        Bloons b = new Bloons(4, map);
+        temp8.add(b);
+      }
+      in.set(7, temp8);
+    }
+    if (n == 15){
+      in = new ArrayList<ArrayList<Bloons>>(Collections.nCopies(4, null));
+      place = new ArrayList<Integer>(Collections.nCopies(4, 0));
+      ArrayList<Bloons> temp1 = new ArrayList<Bloons>(20);
+      for (int i = 0; i < 20; i++){
+        Bloons b = new Bloons(1, map);
+        temp1.add(b);
+      }
+      in.set(0, temp1);
+      ArrayList<Bloons> temp2 = new ArrayList<Bloons>(15);
+      for (int i = 0; i < 15; i++){
+        Bloons b = new Bloons(2, map);
+        temp2.add(b);
+      }
+      in.set(1, temp2);
+      ArrayList<Bloons> temp3 = new ArrayList<Bloons>(12);
+      for (int i = 0; i < 12; i++){
+        Bloons b = new Bloons(3, map);
+        temp3.add(b);
+      }
+      in.set(2, temp3);
+      ArrayList<Bloons> temp4 = new ArrayList<Bloons>(10);
+      for (int i = 0; i < 10; i++){
+        Bloons b = new Bloons(4, map);
+        temp4.add(b);
+      }
+      in.set(3, temp4);
+      ArrayList<Bloons> temp5 = new ArrayList<Bloons>(5);
+      for (int i = 0; i < 5; i++){
+        Bloons b = new Bloons(5, map);
+        temp5.add(b);
+      }
+      in.set(3, temp5);
     }
   }
   public ArrayList<ArrayList<Bloons>> getIn(){
