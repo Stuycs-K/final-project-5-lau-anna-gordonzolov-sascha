@@ -148,14 +148,6 @@ void draw() {
     monk.display();
     monk.move();
   }
-  for (ArrayList<Bloons> bb : rounds.get(curr).getIn()){
-        for (Bloons b : bb){
-          if (b.doesExist() && b.atEnd()){
-            map.minus(b.getValue());
-            b.level(0);
-          }
-        }
-  }
   for (Monkeys m : monkeys) {
     m.display();
     if (m.getDisplayRad()) {

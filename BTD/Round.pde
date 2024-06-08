@@ -5,14 +5,15 @@ public class Round{
   private boolean play;
   private ArrayList<ArrayList<Bloons>> in;
   private Map map;
-  private int place;
+  private ArrayList<Integer> place;
   public Round(int n, Map m){
     timer = 0;
-    place = 0;
     in = new ArrayList<ArrayList<Bloons>>();
     map = m;
     num = n;
     if (n == 1){
+      place = new ArrayList<Integer>(Collections.nCopies(1, 0));
+      place.set(0, 0);
       ArrayList<Bloons> temp = new ArrayList<Bloons>();
       for (int i = 0; i < 20; i++){
         Bloons b = new Bloons(1, map);
@@ -21,6 +22,8 @@ public class Round{
       in.add(temp);
     }
     if (n == 2){
+      place = new ArrayList<Integer>(Collections.nCopies(1, 0));
+      place.set(0, 0);
       ArrayList<Bloons> temp = new ArrayList<Bloons>();
       for (int i = 0; i < 35; i++){
         Bloons b = new Bloons(1, map);
@@ -53,7 +56,11 @@ public class Round{
     return in;
   }
   public int getSize(){
-    return in.size() - place;
+    int size = 0;
+    for (int i = 0; i < place.size(); i++){
+      size += in.size() - place.get(i);
+    }
+    return size;
   }
   public int getNum(){
     return num;
@@ -78,35 +85,47 @@ public class Round{
             b.display();
             b.move();
           }
+          if (b.doesExist() && b.atEnd()){
+            map.minus(b.getValue());
+            b.level(0);
+          }
         }
       }
       if (timer < 360){
         if (timer % 18 == 0){
-          in.get(0).get(place).exist();
+          in.get(0).get(place.get(0)).exist();
           timer ++;
-          place ++;
+          place.set(0, place.get(0) + 1);
         }
         else{
           timer ++;
         }
       }
     }
-    /*if (num == 2){
-      for (int i = 0; i < place; i++){
-        if(in.get(i).doesExist()){
+    if (num == 2){
+      for (ArrayList<Bloons> bb : in){
+        for (Bloons b : bb){  
+          if(b.doesExist()){
+            b.display();
+            b.move();
+          }
+          if (b.doesExist() && b.atEnd()){
+            map.minus(b.getValue());
+            b.level(0);
+          }
         }
       }
-      if (rounds.get(num - 1).getSize() > 0){
-        if (timer == 0){
-          in.get(place).exist();
-          timer = 11;
-          place ++;
+      if (timer < 380){
+        if (timer % 11 == 0){
+          in.get(0).get(place.get(0)).exist();
+          timer ++;
+          place.set(0, place.get(0) + 1);
         }
         else{
-          timer -= 1;
+          timer ++;
         }
       }
-    }
+    }/*
     if (num == 3){
       for (int i = 0; i < place; i++){
         if(in.get(i).doesExist()){
