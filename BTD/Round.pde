@@ -272,6 +272,7 @@ public class Round{
         Bloons b = new Bloons(3, map);
         temp2.add(b);
       }
+      in.set(1, temp2);
     }
     if (n == 14){
       in = new ArrayList<ArrayList<Bloons>>(Collections.nCopies(8, null));
@@ -846,6 +847,33 @@ public class Round{
         if ((timer - 285) % 12 == 0){
           in.get(2).get(place.get(2)).exist();
           place.set(2, place.get(2) + 1);
+        }
+      }
+      timer++;
+    }
+    if (num == 13){
+      for (ArrayList<Bloons> bb : in){
+        for (Bloons b : bb){  
+          if(b.doesExist()){
+            b.display();
+            b.move();
+          }
+          if (b.doesExist() && b.atEnd()){
+            map.minus(b.getValue());
+            b.level(0);
+          }
+        }
+      }
+      if (timer < 50 * 12){
+        if (timer % 12 == 0){
+          in.get(0).get(place.get(0)).exist();
+          place.set(0, place.get(0) + 1);
+        }
+      }
+      if (timer >= 44 && timer < (44 + 23 * 26)){
+        if((timer - 44) % 26 == 0){
+          in.get(1).get(place.get(1)).exist();
+          place.set(1, place.get(1) + 1);
         }
       }
       timer++;
