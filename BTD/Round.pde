@@ -32,6 +32,7 @@ public class Round{
       in.add(temp);
     }
     if (n == 3){
+      place = new ArrayList<Integer>(Collections.nCopies(3, 0));
       ArrayList<Bloons> temp = new ArrayList<Bloons>();
       for (int i = 0; i < 10; i++){
         Bloons b = new Bloons(1, map);
@@ -94,13 +95,10 @@ public class Round{
       if (timer < 360){
         if (timer % 18 == 0){
           in.get(0).get(place.get(0)).exist();
-          timer ++;
           place.set(0, place.get(0) + 1);
         }
-        else{
-          timer ++;
-        }
       }
+      timer++;
     }
     if (num == 2){
       for (ArrayList<Bloons> bb : in){
@@ -118,65 +116,39 @@ public class Round{
       if (timer < 380){
         if (timer % 11 == 0){
           in.get(0).get(place.get(0)).exist();
-          timer ++;
           place.set(0, place.get(0) + 1);
         }
-        else{
-          timer ++;
-        }
       }
-    }/*
+      timer++;
+    }
     if (num == 3){
-      for (int i = 0; i < place; i++){
-        if(in.get(i).doesExist()){
-          in.get(i).display();
-          in.get(i).move();
-        }
-      }
-      if (rounds.get(num - 1).getSize() > 0){
-        if (place < 10){
-          if (timer == 0){
-            in.get(place).exist();
-            in.get(place).display();
-            in.get(place).move();
-            timer = 10;
-            place ++;
+      for (ArrayList<Bloons> bb : in){
+        for (Bloons b : bb){  
+          if(b.doesExist()){
+            b.display();
+            b.move();
           }
-          else{
-            timer -= 1;
-          }
-        }
-        else if (place < 15){
-          if (Math.abs(timer) < 0.01){
-            in.get(place).exist();
-            in.get(place).display();
-            in.get(place).move();
-            timer = 9;
-            place ++;
-          }
-          else{
-            timer -= 1;
-          }
-          if (place == 10){
-            timer += float(2)/12;
-          }
-        }
-        else if (place < 35){
-          if (Math.abs(timer) < 0.01){
-            in.get(place).exist();
-            in.get(place).display();
-            in.get(place).move();
-            timer = 9;
-            place ++;
-          }
-          else{
-            timer -= 1;
-          }
-          if (place == 15){
-            timer += float(30)/39;
+          if (b.doesExist() && b.atEnd()){
+            map.minus(b.getValue());
+            b.level(0);
           }
         }
       }
-    }*/
+      if (timer < 102){
+        if (timer % 10 == 0){
+          in.get(2).get(place.get(2)).exist();
+          place.set(2, place.get(2) + 1);
+        }
+      }
+      if (timer >= 114 && timer < 159){
+        in.get(2).get(place.get(2)).exist();
+        place.set(2, place.get(2) + 1);
+      }
+      if (timer >= 194 && timer < 335){
+        in.get(2).get(place.get(2)).exist();
+        place.set(2, place.get(2) + 2);
+      }
+      timer++;
+    }
   }
 } 
