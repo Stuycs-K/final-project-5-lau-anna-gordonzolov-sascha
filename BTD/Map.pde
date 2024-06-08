@@ -101,6 +101,9 @@ public class Map{
         can = false;
       }
     }
+    if (x >= 650) {
+      can = false;
+    }
     return can;
   }
   public void changeTitle(String str, int size) {
@@ -124,14 +127,22 @@ public class Map{
     } 
     fill(255);
     text("ROUND", 607,15);
+    String show = curr + 1 + "/" + 20;
+    float posx;
+    if (show.length() == 4) {
+      posx = 603;
+    }
+    else {
+      posx = 593;
+    }
     textSize(20);
     fill(0,0,0);
     for(int x = -1; x < 2; x++){
-        text(curr + 1 + "/" + 20, 604+x,32);
-        text(curr + 1 + "/" + 20, 604,32+x);
+        text(curr + 1 + "/" + 20, posx+x,32);
+        text(curr + 1 + "/" + 20, posx,32+x);
     } 
     fill(255);
-    text(curr + 1 + "/" + 20, 604,32);
+    text(curr + 1 + "/" + 20, posx,32);
   }
   public void displaySide() {
     stroke(#AD7C48);

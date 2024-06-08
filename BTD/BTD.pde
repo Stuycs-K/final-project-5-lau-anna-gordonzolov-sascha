@@ -38,14 +38,21 @@ void keyPressed() {
       }
     }
   }
-  if (key == 118) {
-    won = true;
-  }
-  if (key == 108) {
-    map.minus(1);
-  }
 }
 void mouseClicked() {
+  if (won || lost) {
+    print("end");
+    //rect(310,220,200,50,10);
+    if (mouseX >= 310 && mouseX <= 510 && mouseY >= 220 && mouseY <= 270) {
+      if (lost) {
+        lost = !lost;
+      }
+      if (won) {
+        won = !won;
+      }
+      reset();
+    }
+  }
   for (int i = 0; i < monkeys.size(); i++) {
     Monkeys m = monkeys.get(i);
     if (m.isIn(mouseX,mouseY)) {
@@ -106,6 +113,14 @@ void mouseClicked() {
     }
   }
 }
+void reset() {
+  start = false;
+  selected = false;
+  curr = 0;
+  clicked = false;
+  map = new Map(p);
+  monkeys = new ArrayList<Monkeys>();
+}
 void setup() {
   start = false;
   selected = false;
@@ -119,13 +134,6 @@ void setup() {
   //balloons = new ArrayList<Bloons>();
   monkeys = new ArrayList<Monkeys>();
   size(826, 532);
-  fill(0, 0, 0);
-  textSize(36);
-  map.display();
-  Bloons balloon = new Bloons(2, map);
-  balloon.display();
-  balloon.levelDown();
-  balloon.display();
   for (int i = 1; i < 21; i++){
     Round temp = new Round(i, map);
     rounds.add(temp);
@@ -191,11 +199,32 @@ void draw() {
   if (won) {
       PImage win = loadImage("victory.png");
       image(win,160,100);
+      stroke(#556915);
+      fill(#71E709);
+      rect(310,220,200,50,10);
+      textSize(30);
+      fill(0,0,0);
+      for(int x = -1; x < 2; x++){
+          text("RESTART", 345+x,255);
+          text("RESTART", 345,255+x);
+      } 
+      fill(255);
+      text("RESTART", 345,255);
     }
     if (lost) {
-      map.noLives();
       PImage lose = loadImage("defeat.png");
       image(lose,250,10);
+      stroke(#556915);
+      fill(#71E709);
+      rect(310,220,200,50,10);
+      textSize(30);
+      fill(0,0,0);
+      for(int x = -1; x < 2; x++){
+          text("RESTART", 345+x,255);
+          text("RESTART", 345,255+x);
+      } 
+      fill(255);
+      text("RESTART", 345,255);
     }
 }
 
