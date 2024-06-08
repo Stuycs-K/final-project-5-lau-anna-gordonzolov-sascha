@@ -72,7 +72,6 @@ public class Round{
   public void play(){
     play = true;
     if (num == 1){
-      print(timer);
       for (ArrayList<Bloons> bb : in){
         for (Bloons b : bb){  
           if(b.doesExist()){
@@ -81,15 +80,7 @@ public class Round{
           }
         }
       }
-      boolean temp = false;
-      for (ArrayList<Bloons> bb : in){
-        for (Bloons b : bb){
-          if (!b.doesExist()){
-            temp = true;
-          }
-        }
-      }
-      if (temp){
+      if (timer < 360){
         if (timer % 18 == 0){
           in.get(0).get(place).exist();
           timer ++;
