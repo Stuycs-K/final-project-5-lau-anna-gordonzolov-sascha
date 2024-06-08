@@ -136,17 +136,21 @@ public class Round{
       }
       if (timer < 102){
         if (timer % 10 == 0){
-          in.get(2).get(place.get(2)).exist();
-          place.set(2, place.get(2) + 1);
+          in.get(0).get(place.get(0)).exist();
+          place.set(0, place.get(0) + 1);
         }
       }
       if (timer >= 114 && timer < 159){
-        in.get(2).get(place.get(2)).exist();
-        place.set(2, place.get(2) + 1);
+        if((timer - 114) % 9 == 0){
+          in.get(1).get(place.get(1)).exist();
+          place.set(1, place.get(1) + 1);
+        }
       }
       if (timer >= 194 && timer < 335){
-        in.get(2).get(place.get(2)).exist();
-        place.set(2, place.get(2) + 2);
+        if ((timer - 194) % 9 == 0){
+          in.get(2).get(place.get(2)).exist();
+          place.set(2, place.get(2) + 2);
+        }
       }
       timer++;
     }
