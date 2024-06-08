@@ -358,7 +358,7 @@ public class Round{
         Bloons b = new Bloons(5, map);
         temp5.add(b);
       }
-      in.set(3, temp5);
+      in.set(4, temp5);
     }
     if (n == 16){
       in = new ArrayList<ArrayList<Bloons>>(Collections.nCopies(3, null));
@@ -897,20 +897,20 @@ public class Round{
           place.set(0, place.get(0) + 1);
         }
       }
-      if (timer >= 57 && timer < (57 + 5 * 1)){
-        if((timer - 57) % 1 == 0){
+      if (timer >= 57 && timer < (57 + 5 * 5)){
+        if((timer - 57) % 5 == 0){
           in.get(1).get(place.get(1)).exist();
           place.set(1, place.get(1) + 1);
         }
       }
-      if (timer >= 114 && timer < (114 + 5 * 1)){
-        if ((timer - 114) % 1 == 0){
+      if (timer >= 114 && timer < (114 + 5 * 4)){
+        if ((timer - 114) % 4 == 0){
           in.get(2).get(place.get(2)).exist();
           place.set(2, place.get(2) + 1);
         }
       }
-      if (timer >= 171 && timer < (171 + 4 * 1)){
-        if ((timer - 171) % 1 == 0){
+      if (timer >= 171 && timer < (171 + 4 * 5)){
+        if ((timer - 171) % 5 == 0){
           in.get(3).get(place.get(3)).exist();
           place.set(3, place.get(3) + 1);
         }
@@ -921,22 +921,67 @@ public class Round{
           place.set(4, place.get(4) + 1);
         }
       }
-      if (timer >= 319 && timer < (319 + 10 * 1)){
-        if((timer - 319) % 1 == 0){
+      if (timer >= 319 && timer < (319 + 10 * 3)){
+        if((timer - 319) % 3 == 0){
           in.get(5).get(place.get(5)).exist();
           place.set(5, place.get(5) + 1);
         }
       }
-      if (timer >= 397 && timer < (397 + 5 * 1)){
-        if ((timer - 397) % 1 == 0){
+      if (timer >= 397 && timer < (397 + 5 * 6)){
+        if ((timer - 397) % 6 == 0){
           in.get(6).get(place.get(6)).exist();
           place.set(6, place.get(6) + 1);
         }
       }
-      if (timer >= 474 && timer < (474 + 5 * 1)){
-        if ((timer - 474) % 1 == 0){
+      if (timer >= 474 && timer < (474 + 5 * 6)){
+        if ((timer - 474) % 6 == 0){
           in.get(7).get(place.get(7)).exist();
           place.set(7, place.get(7) + 1);
+        }
+      }
+      timer++;
+    }
+    if (num == 15){
+      for (ArrayList<Bloons> bb : in){
+        for (Bloons b : bb){  
+          if(b.doesExist()){
+            b.display();
+            b.move();
+          }
+          if (b.doesExist() && b.atEnd()){
+            map.minus(b.getValue());
+            b.level(0);
+          }
+        }
+      }
+      if (timer < 20 * 25){
+        if (timer % 25 == 0){
+          in.get(0).get(place.get(0)).exist();
+          place.set(0, place.get(0) + 1);
+        }
+      }
+      if (timer >= 56 && timer < (56 + 15 * 27)){
+        if((timer - 56) % 27 == 0){
+          in.get(1).get(place.get(1)).exist();
+          place.set(1, place.get(1) + 1);
+        }
+      }
+      if (timer >= 114 && timer < (114 + 12 * 25)){
+        if ((timer - 114) % 25 == 0){
+          in.get(2).get(place.get(2)).exist();
+          place.set(2, place.get(2) + 1);
+        }
+      }
+      if (timer >= 177 && timer < (177 + 10 * 24)){
+        if ((timer - 177) % 24 == 0){
+          in.get(3).get(place.get(3)).exist();
+          place.set(3, place.get(3) + 1);
+        }
+      }
+      if (timer >= 351 && timer < (351 + 5 * 12)){
+        if ((timer - 351) % 12 == 0){
+          in.get(4).get(place.get(4)).exist();
+          place.set(4, place.get(4) + 1);
         }
       }
       timer++;
