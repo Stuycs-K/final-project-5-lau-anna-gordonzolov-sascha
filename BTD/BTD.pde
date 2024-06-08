@@ -98,12 +98,10 @@ void setup() {
   balloon.display();
   balloon.levelDown();
   balloon.display();
-  Round one = new Round(1, map);
-  rounds.add(one);
-  Round two = new Round(2, map);
-  rounds.add(two);
-  Round three = new Round(3, map);
-  rounds.add(three);
+  for (int i = 1; i < 5; i++){
+    Round temp = new Round(i, map);
+    rounds.add(temp);
+  }
   /*balloon = new Bloons(4,map);
    balloons.add(balloon);
    balloon = new Bloons(3,map);
