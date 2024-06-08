@@ -27,12 +27,22 @@ void keyPressed() {
       start = true;
     }
     else{
-      for (ArrayList<Bloons> bb : rounds.get(curr).getIn()){
-        for (Bloons b : bb){
-           b.level(0);
+      if (curr + 1 >= rounds.size()){
+        for (ArrayList<Bloons> bb : rounds.get(curr).getIn()){
+          for (Bloons b : bb){
+             b.level(0);
+          }
         }
+        won = true;
       }
-      curr ++;
+      else{
+        for (ArrayList<Bloons> bb : rounds.get(curr).getIn()){
+          for (Bloons b : bb){
+             b.level(0);
+          }
+        }
+        curr ++;
+      }
     }
   }
   if (key == 118) {
