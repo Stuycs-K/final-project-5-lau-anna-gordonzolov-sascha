@@ -14,16 +14,6 @@ boolean lost = false;
 Monkeys monk;
 boolean selected;
 void keyPressed() {
-  if (key == 32) {
-    if (!start){
-      start = true;
-    }
-    else{
-      if (rounds.get(curr).nextRound()) {
-        curr ++;
-      }
-    }
-  }
   if (key == 10) {
     if (!start){
       start = true;
@@ -43,7 +33,6 @@ void keyPressed() {
   }
 }
 void mouseClicked() {
-  print (mouseX + " " + mouseY + "     ");
   for (Monkeys m : monkeys) {
     print(m.box());
     print(m.getDisplayRad());
@@ -76,6 +65,17 @@ void mouseClicked() {
     monkeys.add(monk);
     monk = null;
     selected = !selected;
+  }
+  //rect(660,410,156,100,10);
+  if (mouseX >= 660 && mouseX <= 816 && mouseY >= 410 && mouseY <= 510) {
+    if (!start){
+      start = true;
+    }
+    else{
+      if (rounds.get(curr).nextRound()) {
+        curr ++;
+      }
+    }
   }
 }
 void setup() {

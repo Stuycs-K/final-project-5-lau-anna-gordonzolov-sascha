@@ -14,7 +14,7 @@ public class Round{
     num = n;
     if (n == 1){
       for (int i = 0; i < 20; i++){
-        Bloons b = new Bloons(5, map);
+        Bloons b = new Bloons(1, map);
         in.add(b);
       }
     }
