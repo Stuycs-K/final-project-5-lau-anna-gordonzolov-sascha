@@ -85,6 +85,9 @@ public class Map{
   public int getHeight(){
     return background.height;
   }
+  public void addCurr() {
+    curr++;
+  }
   public Block getStart(){
     return start;
   }
@@ -110,6 +113,25 @@ public class Map{
     displayMoney();
     displayLives();
     displaySide();
+    displayRounds();
+  }
+  public void displayRounds() {
+    textSize(10);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text("ROUND", 607+x,15);
+        text("ROUND", 607,15+x);
+    } 
+    fill(255);
+    text("ROUND", 607,15);
+    textSize(20);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text(curr + 1 + "/" + 20, 604+x,32);
+        text(curr + 1 + "/" + 20, 604,32+x);
+    } 
+    fill(255);
+    text(curr + 1 + "/" + 20, 604,32);
   }
   public void displaySide() {
     stroke(#AD7C48);
@@ -130,20 +152,84 @@ public class Map{
     rect(660,110,70,80,10);
     PImage d = loadImage("sDartMonkey.png");
     image(d,680,112);
-    fill(255);
-    textSize(16);
-    text("$",675,185);
     textSize(20);
-    text(200,685,185);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text(200, 685+x,185);
+        text(200, 685,185+x);
+    } 
+    fill(255);
+    text(200, 685,185);
+    textSize(16);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text("$", 675+x,185);
+        text("$", 675,185+x);
+    } 
+    fill(255);
+    text("$", 675,185);
     fill(#89CFF0);
     rect(745,110,70,80,10);
     d = loadImage("sTackShooter.png");
     image(d,760,120);
-    fill(255);
-    textSize(16);
-    text("$",755,185);
     textSize(20);
-    text(280,765,185);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text(280, 765+x,185);
+        text(280, 765,185+x);
+    } 
+    fill(255);
+    text(280, 765,185);
+    textSize(16);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text("$", 755+x,185);
+        text("$", 755,185+x);
+    } 
+    fill(255);
+    text("$", 755,185);
+    stroke(#556915);
+    fill(#71E709);
+    rect(660,410,156,100,10);
+    textSize(40);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text("START", 680+x,475);
+        text("START", 680,475+x);
+    } 
+    fill(255);
+    text("START", 680,475);
+    if (upgraded) {
+      stroke(#556915);
+      fill(#71E709);
+      rect(660,300,156,100,10);
+      d = loadImage("upgrade.png");
+      image(d,700,330);
+      textSize(18);
+      fill(0,0,0);
+      for(int x = -1; x < 2; x++){
+          text("LARGER RADIUS", 665+x,325);
+          text("LARGER RADIUS", 665,325+x);
+      } 
+      fill(255);
+      text("LARGER RADIUS", 665,325);
+      textSize(20);
+      fill(0,0,0);
+      for(int x = -1; x < 2; x++){
+          text(150, 730+x,395);
+          text(150, 730,395+x);
+      } 
+      fill(255);
+      text(150, 730,395);
+      textSize(16);
+      fill(0,0,0);
+      for(int x = -1; x < 2; x++){
+          text("$", 720+x,395);
+          text("$", 720,395+x);
+      } 
+      fill(255);
+      text("$", 720,395);
+    }
   }
   public void displayMoney(){
     textSize(100);

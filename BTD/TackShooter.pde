@@ -19,7 +19,9 @@ class TackShooter extends Monkeys{
   private boolean isSelected;
   private PImage sprite;
   private Map m;
+  private boolean upgrade;
   public TackShooter(int x, int y, Map map){
+    upgrade = false;
     m = map;
     timer = 0;
     att = false;
@@ -64,6 +66,9 @@ class TackShooter extends Monkeys{
     circle(pos.x, pos.y, diameter);
     this.display();
   }
+  public boolean getUpgrade() {
+    return upgrade;
+  }
   public void changeDisplayRad(){
     displayRad = !displayRad;
   }
@@ -76,23 +81,27 @@ class TackShooter extends Monkeys{
   public Bloons getBlon(){
     return blon;
   }
-  public void isIn(int x, int y){
-    if (x > minX && x < maxX && y > minY && y < maxY){
-      displayRad = !displayRad;
-    }
+
+  public boolean isIn(int x, int y) {
+    return x > minX && x < maxX && y > minY && y < maxY;
   }
-  
+  public void changeUpgrade() {
+    upgrade = !upgrade;
+  }
+  public void addRad(int n) {
+    diameter += 2*n;
+  }
   public void attack(Bloons b){
     if (timer == 0){
       d = new Dart[8];
-      d[0] = new Dart(pos.x,pos.y-10.75,map, 2);
-      d[1] = new Dart(pos.x-21.5/4,pos.y-21.5*0.75,map, 2);
-      d[2] = new Dart(pos.x-10.75,pos.y-21.5,map, 2);
-      d[3] = new Dart(pos.x-21.5*0.75,pos.y-21.5*0.75,map, 2);
-      d[4] = new Dart(pos.x-21.5,pos.y-10.75,map, 2);
-      d[5] = new Dart(pos.x-21.5*0.75,pos.y-21.5/4,map, 2);
-      d[6] = new Dart(pos.x-10.75,pos.y-21.5/4,map, 2);
-      d[7] = new Dart(pos.x,pos.y,map, 2);
+      d[0] = new Dart(pos.x+5,pos.y-10.75+5,map, 2,0);
+      d[1] = new Dart(pos.x-21.5/4+5,pos.y-21.5*0.75+5,map, 2,1);
+      d[2] = new Dart(pos.x-10.75+5,pos.y-21.5+4,map, 2,2);
+      d[3] = new Dart(pos.x-21.5*0.75+5,pos.y-21.5*0.75+5,map, 2,3);
+      d[4] = new Dart(pos.x-21.5+5,pos.y-10.75+5, map, 2,4);
+      d[5] = new Dart(pos.x-21.5*0.75+5,pos.y-21.5/4+5,map, 2,5);
+      d[6] = new Dart(pos.x-10.75+5,pos.y-21.5/4+5,map, 2,6);
+      d[7] = new Dart(pos.x+5,pos.y+5,map, 2,7);
       /*if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
         if (b.getLevel() > 1) {
           b.levelDown();

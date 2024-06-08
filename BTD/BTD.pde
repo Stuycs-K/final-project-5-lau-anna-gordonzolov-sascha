@@ -1,3 +1,5 @@
+import processing.sound.*;
+SoundFile pop;
 PImage p;
 Map map;
 Bloons balloon;
@@ -11,17 +13,8 @@ boolean won = false;
 boolean lost = false;
 Monkeys monk;
 boolean selected;
+boolean upgraded;
 void keyPressed() {
-  if (key == 32) {
-    if (!start){
-      start = true;
-    }
-    else{
-      if (rounds.get(curr).nextRound()) {
-        curr ++;
-      }
-    }
-  }
   if (key == 10) {
     if (!start){
       start = true;
@@ -53,15 +46,19 @@ void keyPressed() {
   }
 }
 void mouseClicked() {
-  print (mouseX + " " + mouseY + "     ");
   for (Monkeys m : monkeys) {
-    print(m.box());
-    print(m.getDisplayRad());
-    if (!m.getDisplayRad()) {
-      m.isIn(mouseX, mouseY);
-    } else {
+    if (m.isIn(mouseX,mouseY)) {
+      m.changeUpgrade();
       m.changeDisplayRad();
+      upgraded = !upgraded;
     }
+    if (m.getUpgrade()) {
+    //rect(660,300,156,100,10);
+    if (mouseX >= 660 && mouseX <= 816 && mouseY >= 300 && mouseY <= 400) {
+      m.addRad(15);
+      map.subMoney(150);
+    }
+  }
   }
   if (!selected) {
     if (mouseX >= 660 && mouseX <= 730 && mouseY >= 110 && mouseY <= 170) {
@@ -87,19 +84,30 @@ void mouseClicked() {
     monk = null;
     selected = !selected;
   }
+  //rect(660,410,156,100,10);
+  if (mouseX >= 660 && mouseX <= 816 && mouseY >= 410 && mouseY <= 510) {
+    if (!start){
+      start = true;
+    }
+    else{
+      if (rounds.get(curr).nextRound()) {
+        curr++;
+      }
+    }
+  }
 }
 void setup() {
   start = false;
   selected = false;
   curr = 0;
+  upgraded = false;
   p = loadImage("map.png");
+  pop = new SoundFile(this, "pop.mp3");
   map = new Map(p);
   turningpt = map.getTurns();
   rounds = new ArrayList<Round>();
   //balloons = new ArrayList<Bloons>();
   monkeys = new ArrayList<Monkeys>();
-  int w = p.width;
-  int h = p.height;
   size(826, 532);
   fill(0, 0, 0);
   textSize(36);
@@ -112,16 +120,6 @@ void setup() {
     Round temp = new Round(i, map);
     rounds.add(temp);
   }
-  /*balloon = new Bloons(4,map);
-   balloons.add(balloon);
-   balloon = new Bloons(3,map);
-   balloons.add(balloon);
-   balloon = new Bloons(2,map);
-   balloons.add(balloon);
-   balloon = new Bloons(1,map);
-   balloons.add(balloon);*/
-  //path starts at 0,205
-  //each tile is 40 w and h
 }
 void draw() {
   if (mouseX >= 660 && mouseX <= 730 && mouseY >= 110 && mouseY <= 170) {
@@ -187,12 +185,6 @@ void draw() {
         }
     }
   }
-  /*for (Bloons b: balloons) {
-   if (b.exists){
-   b.move();
-   b.display();
-   }
-   }*/
 }
 
 void moveBloon() {

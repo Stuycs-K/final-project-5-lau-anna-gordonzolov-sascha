@@ -63,6 +63,9 @@ Too sick to work :(
 ### date 6/6
 Made the path start earlier so that it actually looks like the bloons come from somewhere instead of instantly spawning! (I think? Maybe it's a placebo??) You can now no longer place monkeys on path blocks, and added sketches of functions for the map to look different (red/grey) when a monkey can or can not be placed. 
 
+### date 6/7
+Trying to rewrite the rounds class but its ending up looking like a bigger job then I was anticipating -- should work out soon though!
+
 ## Anna Lau
 
 ### date 5/22
@@ -112,3 +115,6 @@ Changed the dart for tackshooter.
 
 ### date 6/6
 Changed the Bloon constructor and the level down method to accomodate more Bloon levels later on.
+
+### date 6/7
+Added new Bloon types and added a popping sound effect.
