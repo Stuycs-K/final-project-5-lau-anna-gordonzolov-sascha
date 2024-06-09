@@ -92,6 +92,14 @@ void mouseClicked() {
         selected = !selected;
       }
     }
+    //rect(660,180,70,80,10);
+    else if (mouseX >= 660 && mouseX <= 730 && mouseY >= 180 && mouseY <= 260) {
+      if (map.getMoney() >= 425) {
+        monk = new IceMonkey(mouseX, mouseY, map);
+        monk.changeSel();
+        selected = !selected;
+      }
+    }
   }
   else if (selected && map.canPlace(mouseX, mouseY)) {
     monk.setCor(mouseX, mouseY);

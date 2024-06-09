@@ -199,6 +199,26 @@ public class Map{
     } 
     fill(255);
     text("$", 755,155);
+    fill(#89CFF0);
+    rect(660,180,70,80,10);
+    d = loadImage("sIce.png");
+    image(d,675,190);
+    textSize(20);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text(425,685+x,255);
+        text(425, 685,255+x);
+    } 
+    fill(255);
+    text(425, 685,255);
+    textSize(16);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text("$", 675+x,255);
+        text("$", 675,255+x);
+    } 
+    fill(255);
+    text("$", 675,255);
     stroke(#556915);
     fill(#71E709);
     rect(660,410,156,100,10);
@@ -213,46 +233,46 @@ public class Map{
     if (clicked) {
       stroke(#556915);
       fill(#71E709);
-      rect(660,300,156,100,10);
+      rect(660,295,156,100,10);
       d = loadImage("upgrade.png");
-      image(d,700,330);
+      image(d,700,325);
       textSize(18);
       fill(0,0,0);
       for(int x = -1; x < 2; x++){
-          text("LARGER RADIUS", 665+x,325);
-          text("LARGER RADIUS", 665,325+x);
+          text("LARGER RADIUS", 665+x,320);
+          text("LARGER RADIUS", 665,320+x);
       } 
       fill(255);
-      text("LARGER RADIUS", 665,325);
+      text("LARGER RADIUS", 665,320);
       textSize(20);
       fill(0,0,0);
       for(int x = -1; x < 2; x++){
-          text(150, 730+x,395);
-          text(150, 730,395+x);
+          text(150, 730+x,390);
+          text(150, 730,390+x);
       } 
       fill(255);
-      text(150, 730,395);
+      text(150, 730,390);
       textSize(16);
       fill(0,0,0);
       for(int x = -1; x < 2; x++){
-          text("$", 720+x,395);
-          text("$", 720,395+x);
+          text("$", 720+x,390);
+          text("$", 720,390+x);
       } 
       fill(255);
-      text("$", 720,395);
+      text("$", 720,390);
       stroke(#556915);
       fill(#71E709);
-      rect(660,190,156,100,10);
+      rect(660,180,156,100,10);
       d = loadImage("sell.png");
-      image(d,700,220);
+      image(d,700,210);
       textSize(18);
       fill(0,0,0);
       for(int x = -1; x < 2; x++){
-          text("SELL", 715+x,215);
-          text("SELL", 715,215+x);
+          text("SELL", 715+x,205);
+          text("SELL", 715,205+x);
       } 
       fill(255);
-      text("SELL", 715,215);
+      text("SELL", 715,205);
     }
   }
   public void displayMoney(){
