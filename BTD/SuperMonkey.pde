@@ -153,6 +153,6 @@ class SuperMonkey extends Monkeys{
     rotate(0.5);
   }
   public int type() {
-    return 1;
+    return 4;
   }
 }

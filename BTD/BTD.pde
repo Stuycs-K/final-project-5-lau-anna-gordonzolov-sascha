@@ -211,8 +211,11 @@ void draw() {
               m.attack(b);
               break;
             }
+            if (m.type() == 3 && m.getHas() == rounds.get(curr).getIn().indexOf(bb) * 1000 + bb.indexOf(b)){
+              m.attack(b);
+            }
             if (m.getAtt()) {
-              if (m.type() == 1) {
+              if (m.type() == 1 || m.type() == 4) {
                 if (m.getDart().fly(m, m.getBlon())) {
                   pop.play();
                 }

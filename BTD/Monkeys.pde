@@ -9,6 +9,7 @@ abstract class Monkeys{
   private PVector pos;
   private boolean isSelected;
   private PImage sprite;
+  private int has;
   private boolean displayRad;
   private int timer;
   private Bloons bloon;
@@ -32,6 +33,12 @@ abstract class Monkeys{
   }
   public int countUpgrades() {
     return 0;
+  }
+  public int getHas(){
+    return has;
+  }
+  public void setHas(int num){
+    has = num;
   }
   public boolean getUpgrade() {
     return true;
