@@ -60,6 +60,11 @@ void mouseClicked() {
       m.changeDisplayRad();
       clicked = !clicked;
     }
+    else if (m.getDisplayRad()){
+      m.changeUpgrade();
+      m.changeDisplayRad();
+      clicked = !clicked;
+    }
     if (m.getUpgrade()) {
     //rect(660,300,156,100,10);
     if (mouseX >= 660 && mouseX <= 816 && mouseY >= 300 && mouseY <= 400) {
