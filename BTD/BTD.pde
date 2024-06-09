@@ -107,6 +107,14 @@ void mouseClicked() {
         selected = !selected;
       }
     }
+    //rect(745,180,70,80,10);
+    else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 180 && mouseY <= 260) {
+      if (map.getMoney() >= 230){
+        monk = new GlueGun(mouseX, mouseY, map);
+        monk.changeSel();
+        selected = !selected;
+      }
+    }
   }
   else if (selected && map.canPlace(mouseX, mouseY)) {
     monk.setCor(mouseX, mouseY);
