@@ -163,17 +163,17 @@ void setup() {
   }
 }
 void draw() {
-  if (mouseX >= 660 && mouseX <= 730 && mouseY >= 110 && mouseY <= 170) {
+  if (mouseX >= 660 && mouseX <= 730 && mouseY >= 80 && mouseY <= 160) {
     map.changeTitle("DART MONKEY",18);
   }
-  else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 110 && mouseY <= 170) {
+  else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 80 && mouseY <= 160) {
     map.changeTitle("TACK SHOOTER",18);
   }
-  else if (mouseX >= 660 && mouseX <= 730 && mouseY >= 210 && mouseY <= 270) {
-    map.changeTitle("SNIPER  MONKEY",18);
+  else if (mouseX >= 660 && mouseX <= 730 && mouseY >= 180 && mouseY <= 260) {
+    map.changeTitle("SNIPER MONKEY",17);
   }
-  else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 210 && mouseY <= 270) {
-    map.changeTitle("SUPER  MONKEY",18);
+  else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 180 && mouseY <= 260) {
+    map.changeTitle("SUPER MONKEY",17);
   }
   else {
     map.changeTitle("TOWERS",20);
@@ -215,7 +215,7 @@ void draw() {
               m.attack(b);
             }
             if (m.getAtt()) {
-              if (m.type() == 1 || m.type() == 4) {
+              if (m.type() == 1 || m.type() == 3||m.type() == 4) {
                 if (m.getDart().fly(m, m.getBlon())) {
                   pop.play();
                 }

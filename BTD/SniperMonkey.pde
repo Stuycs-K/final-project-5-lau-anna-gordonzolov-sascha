@@ -22,7 +22,7 @@ class SniperMonkey extends Monkeys{
   private PImage sprite;
   private Map m;
   private int has;
-  float angle = 0;
+  float angle = 3 * PI/2;
   boolean upgrade;
   int upgrades;
   public SniperMonkey(int x, int y, Map map){
@@ -38,10 +38,10 @@ class SniperMonkey extends Monkeys{
     minY = y - 20.5;
     maxX = x + 20.5;
     maxY = y + 20.5;
-    sprite = loadImage("DartMonkey.png");
+    sprite = loadImage("sniper.png");
     pos = new PVector(x,y);
     isSelected = false;
-    diameter = 80;
+    diameter = 120;
     cost = 300;
   }
   public int getCost() {
@@ -117,16 +117,13 @@ class SniperMonkey extends Monkeys{
     upgrade = !upgrade;
   }
   public void attack(Bloons b){
+    d = new Dart(pos.x, pos.y, m, 1, 0);
     if (timer % 200 == 0){
-      /*if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
-        if (b.getLevel() > 1) {
-          b.levelDown();
-        }
-      }*/
       att = true;
-      PVector dir = PVector.sub(pos,b.getPos());
-      angle += 2 * PI -  dir.heading();
-      b.levelDown();
+      PVector dir = PVector.sub(b.getPos(), pos);
+      angle = dir.heading();
+      bloon = b.getPos();
+      blon = b;
     }
     timer ++;
   }

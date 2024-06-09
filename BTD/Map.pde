@@ -203,46 +203,46 @@ public class Map{
     text("$", 755,155);
     //sniper
     fill(#89CFF0);
-    rect(660,180,70,80,10);
-    d = loadImage("sDartMonkey.png");
-    image(d,680,182);
+    rect(660,190,70,80,10);
+    d = loadImage("sSniper.png");
+    image(d,680,192);
     textSize(20);
     fill(0,0,0);
     for(int x = -1; x < 2; x++){
-        text(200, 685+x,255);
-        text(200, 685,255+x);
+        text(300, 685+x,265);
+        text(300, 685,265+x);
     } 
     fill(255);
-    text(200, 685,255);
+    text(300, 685,265);
     textSize(16);
     fill(0,0,0);
     for(int x = -1; x < 2; x++){
-        text("$", 675+x,255);
-        text("$", 675,255+x);
+        text("$", 675+x,265);
+        text("$", 675,265+x);
     } 
     fill(255);
-    text("$", 675,255);
+    text("$", 675,265);
     //super
     fill(#89CFF0);
-    rect(745,180,70,80,10);
-    d = loadImage("sDartMonkey.png");
-    image(d,765,182);
+    rect(745,190,70,80,10);
+    d = loadImage("sSuper.png");
+    image(d,765,202);
     textSize(20);
     fill(0,0,0);
     for(int x = -1; x < 2; x++){
-        text(280, 765+x,255);
-        text(280, 765,255+x);
+        text("2,125", 760+x,265);
+        text("2,125", 760,265+x);
     } 
     fill(255);
-    text(280, 765,255);
+    text("2,125", 760,265);
     textSize(16);
     fill(0,0,0);
     for(int x = -1; x < 2; x++){
-        text("$", 755+x,255);
-        text("$", 755,255+x);
+        text("$", 750+x,265);
+        text("$", 750,265+x);
     } 
     fill(255);
-    text("$", 755,255);
+    text("$", 750,265);
     //start
     stroke(#556915);
     fill(#71E709);
