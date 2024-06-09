@@ -1,4 +1,4 @@
-class GlueGun extends Monkeys{
+class SuperMonkey extends Monkeys{
   private int cost;
   private int sell;
   private int size;
@@ -23,7 +23,7 @@ class GlueGun extends Monkeys{
   float angle = 0;
   boolean upgrade;
   int upgrades;
-  public GlueGun(int x, int y, Map map){
+  public SuperMonkey(int x, int y, Map map){
     upgrade = false;
     m = map;
     timer = 0;
@@ -34,11 +34,11 @@ class GlueGun extends Monkeys{
     minY = y - 20.5;
     maxX = x + 20.5;
     maxY = y + 20.5;
-    sprite = loadImage("glue.png");
+    sprite = loadImage("DartMonkey.png");
     pos = new PVector(x,y);
     isSelected = false;
     diameter = 200;
-    cost = 230;
+    cost = 300;
   }
   public int getCost() {
     return cost;
@@ -106,7 +106,7 @@ class GlueGun extends Monkeys{
     upgrade = !upgrade;
   }
   public void attack(Bloons b){
-    d = new Dart(pos.x,pos.y,m,3,0);
+    d = new Dart(pos.x,pos.y,m,1,0);
     if (timer == 0){
       /*if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
         if (b.getLevel() > 1) {
@@ -155,6 +155,6 @@ class GlueGun extends Monkeys{
     rotate(0.5);
   }
   public int type() {
-    return 3;
+    return 1;
   }
 }

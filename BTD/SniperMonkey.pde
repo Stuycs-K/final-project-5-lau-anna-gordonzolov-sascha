@@ -1,4 +1,4 @@
-class IceMonkey extends Monkeys{
+class SniperMonkey extends Monkeys{
   private int cost;
   private int sell;
   private int size;
@@ -23,7 +23,7 @@ class IceMonkey extends Monkeys{
   float angle = 0;
   boolean upgrade;
   int upgrades;
-  public IceMonkey(int x, int y, Map map){
+  public SniperMonkey(int x, int y, Map map){
     upgrade = false;
     m = map;
     timer = 0;
@@ -34,11 +34,11 @@ class IceMonkey extends Monkeys{
     minY = y - 20.5;
     maxX = x + 20.5;
     maxY = y + 20.5;
-    sprite = loadImage("ice.png");
+    sprite = loadImage("DartMonkey.png");
     pos = new PVector(x,y);
     isSelected = false;
     diameter = 200;
-    cost = 425;
+    cost = 300;
   }
   public int getCost() {
     return cost;
