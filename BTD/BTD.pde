@@ -71,7 +71,7 @@ void mouseClicked() {
       }
       //rect(660,190,156,100,10);
       else if (mouseX >= 660 && mouseX <= 816 && mouseY >= 190 && mouseY <= 290) {
-        map.addMoney(m.getCost() + m.countUpgrades() * 150);
+        map.addMoney((int) ((m.getCost() + m.countUpgrades() * 150) * 0.7));
         monkeys.remove(m);
         clicked = !clicked;
       }
