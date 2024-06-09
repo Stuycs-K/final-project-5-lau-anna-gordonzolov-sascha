@@ -3,8 +3,6 @@ public class Bloons{
   float velo; 
   int value;
   boolean exists;
-  Block curr;
-  Block next;
   PVector pos;
   PImage balloon;
   Map m;
@@ -12,37 +10,66 @@ public class Bloons{
   int pathBlock;
   int turns;
   private int timer;
+  private float angle = 0;
+  private int hits;
   String[] sprites = new String[]{"red","blue","green","yellow","pink","black","white","camo","purple","lead","zebra","rainbow","ceramic","moab"};
   //in BTD, call this with (0,205);
   public Bloons(int level, Map map){
     exists = false;
     int pathBlock = 0;
     turns = 0;
-    if (level > 0 && level < 5) {
-      this.level = level;
+    this.level = level;
+    balloon = loadImage(sprites[level-1] + ".png");
+    if (level <= 5) {
+      value = level;
+      hits = 1;
+      velo = 2.5 + 0.5 * (level - 1);
     }
-    if (level <= 4){
-      balloon = loadImage(sprites[level-1] + ".png");
+    else if (level > 5 && level <= 9) {
+      value = 11;
+      hits = 1;
+      velo = 2;
     }
-    else{
-      balloon = loadImage(sprites[4] + ".png");
+    else if (level == 10 || level == 11) {
+      value = 23;
+      hits = 1;
+      velo = 1.5;
     }
-    velo = 2.5 + 0.5 * (level - 1);
-    value = level;
+    else if (level == 12) {
+      value = 47;
+      hits = 1;
+      velo = 2;
+    }
+    else if (level == 13) {
+      value = 104;
+      hits = 10;
+      velo = 2.5;
+    }
+    else if (level == 14) {
+      value = 616;
+      hits = 200;
+      velo = 1;
+    }
     m = map;
     pos = new PVector(0, 204);
-    curr = path.get(pathBlock);
-    next = path.get(pathBlock+1);
   }
-  public Block getCurr(){
-    return curr;
-  }
-  public Block getNext(){
-    return next;
+  public Bloons(int level, Map map, float x, float y) {
+    this(level,map);
+    pos = new PVector(x,y);
   }
   public void display() {
-    //this should be fine? no clue why there are afterimages
-    image(balloon,pos.x,pos.y);
+    if (level == 14) {
+      pushMatrix();
+      imageMode(CENTER);
+      translate(pos.x, pos.y+10);
+      rotate(-angle);
+      image(balloon, 0, 0);
+      imageMode(CORNER);
+      popMatrix();
+    }
+    else {
+      image(balloon,pos.x,pos.y);
+    }
   }
   public int getValue() {
     return value; //each pop is $1
@@ -58,6 +85,7 @@ public class Bloons{
       pos.y += dir.y * velo;
       if (around(pos.x,turningpt.get(turns).getX()) && around(pos.y,turningpt.get(turns).getY())) {
         turns++;
+        angle += PI/2;
       }
     }
     else if (pos.y <= 550){
@@ -71,9 +99,36 @@ public class Bloons{
     level = l;
     if (level >= 1) {
       balloon = loadImage(sprites[level-1] + ".png");
-      velo = 2.5 + 0.5 * (level - 1);
-      value = level;
-      m = map;
+      if (level <= 5) {
+        value = level;
+        hits = 1;
+        velo = 2.5 + 0.5 * (level - 1);
+      }
+      else if (level > 5 && level <= 9) {
+        value = 11;
+        hits = 1;
+        velo = 2;
+      }
+      else if (level == 10 || level == 11) {
+        value = 23;
+        hits = 1;
+        velo = 1.5;
+      }
+      else if (level == 12) {
+        value = 47;
+        hits = 1;
+        velo = 2;
+      }
+      else if (level == 13) {
+        value = 104;
+        hits = 10;
+        velo = 2.5;
+      }
+      else if (level == 14) {
+        value = 616;
+        hits = 200;
+        velo = 1;
+      }
     }
     else {
       exists = false;
@@ -81,9 +136,44 @@ public class Bloons{
       pos.y = 1000;
     }
   }
-  public void levelDown(){
-    this.level(level - 1);
+  public void levelDown(Round r){
+    if (level <= 5) {
+      this.level(level - 1);
+    }
+    else if (level >=6 && level <=9) {
+      this.level(5);
+      r.getIn().get(0).add(new Bloons(5,m,pos.x,pos.y));
+    }
+    else if (level == 10) {
+      this.level(6);
+      r.getIn().get(0).add(new Bloons(6,m,pos.x,pos.y));
+    }
+    else if (level == 11) {
+      this.level(6);
+      r.getIn().get(0).add(new Bloons(7,m,pos.x,pos.y));
+    }
+    else if (level == 12) {
+      this.level(11);
+      r.getIn().get(0).add(new Bloons(11,m,pos.x,pos.y));
+    }
+    else if (level == 13) {
+      this.level(12);
+      r.getIn().get(0).add(new Bloons(12,m,pos.x,pos.y));
+    }
+    else if (level == 14) {
+      this.level(13);
+      r.getIn().get(0).add(new Bloons(13,m,pos.x,pos.y));
+      r.getIn().get(0).add(new Bloons(13,m,pos.x,pos.y));
+      r.getIn().get(0).add(new Bloons(13,m,pos.x,pos.y));
+    }
     //remove this balloon and replace it with a lower level at the same position
+  }
+  public void hit() {
+    hits --;
+    if (hits == 0) {
+      levelDown(rounds.get(curr));
+      m.addMoney(value);
+    }
   }
   public void exist(){
     exists = true;
