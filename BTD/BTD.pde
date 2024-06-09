@@ -205,7 +205,8 @@ void draw() {
       m.displayRad();
     }
     for (ArrayList<Bloons> bb : rounds.get(curr).getIn()){
-        for (Bloons b : bb){
+        for (int i = 0; i < bb.size(); i++){
+          Bloons b = bb.get(i);
           if (b.doesExist()) {
             if (m.isInRad(b) && !m.getAtt()) {
               m.attack(b);
@@ -242,6 +243,7 @@ void draw() {
     }
   }
   if (won) {
+    monkeys = new ArrayList<Monkeys>();
       PImage win = loadImage("victory.png");
       image(win,160,100);
       stroke(#556915);
@@ -257,6 +259,7 @@ void draw() {
       text("RESTART", 345,255);
     }
     if (lost) {
+      monkeys = new ArrayList<Monkeys>();
       PImage lose = loadImage("defeat.png");
       image(lose,250,10);
       stroke(#556915);

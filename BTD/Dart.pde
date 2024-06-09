@@ -34,12 +34,9 @@ public class Dart {
   public void display() {
     image(sprite,pos.x,pos.y);
   }
-  public void pop(Bloons balloon) {
-  }
   public boolean fly(Monkeys mon, Bloons bloon) {
     if (pos.x < bloon.getPos().x + 12 && pos.x > bloon.getPos().x - 12 && pos.y < bloon.getPos().y + 20.5 && pos.y > bloon.getPos().y - 20.5){
-      m.addMoney(bloon.getValue());
-      bloon.levelDown();
+      bloon.hit();
       mon.setAtt();
       popped = true;
     }
@@ -55,13 +52,12 @@ public class Dart {
   }
   public boolean fly(Monkeys mon, Bloons bloon, int n) {
     if (pos.x < bloon.getPos().x + 12 && pos.x > bloon.getPos().x - 12 && pos.y < bloon.getPos().y + 20.5 && pos.y > bloon.getPos().y - 20.5){
-      m.addMoney(bloon.getValue());
       if (bloon.getLevel() == 1) {
-        bloon.levelDown();
+        bloon.hit();
       }
       else {
-        bloon.levelDown();
-        bloon.levelDown();
+        bloon.hit();
+        bloon.hit();
       }
       mon.setAtt();
       popped = true;
@@ -78,8 +74,7 @@ public class Dart {
   }
   public boolean fly(Bloons bloon, Monkeys mon, int n, float x, float y) {
     if (pos.x < bloon.getPos().x + 12 && pos.x > bloon.getPos().x - 12 && pos.y < bloon.getPos().y + 20.5 && pos.y > bloon.getPos().y - 20.5){
-      m.addMoney(1);
-      bloon.levelDown();
+      bloon.hit();
       mon.setAtt();
       popped = true;
     }
