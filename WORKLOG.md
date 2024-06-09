@@ -66,6 +66,9 @@ Made the path start earlier so that it actually looks like the bloons come from 
 ### date 6/7
 Trying to rewrite the rounds class but its ending up looking like a bigger job then I was anticipating -- should work out soon though!
 
+### date 6/8
+Productive day! I made 20 full rounds mimicking the rounds of the real game -- the system implemented yesterday helped significantly. Now when monkeys are selected to place you can tell by a red or grey radius whether or not the monkey can be placed. Started making a super and sniper monkey! Super is done, sniper is close. 
+
 ## Anna Lau
 
 ### date 5/22
