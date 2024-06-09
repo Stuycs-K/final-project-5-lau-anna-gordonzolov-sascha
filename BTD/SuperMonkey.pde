@@ -20,7 +20,7 @@ class SuperMonkey extends Monkeys{
   private boolean isSelected;
   private PImage sprite;
   private Map m;
-  float angle = 0;
+  float angle = 3 * PI /2;
   boolean upgrade;
   int upgrades;
   public SuperMonkey(int x, int y, Map map){
@@ -34,7 +34,7 @@ class SuperMonkey extends Monkeys{
     minY = y - 20.5;
     maxX = x + 20.5;
     maxY = y + 20.5;
-    sprite = loadImage("DartMonkey.png");
+    sprite = loadImage("super.png");
     pos = new PVector(x,y);
     isSelected = false;
     diameter = 300;
@@ -107,16 +107,11 @@ class SuperMonkey extends Monkeys{
     upgrade = !upgrade;
   }
   public void attack(Bloons b){
-    d = new Dart(pos.x,pos.y,m,1,0);
+    d = new Dart(pos.x, pos.y, m, 1, 0);
     if (timer % 4 == 0){
-      /*if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
-        if (b.getLevel() > 1) {
-          b.levelDown();
-        }
-      }*/
       att = true;
-      PVector dir = PVector.sub(pos,b.getPos());
-      angle += 2 * PI -  dir.heading();
+      PVector dir = PVector.sub(b.getPos(), pos);
+      angle = dir.heading();
       bloon = b.getPos();
       blon = b;
     }
