@@ -37,7 +37,7 @@ class SuperMonkey extends Monkeys{
     sprite = loadImage("DartMonkey.png");
     pos = new PVector(x,y);
     isSelected = false;
-    diameter = 200;
+    diameter = 300;
     cost = 300;
   }
   public int getCost() {
@@ -108,7 +108,7 @@ class SuperMonkey extends Monkeys{
   }
   public void attack(Bloons b){
     d = new Dart(pos.x,pos.y,m,1,0);
-    if (timer == 0){
+    if (timer % 4 == 0){
       /*if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
         if (b.getLevel() > 1) {
           b.levelDown();
@@ -119,11 +119,8 @@ class SuperMonkey extends Monkeys{
       angle += 2 * PI -  dir.heading();
       bloon = b.getPos();
       blon = b;
-      timer = 40;
     }
-    else{
-      timer --;
-    }
+    timer ++;
   }
   public String box(){
     return (minX + " " + maxX + " " + minY + " " + maxY);
@@ -156,6 +153,6 @@ class SuperMonkey extends Monkeys{
     rotate(0.5);
   }
   public int type() {
-    return 1;
+    return 4;
   }
 }

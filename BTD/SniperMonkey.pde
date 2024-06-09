@@ -17,13 +17,17 @@ class SniperMonkey extends Monkeys{
   private boolean att;
   private PVector pos;
   private Dart d;
+  private float  range;
   private boolean isSelected;
   private PImage sprite;
   private Map m;
+  private int has;
   float angle = 0;
   boolean upgrade;
   int upgrades;
   public SniperMonkey(int x, int y, Map map){
+    has = -1;
+    range = 1000;
     upgrade = false;
     m = map;
     timer = 0;
@@ -37,7 +41,7 @@ class SniperMonkey extends Monkeys{
     sprite = loadImage("DartMonkey.png");
     pos = new PVector(x,y);
     isSelected = false;
-    diameter = 200;
+    diameter = 80;
     cost = 300;
   }
   public int getCost() {
@@ -75,6 +79,12 @@ class SniperMonkey extends Monkeys{
   public boolean getDisplayRad(){
     return displayRad;
   }
+  public int getHas(){
+    return has;
+  }
+  public void setHas(int num){
+    has = num;
+  }
   public void displayRad(){
     fill(#d3d3d3, 150);
     circle(pos.x, pos.y, diameter);
@@ -107,8 +117,7 @@ class SniperMonkey extends Monkeys{
     upgrade = !upgrade;
   }
   public void attack(Bloons b){
-    d = new Dart(pos.x,pos.y,m,1,0);
-    if (timer == 0){
+    if (timer % 200 == 0){
       /*if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
         if (b.getLevel() > 1) {
           b.levelDown();
@@ -117,13 +126,9 @@ class SniperMonkey extends Monkeys{
       att = true;
       PVector dir = PVector.sub(pos,b.getPos());
       angle += 2 * PI -  dir.heading();
-      bloon = b.getPos();
-      blon = b;
-      timer = 40;
+      b.levelDown();
     }
-    else{
-      timer --;
-    }
+    timer ++;
   }
   public String box(){
     return (minX + " " + maxX + " " + minY + " " + maxY);
@@ -156,6 +161,6 @@ class SniperMonkey extends Monkeys{
     rotate(0.5);
   }
   public int type() {
-    return 1;
+    return 3;
   }
 }

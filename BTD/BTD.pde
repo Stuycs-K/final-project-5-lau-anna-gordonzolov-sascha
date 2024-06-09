@@ -60,7 +60,7 @@ void mouseClicked() {
       m.changeDisplayRad();
       clicked = !clicked;
     }
-    if (m.getUpgrade()) {
+    else if (m.getUpgrade()) {
       //rect(660,300,156,100,10);
       if (mouseX >= 660 && mouseX <= 816 && mouseY >= 300 && mouseY <= 400) {
         if (map.getMoney() >= 150) {
@@ -75,12 +75,12 @@ void mouseClicked() {
         monkeys.remove(m);
         clicked = !clicked;
       }
-    }
-    else if (m.getDisplayRad()){
+      else{
         m.changeUpgrade();
         m.changeDisplayRad();
         clicked = !clicked;
       }
+    }
   }
   if (!selected) {
     if (mouseX >= 660 && mouseX <= 730 && mouseY >= 110 && mouseY <= 170) {
@@ -94,6 +94,22 @@ void mouseClicked() {
     else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 110 && mouseY <= 170) {
       if (map.getMoney() >= 230) {
         monk = new TackShooter(mouseX, mouseY, map);
+        monk.displayRad();
+        monk.changeSel();
+        selected = !selected;
+      }
+    }
+    else if (mouseX >= 660 && mouseX <= 730 && mouseY >= 210 && mouseY <= 270) {
+      if (map.getMoney() >= 230) {
+        monk = new SniperMonkey(mouseX, mouseY, map);
+        monk.displayRad();
+        monk.changeSel();
+        selected = !selected;
+      }
+    }
+    else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 210 && mouseY <= 270) {
+      if (map.getMoney() >= 230) {
+        monk = new SuperMonkey(mouseX, mouseY, map);
         monk.displayRad();
         monk.changeSel();
         selected = !selected;
@@ -153,6 +169,12 @@ void draw() {
   else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 110 && mouseY <= 170) {
     map.changeTitle("TACK SHOOTER",18);
   }
+  else if (mouseX >= 660 && mouseX <= 730 && mouseY >= 210 && mouseY <= 270) {
+    map.changeTitle("SNIPER  MONKEY",18);
+  }
+  else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 210 && mouseY <= 270) {
+    map.changeTitle("SUPER  MONKEY",18);
+  }
   else {
     map.changeTitle("TOWERS",20);
   }
@@ -189,8 +211,11 @@ void draw() {
               m.attack(b);
               break;
             }
+            if (m.type() == 3 && m.getHas() == rounds.get(curr).getIn().indexOf(bb) * 1000 + bb.indexOf(b)){
+              m.attack(b);
+            }
             if (m.getAtt()) {
-              if (m.type() == 1) {
+              if (m.type() == 1 || m.type() == 4) {
                 if (m.getDart().fly(m, m.getBlon())) {
                   pop.play();
                 }
