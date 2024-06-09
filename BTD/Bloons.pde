@@ -58,7 +58,7 @@ public class Bloons{
       pushMatrix();
       imageMode(CENTER);
       translate(pos.x, pos.y+10);
-      rotate(-angle);
+      rotate(angle);
       image(balloon, 0, 0);
       imageMode(CORNER);
       popMatrix();
@@ -77,11 +77,11 @@ public class Bloons{
     if (turns < 12) {
       PVector dir = PVector.sub(turningpt.get(turns).getPos(),pos);
       dir = dir.div(dir.mag());
+      angle =  dir.heading();
       pos.x += dir.x * velo;
       pos.y += dir.y * velo;
       if (around(pos.x,turningpt.get(turns).getX()) && around(pos.y,turningpt.get(turns).getY())) {
         turns++;
-        angle += PI/2;
       }
     }
     else if (pos.y <= 550){

@@ -27,14 +27,8 @@ public class Block {
   public float getY() {
     return pos.y;
   }
-  public void highlight() {
-    //make the borders white
-  }
   public String toString() {
     return "(" + pos.x + ", " + pos.y + ")";
-  }
-  public void setFill(color c) {
-    fill(c);
   }
   public PVector getPos() {
     return pos;
