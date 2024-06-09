@@ -153,6 +153,9 @@ void draw() {
   else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 110 && mouseY <= 170) {
     map.changeTitle("TACK SHOOTER",18);
   }
+  else {
+    map.changeTitle("TOWERS",20);
+  }
   if (map.getLives() == 0){
     lost = true;
   }

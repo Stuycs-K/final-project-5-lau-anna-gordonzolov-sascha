@@ -20,7 +20,7 @@ class DartMonkey extends Monkeys {
   private boolean isSelected;
   private PImage sprite;
   private Map m;
-  float angle = 0;
+  float angle = 3 * PI/2;
   boolean upgrade;
   int upgrades;
   public DartMonkey(int x, int y, Map map) {
