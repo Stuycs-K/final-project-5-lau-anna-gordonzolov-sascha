@@ -53,6 +53,29 @@ public class Dart {
     pos.y += move.y * speed;
     return popped;
   }
+  public boolean fly(Monkeys mon, Bloons bloon, int n) {
+    if (pos.x < bloon.getPos().x + 12 && pos.x > bloon.getPos().x - 12 && pos.y < bloon.getPos().y + 20.5 && pos.y > bloon.getPos().y - 20.5){
+      m.addMoney(bloon.getValue());
+      if (bloon.getLevel() == 1) {
+        bloon.levelDown();
+      }
+      else {
+        bloon.levelDown();
+        bloon.levelDown();
+      }
+      mon.setAtt();
+      popped = true;
+    }
+    else {
+      popped = false;
+    }
+    this.display();
+    PVector dist = PVector.sub(bloon.getPos(),mon.getPos());
+    PVector move = dist.div(dist.mag());
+    pos.x += move.x * speed;
+    pos.y += move.y * speed;
+    return popped;
+  }
   public boolean fly(Bloons bloon, Monkeys mon) {
     if (pos.x < bloon.getPos().x + 12 && pos.x > bloon.getPos().x - 12 && pos.y < bloon.getPos().y + 20.5 && pos.y > bloon.getPos().y - 20.5){
       //m.addMoney(bloon.getValue());

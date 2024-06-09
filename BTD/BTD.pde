@@ -215,7 +215,7 @@ void draw() {
               m.attack(b);
             }
             if (m.getAtt()) {
-              if (m.type() == 1 || m.type() == 3||m.type() == 4) {
+              if (m.type() == 1 || m.type() == 4) {
                 if (m.getDart().fly(m, m.getBlon())) {
                   pop.play();
                 }
@@ -231,6 +231,10 @@ void draw() {
                   pop.play();
                 }
                 m.display();
+              } else if (m.type() == 3) {
+                if (m.getDart().fly(m, m.getBlon(),1)) {
+                  pop.play();
+                }
               }
             }
           }
