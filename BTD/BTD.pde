@@ -61,33 +61,40 @@ void mouseClicked() {
       clicked = !clicked;
     }
     if (m.getUpgrade()) {
-    //rect(660,300,156,100,10);
-    if (mouseX >= 660 && mouseX <= 816 && mouseY >= 300 && mouseY <= 400) {
-      if (map.getMoney() >= 150) {
-        m.addRad(15);
-        m.addUpgrade();
-        map.subMoney(150);
+      //rect(660,300,156,100,10);
+      if (mouseX >= 660 && mouseX <= 816 && mouseY >= 300 && mouseY <= 400) {
+        if (map.getMoney() >= 150) {
+          m.addRad(15);
+          m.addUpgrade();
+          map.subMoney(150);
+        }
+      }
+      //rect(660,190,156,100,10);
+      else if (mouseX >= 660 && mouseX <= 816 && mouseY >= 190 && mouseY <= 290) {
+        map.addMoney((int) ((m.getCost() + m.countUpgrades() * 150) * 0.7));
+        monkeys.remove(m);
+        clicked = !clicked;
       }
     }
-    //rect(660,190,156,100,10);
-    if (mouseX >= 660 && mouseX <= 816 && mouseY >= 190 && mouseY <= 290) {
-      map.addMoney(m.getCost() + m.countUpgrades() * 150);
-      monkeys.remove(m);
-      clicked = !clicked;
-    }
-  }
+    else if (m.getDisplayRad()){
+        m.changeUpgrade();
+        m.changeDisplayRad();
+        clicked = !clicked;
+      }
   }
   if (!selected) {
     if (mouseX >= 660 && mouseX <= 730 && mouseY >= 110 && mouseY <= 170) {
       if (map.getMoney() >= 200) {
         monk = new DartMonkey(mouseX, mouseY, map);
         monk.changeSel();
+        monk.displayRad();
         selected = !selected;
       }
     }
     else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 110 && mouseY <= 170) {
       if (map.getMoney() >= 230) {
         monk = new TackShooter(mouseX, mouseY, map);
+        monk.displayRad();
         monk.changeSel();
         selected = !selected;
       }
@@ -167,6 +174,12 @@ void draw() {
   }
   if (monk != null) {
     monk.display();
+    if (map.canPlace(mouseX, mouseY)){
+      monk.displayRad();
+    }
+    else{
+      monk.displayRadRed();
+    }
     monk.move();
   }
   for (Monkeys m : monkeys) {
