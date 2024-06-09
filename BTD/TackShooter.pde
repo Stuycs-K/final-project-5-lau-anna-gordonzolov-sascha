@@ -100,7 +100,7 @@ class TackShooter extends Monkeys{
     diameter += 2*n;
   }
   public void attack(Bloons b){
-    if (timer == 0){
+    if (timer % 55 == 0){
       d = new Dart[8];
       d[0] = new Dart(pos.x+5,pos.y-10.75+5,map, 2,0);
       d[1] = new Dart(pos.x-21.5/4+5,pos.y-21.5*0.75+5,map, 2,1);
@@ -118,11 +118,8 @@ class TackShooter extends Monkeys{
       att = true;
       bloon = b.getPos();
       blon = b;
-      timer = 20;
     }
-    else{
-      timer --;
-    }
+     timer ++;
   }
   public boolean around(float n1, float n2) {
     return Math.abs(n1-n2) <= 4;

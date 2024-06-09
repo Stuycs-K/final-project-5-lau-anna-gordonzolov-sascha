@@ -108,7 +108,7 @@ class SuperMonkey extends Monkeys{
   }
   public void attack(Bloons b){
     d = new Dart(pos.x,pos.y,m,1,0);
-    if (timer == 0){
+    if (timer % 3 == 0){
       /*if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
         if (b.getLevel() > 1) {
           b.levelDown();
@@ -121,9 +121,7 @@ class SuperMonkey extends Monkeys{
       blon = b;
       timer = 40;
     }
-    else{
-      timer --;
-    }
+    timer ++;
   }
   public String box(){
     return (minX + " " + maxX + " " + minY + " " + maxY);

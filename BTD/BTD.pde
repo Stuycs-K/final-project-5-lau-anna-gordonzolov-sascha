@@ -99,6 +99,22 @@ void mouseClicked() {
         selected = !selected;
       }
     }
+    else if (mouseX >= 660 && mouseX <= 730 && mouseY >= 210 && mouseY <= 270) {
+      if (map.getMoney() >= 230) {
+        monk = new SniperMonkey(mouseX, mouseY, map);
+        monk.displayRad();
+        monk.changeSel();
+        selected = !selected;
+      }
+    }
+    else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 210 && mouseY <= 270) {
+      if (map.getMoney() >= 230) {
+        monk = new SuperMonkey(mouseX, mouseY, map);
+        monk.displayRad();
+        monk.changeSel();
+        selected = !selected;
+      }
+    }
   }
   else if (selected && map.canPlace(mouseX, mouseY)) {
     monk.setCor(mouseX, mouseY);
@@ -152,6 +168,12 @@ void draw() {
   }
   else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 110 && mouseY <= 170) {
     map.changeTitle("TACK SHOOTER",18);
+  }
+  else if (mouseX >= 660 && mouseX <= 730 && mouseY >= 210 && mouseY <= 270) {
+    map.changeTitle("SNIPER  MONKEY",18);
+  }
+  else if (mouseX >= 660 && mouseX <= 730 && mouseY >= 210 && mouseY <= 270) {
+    map.changeTitle("SUPER  MONKEY",18);
   }
   else {
     map.changeTitle("TOWERS",20);

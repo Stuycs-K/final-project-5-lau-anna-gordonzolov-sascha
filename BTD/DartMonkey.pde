@@ -114,9 +114,8 @@ class DartMonkey extends Monkeys {
       angle = dir.heading();
       bloon = b.getPos();
       blon = b;
-    } else {
-      timer ++;
-    }
+    } 
+    timer ++;
   }
   public String box() {
     return (minX + " " + maxX + " " + minY + " " + maxY);
