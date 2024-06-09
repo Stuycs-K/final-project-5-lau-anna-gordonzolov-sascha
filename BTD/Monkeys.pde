@@ -5,7 +5,7 @@ abstract class Monkeys{
   private int v;
   private boolean att;
   private int strength;
-  private int radius;
+  private int diameter;
   private PVector pos;
   private boolean isSelected;
   private PImage sprite;
@@ -18,6 +18,7 @@ abstract class Monkeys{
   public void move(){
     if (isSelected) {
       pos = new PVector(mouseX,mouseY);
+      monk.displayRad();
     }
   }
   public void changeUpgrade() {
@@ -36,13 +37,13 @@ abstract class Monkeys{
     return true;
   }
   public float getRad() {
-    return radius/2;
+    return diameter/2;
   }
   public PVector getPos() {
     return pos;
   }
   public boolean isInRad(Bloons b){
-    return (b.getPos().dist(this.pos) < this.radius);
+    return (b.getPos().dist(this.pos) < this.diameter/2);
   }
   public Bloons getBlon(){
     return bloon;
@@ -60,6 +61,9 @@ abstract class Monkeys{
   public void display(){
   }
   public void displayRad(){
+    fill(#d3d3d3, 150);
+    circle(pos.x, pos.y, diameter);
+    this.display();
   }
   public void displayRadRed(){
   }
