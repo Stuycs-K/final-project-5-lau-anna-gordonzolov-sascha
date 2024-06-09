@@ -172,7 +172,7 @@ void draw() {
   else if (mouseX >= 660 && mouseX <= 730 && mouseY >= 210 && mouseY <= 270) {
     map.changeTitle("SNIPER  MONKEY",18);
   }
-  else if (mouseX >= 660 && mouseX <= 730 && mouseY >= 210 && mouseY <= 270) {
+  else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 210 && mouseY <= 270) {
     map.changeTitle("SUPER  MONKEY",18);
   }
   else {
