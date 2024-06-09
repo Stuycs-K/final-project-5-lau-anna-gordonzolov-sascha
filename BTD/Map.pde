@@ -227,19 +227,19 @@ public class Map{
     textSize(20);
     fill(0,0,0);
     for(int x = -1; x < 2; x++){
-        text("2,125", 760+x,265);
-        text("2,125", 760,265+x);
+        text(800, 765+x,265);
+        text(800, 765,265+x);
     } 
     fill(255);
-    text("2,125", 760,265);
+    text(800, 765,265);
     textSize(16);
     fill(0,0,0);
     for(int x = -1; x < 2; x++){
-        text("$", 750+x,265);
-        text("$", 750,265+x);
+        text("$", 755+x,265);
+        text("$", 755,265+x);
     } 
     fill(255);
-    text("$", 750,265);
+    text("$", 755 ,265);
     //ninja
     fill(#89CFF0);
     rect(660,300,70,80,10);

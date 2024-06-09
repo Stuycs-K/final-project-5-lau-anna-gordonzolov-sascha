@@ -108,7 +108,7 @@ void mouseClicked() {
       }
     }
     else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 190 && mouseY <= 270) {
-      if (map.getMoney() >= 2125) {
+      if (map.getMoney() >= 800) {
         monk = new SuperMonkey(mouseX, mouseY, map);
         monk.displayRad();
         monk.changeSel();
