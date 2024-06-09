@@ -5,6 +5,7 @@ public class Dart {
   private float ogX;
   private float ogY;
   private boolean popped = false;
+  private float angle;
   public Dart(float x, float y, Map map, int type, int num) {
     if (type == 1) {
       speed = 15;
@@ -29,7 +30,13 @@ public class Dart {
     return ogY;
   }
   public void display() {
-    image(sprite,pos.x,pos.y);
+    pushMatrix();
+    imageMode(CENTER);
+    translate(pos.x, pos.y);
+    rotate(angle);
+    image(sprite, 0, 0);
+    imageMode(CORNER);
+    popMatrix();
   }
   public boolean fly(Monkeys mon, Bloons bloon) {
     if (pos.x < bloon.getPos().x + 12 && pos.x > bloon.getPos().x - 12 && pos.y < bloon.getPos().y + 20.5 && pos.y > bloon.getPos().y - 20.5){
@@ -42,6 +49,7 @@ public class Dart {
     }
     this.display();
     PVector dist = PVector.sub(bloon.getPos(),mon.getPos());
+    angle = dist.heading();
     PVector move = dist.div(dist.mag());
     pos.x += move.x * speed;
     pos.y += move.y * speed;
@@ -64,6 +72,7 @@ public class Dart {
     }
     this.display();
     PVector dist = PVector.sub(bloon.getPos(),mon.getPos());
+    angle = dist.heading();
     PVector move = dist.div(dist.mag());
     pos.x += move.x * speed;
     pos.y += move.y * speed;

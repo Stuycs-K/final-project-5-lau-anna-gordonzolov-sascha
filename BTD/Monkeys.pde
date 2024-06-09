@@ -32,8 +32,6 @@ abstract class Monkeys{
   public void changeSel() {
     isSelected = !isSelected;
   }
-  public void dartRotate(){
-  }
   public void addUpgrade() {
   }
   public int countUpgrades() {
