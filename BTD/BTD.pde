@@ -166,7 +166,12 @@ void draw() {
   }
   if (monk != null) {
     monk.display();
-    monk.displayRad();
+    if (map.canPlace(mouseX, mouseY)){
+      monk.displayRad();
+    }
+    else{
+      monk.displayRadRed();
+    }
     monk.move();
   }
   for (Monkeys m : monkeys) {
