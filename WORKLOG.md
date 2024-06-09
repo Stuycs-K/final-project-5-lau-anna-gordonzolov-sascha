@@ -124,3 +124,7 @@ Added new Bloon types and added a popping sound effect.
 
 ### date 6/8
 Created options for upgrading the radius of a Bloon and selling a Bloon. Made the monkeys rotate and started creating new monkey types.
+
+### date 6/9
+Fixed issues with the sniper monkey and super monkey. Created a new ninja monkey and also added the rest of the Bloon types. Unsure how to make one balloon
+spawn multiple. Updated the prototype.
