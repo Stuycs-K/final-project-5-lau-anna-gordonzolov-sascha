@@ -1,4 +1,4 @@
-class DartMonkey extends Monkeys{
+class DartMonkey extends Monkeys {
   private int cost;
   private int sell;
   private int size;
@@ -23,7 +23,7 @@ class DartMonkey extends Monkeys{
   float angle = 0;
   boolean upgrade;
   int upgrades;
-  public DartMonkey(int x, int y, Map map){
+  public DartMonkey(int x, int y, Map map) {
     upgrade = false;
     m = map;
     timer = 0;
@@ -35,7 +35,7 @@ class DartMonkey extends Monkeys{
     maxX = x + 20.5;
     maxY = y + 20.5;
     sprite = loadImage("DartMonkey.png");
-    pos = new PVector(x,y);
+    pos = new PVector(x, y);
     isSelected = false;
     diameter = 200;
     cost = 200;
@@ -47,14 +47,17 @@ class DartMonkey extends Monkeys{
     isSelected = !isSelected;
   }
   public void display() {
-    if (att) {
-      //rotate(PI/2 + angle);
-    }
-    image(sprite,pos.x - 21.5,pos.y - 21.5);
+    pushMatrix();
+    imageMode(CENTER);
+    translate(pos.x, pos.y);
+    rotate(PI/2 + angle);
+    image(sprite, 0, 0);
+    imageMode(CORNER);
+    popMatrix();
   }
-  public void move(){
+  public void move() {
     if (isSelected) {
-      pos = new PVector(mouseX,mouseY);
+      pos = new PVector(mouseX, mouseY);
     }
   }
   public float getRad() {
@@ -69,29 +72,29 @@ class DartMonkey extends Monkeys{
   public int countUpgrades() {
     return upgrades;
   }
-  public boolean getDisplayRad(){
+  public boolean getDisplayRad() {
     return displayRad;
   }
-  public void displayRad(){
+  public void displayRad() {
     fill(#d3d3d3, 150);
     circle(pos.x, pos.y, diameter);
     this.display();
   }
-  public void displayRadRed(){
+  public void displayRadRed() {
     fill(#FF0000, 150);
     circle(pos.x, pos.y, diameter);
     this.display();
   }
-  public void changeDisplayRad(){
+  public void changeDisplayRad() {
     displayRad = !displayRad;
   }
-  public Dart getDart(){
+  public Dart getDart() {
     return d;
   }
-  public PVector getBloon(){
+  public PVector getBloon() {
     return bloon;
   }
-  public Bloons getBlon(){
+  public Bloons getBlon() {
     return blon;
   }
   public boolean isIn(int x, int y) {
@@ -103,53 +106,52 @@ class DartMonkey extends Monkeys{
   public void changeUpgrade() {
     upgrade = !upgrade;
   }
-  public void attack(Bloons b){
-    d = new Dart(pos.x,pos.y,m,1,0);
-    if (timer == 0){
+  public void attack(Bloons b) {
+    d = new Dart(pos.x, pos.y, m, 1, 0);
+    if (timer == 0) {
       /*if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
-        if (b.getLevel() > 1) {
-          b.levelDown();
-        }
-      }*/
+       if (b.getLevel() > 1) {
+       b.levelDown();
+       }
+       }*/
       att = true;
-      PVector dir = PVector.sub(pos,b.getPos());
+      PVector dir = PVector.sub(b.getPos(), pos);
       angle = dir.heading();
       bloon = b.getPos();
       blon = b;
       timer = 40;
-    }
-    else{
+    } else {
       timer --;
     }
   }
-  public String box(){
+  public String box() {
     return (minX + " " + maxX + " " + minY + " " + maxY);
   }
   public boolean around(float n1, float n2) {
     return Math.abs(n1-n2) <= 4;
   }
-  public boolean getAtt(){
+  public boolean getAtt() {
     return att;
   }
-  public void setAtt(){
+  public void setAtt() {
     att = false;
   }
-  public boolean isInRad(Bloons b){
+  public boolean isInRad(Bloons b) {
     return (b.getPos().dist(this.pos) < diameter/2);
   }
-  public void upgrade(){
+  public void upgrade() {
   }
   public PVector getPos() {
     return pos;
   }
-  public void setCor(float x, float y){
+  public void setCor(float x, float y) {
     minX = x - 20.5;
     minY = y - 20.5;
     maxX = x + 20.5;
     maxY = y + 20.5;
-    pos = new PVector(x,y);
+    pos = new PVector(x, y);
   }
-  public void dartRotate(){
+  public void dartRotate() {
     rotate(0.5);
   }
   public int type() {
