@@ -107,7 +107,7 @@
     upgrade = !upgrade;
   }
   public void attack(Bloons b) {
-    d = new Dart(pos.x, pos.y, m, 1, 0);
+    d = new Dart(pos.x, pos.y, m, 3, 0);
     if (timer % 38 == 0) {
       att = true;
       PVector dir = PVector.sub(b.getPos(), pos);
@@ -148,6 +148,6 @@
     rotate(0.5);
   }
   public int type() {
-    return 1;
+    return 5;
   }
 }

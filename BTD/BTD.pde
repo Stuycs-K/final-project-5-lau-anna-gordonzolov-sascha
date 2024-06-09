@@ -41,7 +41,6 @@ void keyPressed() {
 }
 void mouseClicked() {
   if (won || lost) {
-    print("end");
     //rect(310,220,200,50,10);
     if (mouseX >= 310 && mouseX <= 510 && mouseY >= 220 && mouseY <= 270) {
       if (lost) {
@@ -116,7 +115,7 @@ void mouseClicked() {
       }
     }
     //rect(660,290,70,80,10);
-    else if (mouseX >= 660 && mouseX <= 730 && mouseY >= 290 && mouseY >= 370) {
+    else if (mouseX >= 660 && mouseX <= 730 && mouseY >= 290 && mouseY <= 370) {
       if (map.getMoney() >= 340) {
         monk = new NinjaMonkey(mouseX, mouseY, map);
         monk.displayRad();
@@ -219,34 +218,37 @@ void draw() {
     for (ArrayList<Bloons> bb : rounds.get(curr).getIn()){
         for (int i = 0; i < bb.size(); i++){
           Bloons b = bb.get(i);
-          if (b.doesExist() && b.isCamo()) {
-            if (m.isInRad(b) && !m.getAtt()) {
-              m.attack(b);
-              break;
-            }
-            if (m.type() == 3 && m.getHas() == rounds.get(curr).getIn().indexOf(bb) * 1000 + bb.indexOf(b)){
-              m.attack(b);
-            }
-            if (m.getAtt()) {
-              if (m.type() == 1 || m.type() == 4) {
-                if (m.getDart().fly(m, m.getBlon())) {
-                  pop.play();
-                }
-              } else if (m.type() == 2) {
-                if (m.getDart(0).fly(m.getBlon(), m, 0, m.getDart(0).getogX(), m.getDart(0).getogY()) ||
-                m.getDart(1).fly(m.getBlon(), m, 1, m.getDart(1).getogX(), m.getDart(1).getogY())||
-                m.getDart(2).fly(m.getBlon(), m, 2, m.getDart(2).getogX(), m.getDart(2).getogY())||
-                m.getDart(3).fly(m.getBlon(), m, 3, m.getDart(3).getogX(), m.getDart(3).getogY())||
-                m.getDart(4).fly(m.getBlon(), m, 4, m.getDart(4).getogX(), m.getDart(4).getogY())||
-                m.getDart(5).fly(m.getBlon(), m, 5, m.getDart(5).getogX(), m.getDart(5).getogY())||
-                m.getDart(6).fly(m.getBlon(), m, 6, m.getDart(6).getogX(), m.getDart(6).getogY())||
-                m.getDart(7).fly(m.getBlon(), m, 7, m.getDart(7).getogX(), m.getDart(7).getogY())) {
-                  pop.play();
-                }
-                m.display();
-              } else if (m.type() == 3) {
-                if (m.getDart().fly(m, m.getBlon(),1)) {
-                  pop.play();
+          if (b.doesExist()) {
+            if (m.type() == 5 && b.isCamo() || !(m.type() == 5) && !b.isCamo() || (m.type() == 5) && !b.isCamo()) {
+              if (m.isInRad(b) && !m.getAtt()) {
+                m.attack(b);
+                break;
+              }
+              if (m.type() == 3 && m.getHas() == rounds.get(curr).getIn().indexOf(bb) * 1000 + bb.indexOf(b)){
+                m.attack(b);
+              }
+              if (m.getAtt()) {
+                print("att");
+                if (m.type() == 1 || m.type() == 4 || m.type() == 5) {
+                  if (m.getDart().fly(m, m.getBlon())) {
+                    pop.play();
+                  }
+                } else if (m.type() == 2) {
+                  if (m.getDart(0).fly(m.getBlon(), m, 0, m.getDart(0).getogX(), m.getDart(0).getogY()) ||
+                  m.getDart(1).fly(m.getBlon(), m, 1, m.getDart(1).getogX(), m.getDart(1).getogY())||
+                  m.getDart(2).fly(m.getBlon(), m, 2, m.getDart(2).getogX(), m.getDart(2).getogY())||
+                  m.getDart(3).fly(m.getBlon(), m, 3, m.getDart(3).getogX(), m.getDart(3).getogY())||
+                  m.getDart(4).fly(m.getBlon(), m, 4, m.getDart(4).getogX(), m.getDart(4).getogY())||
+                  m.getDart(5).fly(m.getBlon(), m, 5, m.getDart(5).getogX(), m.getDart(5).getogY())||
+                  m.getDart(6).fly(m.getBlon(), m, 6, m.getDart(6).getogX(), m.getDart(6).getogY())||
+                  m.getDart(7).fly(m.getBlon(), m, 7, m.getDart(7).getogX(), m.getDart(7).getogY())) {
+                    pop.play();
+                  }
+                  m.display();
+                } else if (m.type() == 3) {
+                  if (m.getDart().fly(m, m.getBlon(),1)) {
+                    pop.play();
+                  }
                 }
               }
             }

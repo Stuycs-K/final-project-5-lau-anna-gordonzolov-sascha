@@ -43,7 +43,7 @@ public class Round{
       in.set(0, temp1);
       ArrayList<Bloons> temp2 = new ArrayList<Bloons>(5);
       for (int i = 0; i < 5; i++){
-        Bloons b = new Bloons(2, map);
+        Bloons b = new Bloons(8, map);
         temp2.add(b);
       }
       in.set(1, temp2);

@@ -17,8 +17,8 @@ public class Dart {
       sprite = loadImage("nail" + num + ".png");
     }
     else if (type == 3) {
-      speed = 15;
-      sprite = loadImage("glueBall.png");
+      speed = 10;
+      sprite = loadImage("nDart.png");
     }
      pos = new PVector(x,y);
      m = map;
