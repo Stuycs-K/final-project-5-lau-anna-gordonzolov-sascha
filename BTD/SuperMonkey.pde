@@ -38,7 +38,7 @@ class SuperMonkey extends Monkeys{
     pos = new PVector(x,y);
     isSelected = false;
     diameter = 300;
-    cost = 300;
+    cost = 2125;
   }
   public int getCost() {
     return cost;

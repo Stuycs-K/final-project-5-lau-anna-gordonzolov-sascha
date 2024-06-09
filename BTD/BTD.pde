@@ -100,7 +100,7 @@ void mouseClicked() {
       }
     }
     else if (mouseX >= 660 && mouseX <= 730 && mouseY >= 210 && mouseY <= 270) {
-      if (map.getMoney() >= 230) {
+      if (map.getMoney() >= 300) {
         monk = new SniperMonkey(mouseX, mouseY, map);
         monk.displayRad();
         monk.changeSel();
@@ -108,7 +108,7 @@ void mouseClicked() {
       }
     }
     else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 210 && mouseY <= 270) {
-      if (map.getMoney() >= 230) {
+      if (map.getMoney() >= 2125) {
         monk = new SuperMonkey(mouseX, mouseY, map);
         monk.displayRad();
         monk.changeSel();

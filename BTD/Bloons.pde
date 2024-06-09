@@ -12,7 +12,7 @@ public class Bloons{
   int pathBlock;
   int turns;
   private int timer;
-  PImage[] sprites = new PImage[]{loadImage("red.png"), loadImage("blue.png"), loadImage("green.png"), loadImage("yellow.png"), loadImage("pink.png")};
+  String[] sprites = new String[]{"red","blue","green","yellow","pink","black","white","camo","purple","lead","zebra","rainbow","ceramic","moab"};
   //in BTD, call this with (0,205);
   public Bloons(int level, Map map){
     exists = false;
@@ -22,10 +22,10 @@ public class Bloons{
       this.level = level;
     }
     if (level <= 4){
-      balloon = sprites[level-1];
+      balloon = loadImage(sprites[level-1] + ".png");
     }
     else{
-      balloon = sprites[4];
+      balloon = loadImage(sprites[4] + ".png");
     }
     velo = 2.5 + 0.5 * (level - 1);
     value = level;
@@ -70,7 +70,7 @@ public class Bloons{
   public void level(int l){
     level = l;
     if (level >= 1) {
-      balloon = sprites[level-1];
+      balloon = loadImage(sprites[level-1] + ".png");
       velo = 2.5 + 0.5 * (level - 1);
       value = level;
       m = map;
@@ -81,37 +81,9 @@ public class Bloons{
       pos.y = 1000;
     }
   }
-  public void glueLevel(int l){
-    level = l;
-    if (level >= 1) {
-      balloon = sprites[level-1];
-      velo = (2.5 + 0.5 * (level - 1))*0.75;
-      value = level;
-      m = map;
-    }
-    else {
-      exists = false;
-      pos.x = 1000;
-      pos.y = 1000;
-    }
-  }
-  public void glue() {
-    print("glued");
-    velo *= 0.5;
-    if (timer == 0) {
-      glueLevelDown();
-      timer = 50;
-    }
-    else {
-      timer--;
-    }
-  }
   public void levelDown(){
     this.level(level - 1);
     //remove this balloon and replace it with a lower level at the same position
-  }
-  public void glueLevelDown() {
-    this.glueLevel(level-1);
   }
   public void exist(){
     exists = true;
