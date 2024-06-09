@@ -136,6 +136,9 @@ public class Bloons{
       pos.y = 1000;
     }
   }
+  public boolean isCamo() {
+    return (level == 8);
+  }
   public void levelDown(Round r){
     if (level <= 5) {
       this.level(level - 1);

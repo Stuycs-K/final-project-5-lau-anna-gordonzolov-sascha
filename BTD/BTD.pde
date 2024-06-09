@@ -83,7 +83,7 @@ void mouseClicked() {
     }
   }
   if (!selected) {
-    if (mouseX >= 660 && mouseX <= 730 && mouseY >= 110 && mouseY <= 170) {
+    if (mouseX >= 660 && mouseX <= 730 && mouseY >= 80 && mouseY <= 160) {
       if (map.getMoney() >= 200) {
         monk = new DartMonkey(mouseX, mouseY, map);
         monk.changeSel();
@@ -91,7 +91,7 @@ void mouseClicked() {
         selected = !selected;
       }
     }
-    else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 110 && mouseY <= 170) {
+    else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 80 && mouseY <= 160) {
       if (map.getMoney() >= 230) {
         monk = new TackShooter(mouseX, mouseY, map);
         monk.displayRad();
@@ -99,7 +99,7 @@ void mouseClicked() {
         selected = !selected;
       }
     }
-    else if (mouseX >= 660 && mouseX <= 730 && mouseY >= 210 && mouseY <= 270) {
+    else if (mouseX >= 660 && mouseX <= 730 && mouseY >= 190 && mouseY <= 270) {
       if (map.getMoney() >= 300) {
         monk = new SniperMonkey(mouseX, mouseY, map);
         monk.displayRad();
@@ -107,9 +107,18 @@ void mouseClicked() {
         selected = !selected;
       }
     }
-    else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 210 && mouseY <= 270) {
+    else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 190 && mouseY <= 270) {
       if (map.getMoney() >= 2125) {
         monk = new SuperMonkey(mouseX, mouseY, map);
+        monk.displayRad();
+        monk.changeSel();
+        selected = !selected;
+      }
+    }
+    //rect(660,290,70,80,10);
+    else if (mouseX >= 660 && mouseX <= 730 && mouseY >= 290 && mouseY >= 370) {
+      if (map.getMoney() >= 340) {
+        monk = new NinjaMonkey(mouseX, mouseY, map);
         monk.displayRad();
         monk.changeSel();
         selected = !selected;
@@ -175,6 +184,9 @@ void draw() {
   else if (mouseX >= 745 && mouseX <= 815 && mouseY >= 180 && mouseY <= 260) {
     map.changeTitle("SUPER MONKEY",17);
   }
+  else if (mouseX >= 660 && mouseX <= 730 && mouseY >= 290 && mouseY >= 370) {
+    map.changeTitle("NINJA MONKEY",17);
+  }
   else {
     map.changeTitle("TOWERS",20);
   }
@@ -207,7 +219,7 @@ void draw() {
     for (ArrayList<Bloons> bb : rounds.get(curr).getIn()){
         for (int i = 0; i < bb.size(); i++){
           Bloons b = bb.get(i);
-          if (b.doesExist()) {
+          if (b.doesExist() && b.isCamo()) {
             if (m.isInRad(b) && !m.getAtt()) {
               m.attack(b);
               break;

@@ -243,6 +243,27 @@ public class Map{
     } 
     fill(255);
     text("$", 750,265);
+    //ninja
+    fill(#89CFF0);
+    rect(660,290,70,80,10);
+    d = loadImage("sNinja.png");
+    image(d,675,302);
+    textSize(20);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text(340, 685+x,365);
+        text(340, 685,365+x);
+    } 
+    fill(255);
+    text(340, 685,365);
+    textSize(16);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text("$", 675+x,365);
+        text("$", 675,365+x);
+    } 
+    fill(255);
+    text("$", 675,365);
     //start
     stroke(#556915);
     fill(#71E709);
