@@ -1,16 +1,11 @@
 class DartMonkey extends Monkeys {
   private int cost;
-  private int sell;
-  private int size;
-  private int v;
-  private int strength;
   private float diameter;
   private boolean displayRad;
-  private float dir;
-  float minX;
-  float maxX;
-  float minY;
-  float maxY;
+  private float minX;
+  private float maxX;
+  private float minY;
+  private float maxY;
   private int timer;
   private PVector bloon;
   private Bloons blon;
@@ -20,9 +15,9 @@ class DartMonkey extends Monkeys {
   private boolean isSelected;
   private PImage sprite;
   private Map m;
-  float angle = 3 * PI/2;
-  boolean upgrade;
-  int upgrades;
+  private float angle = 3 * PI/2;
+  private boolean upgrade;
+  private int upgrades;
   public DartMonkey(int x, int y, Map map) {
     upgrade = false;
     m = map;

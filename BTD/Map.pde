@@ -8,9 +8,9 @@ public class Map{
   private Block[][] blocks;
   private LinkedList<Block> path;
   private ArrayList<Block> turns;
-  PFont font = createFont("honey.ttf", 16);
-  PImage coins = loadImage("money.png");
-  PImage health = loadImage("health.png");
+  private PFont font = createFont("honey.ttf", 16);
+  private PImage coins = loadImage("money.png");
+  private PImage health = loadImage("health.png");
   private String title;
   private float titleS;
   public Map(PImage map){

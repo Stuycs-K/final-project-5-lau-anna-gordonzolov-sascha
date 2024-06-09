@@ -1,9 +1,9 @@
 public class Block {
   private PVector pos;
-  float minX;
-  float maxX;
-  float minY;
-  float maxY;
+  private float minX;
+  private float maxX;
+  private float minY;
+  private float maxY;
   public Block (float x, float y) {
     pos = new PVector(x, y);
     minX = x;

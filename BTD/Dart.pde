@@ -1,9 +1,7 @@
 public class Dart {
   private float speed;
-  private int size = 1;
   private PImage sprite;
   private PVector pos;
-  private Map m;
   private float ogX;
   private float ogY;
   private boolean popped = false;
@@ -21,7 +19,6 @@ public class Dart {
       sprite = loadImage("nDart.png");
     }
      pos = new PVector(x,y);
-     m = map;
      ogX = x;
      ogY = y;
   }
