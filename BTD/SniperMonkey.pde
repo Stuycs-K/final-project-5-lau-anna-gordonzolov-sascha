@@ -47,12 +47,13 @@ class SniperMonkey extends Monkeys{
     isSelected = !isSelected;
   }
   public void display() {
-    //pushMatrix();
-    //translate(-pos.x,-pos.y);
-    //rotate(angle);
-    //translate(pos.x,pos.y);
-    image(sprite,pos.x - 21.5,pos.y - 21.5);
-    //popMatrix();
+    pushMatrix();
+    imageMode(CENTER);
+    translate(pos.x, pos.y);
+    rotate(PI/2 + angle);
+    image(sprite, 0, 0);
+    imageMode(CORNER);
+    popMatrix();
   }
   public void move(){
     if (isSelected) {
