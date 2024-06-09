@@ -13,7 +13,7 @@ public class Dart {
       sprite = loadImage("dart.png");
     }
     else if (type == 2) {
-      speed = 0.5;
+      speed = 2;
       sprite = loadImage("nail" + num + ".png");
     }
      pos = new PVector(x,y);
