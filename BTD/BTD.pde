@@ -60,7 +60,7 @@ void mouseClicked() {
       m.changeDisplayRad();
       clicked = !clicked;
     }
-    if (m.getUpgrade()) {
+    else if (m.getUpgrade()) {
       //rect(660,300,156,100,10);
       if (mouseX >= 660 && mouseX <= 816 && mouseY >= 300 && mouseY <= 400) {
         if (map.getMoney() >= 150) {
@@ -75,12 +75,12 @@ void mouseClicked() {
         monkeys.remove(m);
         clicked = !clicked;
       }
-    }
-    else if (m.getDisplayRad()){
+      else{
         m.changeUpgrade();
         m.changeDisplayRad();
         clicked = !clicked;
       }
+    }
   }
   if (!selected) {
     if (mouseX >= 660 && mouseX <= 730 && mouseY >= 110 && mouseY <= 170) {
