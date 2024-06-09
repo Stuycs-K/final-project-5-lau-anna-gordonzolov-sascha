@@ -16,7 +16,7 @@ public class Round{
       place.set(0, 0);
       ArrayList<Bloons> temp = new ArrayList<Bloons>();
       for (int i = 0; i < 20; i++){
-        Bloons b = new Bloons(14, map);
+        Bloons b = new Bloons(1, map);
         temp.add(b);
       }
       in.set(0, temp);

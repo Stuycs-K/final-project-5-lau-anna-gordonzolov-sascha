@@ -146,6 +146,6 @@ class TackShooter extends Monkeys{
     pos = new PVector(x,y);
   }
   public int type() {
-    return 4;
+    return 2;
   }
 }
