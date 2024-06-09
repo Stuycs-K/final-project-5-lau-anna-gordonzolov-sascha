@@ -47,12 +47,10 @@ class DartMonkey extends Monkeys{
     isSelected = !isSelected;
   }
   public void display() {
-    //pushMatrix();
-    //translate(-pos.x,-pos.y);
-    //rotate(angle);
-    //translate(pos.x,pos.y);
+    if (att) {
+      //rotate(PI/2 + angle);
+    }
     image(sprite,pos.x - 21.5,pos.y - 21.5);
-    //popMatrix();
   }
   public void move(){
     if (isSelected) {
@@ -115,7 +113,7 @@ class DartMonkey extends Monkeys{
       }*/
       att = true;
       PVector dir = PVector.sub(pos,b.getPos());
-      angle += 2 * PI -  dir.heading();
+      angle = dir.heading();
       bloon = b.getPos();
       blon = b;
       timer = 40;
