@@ -73,6 +73,7 @@ void mouseClicked() {
         map.addMoney((int) ((m.getCost() + m.countUpgrades() * 150) * 0.7));
         monkeys.remove(m);
         clicked = !clicked;
+        return;
       }
       else{
         m.changeUpgrade();
@@ -228,7 +229,6 @@ void draw() {
                 m.attack(b);
               }
               if (m.getAtt()) {
-                print("att");
                 if (m.type() == 1 || m.type() == 4 || m.type() == 5) {
                   if (m.getDart().fly(m, m.getBlon())) {
                     pop.play();
@@ -288,7 +288,4 @@ void draw() {
       fill(255);
       text("RESTART", 345,255);
     }
-}
-
-void moveBloon() {
 }

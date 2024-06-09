@@ -1,19 +1,24 @@
 abstract class Monkeys{
   private int cost;
-  private int sell;
-  private int size;
-  private int v;
+  private float diameter;
+  private boolean displayRad;
+  private float minX;
+  private float maxX;
+  private float minY;
+  private float maxY;
+  private int timer;
+  private int has;
+  private PVector bloon;
+  private Bloons blon;
   private boolean att;
-  private int strength;
-  private int diameter;
   private PVector pos;
+  private Dart d;
   private boolean isSelected;
   private PImage sprite;
-  private int has;
-  private boolean displayRad;
-  private int timer;
-  private Bloons bloon;
-  private Dart d;
+  private Map m;
+  private float angle = 3 * PI/2;
+  private boolean upgrade;
+  private int upgrades;
   public abstract void attack(Bloons b);
   public abstract void upgrade();
   public void move(){
@@ -53,7 +58,7 @@ abstract class Monkeys{
     return (b.getPos().dist(this.pos) < this.diameter/2);
   }
   public Bloons getBlon(){
-    return bloon;
+    return blon;
   }
   public void setAtt(){
     att = false;
@@ -83,7 +88,7 @@ abstract class Monkeys{
     return false;
   }
   public PVector getBloon(){
-    return bloon.getPos();
+    return blon.getPos();
   }
   public Dart getDart(){
     return d;

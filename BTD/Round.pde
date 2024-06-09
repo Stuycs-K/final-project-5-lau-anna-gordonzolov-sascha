@@ -43,7 +43,7 @@ public class Round{
       in.set(0, temp1);
       ArrayList<Bloons> temp2 = new ArrayList<Bloons>(5);
       for (int i = 0; i < 5; i++){
-        Bloons b = new Bloons(8, map);
+        Bloons b = new Bloons(2, map);
         temp2.add(b);
       }
       in.set(1, temp2);
@@ -171,7 +171,7 @@ public class Round{
       in.set(2, temp3);
       ArrayList<Bloons> temp4 = new ArrayList<Bloons>(12);
       for (int i = 0; i < 12; i++){
-        Bloons b = new Bloons(3, map);
+        Bloons b = new Bloons(4, map);
         temp4.add(b);
       }
       in.set(3, temp4);
@@ -203,7 +203,7 @@ public class Round{
       in.set(1, temp2);
       ArrayList<Bloons> temp3 = new ArrayList<Bloons>(22);
       for (int i = 0; i < 22; i++){
-        Bloons b = new Bloons(2, map);
+        Bloons b = new Bloons(5, map);
         temp3.add(b);
       }
       in.set(2, temp3);
@@ -225,7 +225,7 @@ public class Round{
       in.set(1, temp2);
       ArrayList<Bloons> temp3 = new ArrayList<Bloons>(10);
       for (int i = 0; i < 10; i++){
-        Bloons b = new Bloons(2, map);
+        Bloons b = new Bloons(6, map);
         temp3.add(b);
       }
       in.set(2, temp3);
@@ -253,7 +253,7 @@ public class Round{
       in.set(1, temp2);
       ArrayList<Bloons> temp3 = new ArrayList<Bloons>(5);
       for (int i = 0; i < 5; i++){
-        Bloons b = new Bloons(4, map);
+        Bloons b = new Bloons(7, map);
         temp3.add(b);
       }
       in.set(2, temp3);
@@ -269,7 +269,7 @@ public class Round{
       in.set(0, temp1);
       ArrayList<Bloons> temp2 = new ArrayList<Bloons>(23);
       for (int i = 0; i < 23; i++){
-        Bloons b = new Bloons(3, map);
+        Bloons b = new Bloons(8, map);
         temp2.add(b);
       }
       in.set(1, temp2);
@@ -303,7 +303,7 @@ public class Round{
       in.set(3, temp4);
       ArrayList<Bloons> temp5 = new ArrayList<Bloons>(31);
       for (int i = 0; i < 31; i++){
-        Bloons b = new Bloons(1, map);
+        Bloons b = new Bloons(9, map);
         temp5.add(b);
       }
       in.set(4, temp5);
@@ -315,7 +315,7 @@ public class Round{
       in.set(5, temp6);
       ArrayList<Bloons> temp7 = new ArrayList<Bloons>(5);
       for (int i = 0; i < 5; i++){
-        Bloons b = new Bloons(3, map);
+        Bloons b = new Bloons(10, map);
         temp7.add(b);
       }
       in.set(6, temp7);
@@ -349,7 +349,7 @@ public class Round{
       in.set(2, temp3);
       ArrayList<Bloons> temp4 = new ArrayList<Bloons>(10);
       for (int i = 0; i < 10; i++){
-        Bloons b = new Bloons(4, map);
+        Bloons b = new Bloons(11, map);
         temp4.add(b);
       }
       in.set(3, temp4);
@@ -371,7 +371,7 @@ public class Round{
       in.set(0, temp1);
       ArrayList<Bloons> temp2 = new ArrayList<Bloons>(20);
       for (int i = 0; i < 20; i++){
-        Bloons b = new Bloons(3, map);
+        Bloons b = new Bloons(9, map);
         temp2.add(b);
       }
       in.set(1, temp2);
@@ -403,7 +403,7 @@ public class Round{
       in.set(0, temp1);
       ArrayList<Bloons> temp2 = new ArrayList<Bloons>(20);
       for (int i = 0; i < 20; i++){
-        Bloons b = new Bloons(3, map);
+        Bloons b = new Bloons(12, map);
         temp2.add(b);
       }
       in.set(1, temp2);
@@ -419,7 +419,7 @@ public class Round{
       in.set(0, temp1);
       ArrayList<Bloons> temp2 = new ArrayList<Bloons>(5);
       for (int i = 0; i < 5; i++){
-        Bloons b = new Bloons(4, map);
+        Bloons b = new Bloons(13, map);
         temp2.add(b);
       }
       in.set(1, temp2);
@@ -437,7 +437,7 @@ public class Round{
       in.set(3, temp4);
     }
     if (n == 20){
-      in = new ArrayList<ArrayList<Bloons>>(Collections.nCopies(1, null));
+      in = new ArrayList<ArrayList<Bloons>>(Collections.nCopies(2, null));
       place = new ArrayList<Integer>(Collections.nCopies(1, 0));
       ArrayList<Bloons> temp1 = new ArrayList<Bloons>(6);
       for (int i = 0; i < 6; i++){
@@ -445,6 +445,12 @@ public class Round{
         temp1.add(b);
       }
       in.set(0, temp1);
+      ArrayList<Bloons> temp2 = new ArrayList<Bloons>(1);
+      for (int i = 0; i < 1; i++){
+        Bloons b = new Bloons(14, map);
+        temp2.add(b);
+      }
+      in.set(1, temp2);
     }
   }
   public ArrayList<ArrayList<Bloons>> getIn(){
@@ -1123,6 +1129,12 @@ public class Round{
         if (timer % 18 == 0){
           in.get(0).get(place.get(0)).exist();
           place.set(0, place.get(0) + 1);
+        }
+      }
+      if (timer > 6 * 18){
+        if (timer % 18 == 0){
+          in.get(1).get(place.get(1)).exist();
+          place.set(1, place.get(1) + 1);
         }
       }
       timer++;
