@@ -139,9 +139,6 @@ class DartMonkey extends Monkeys {
     maxY = y + 20.5;
     pos = new PVector(x, y);
   }
-  public void dartRotate() {
-    rotate(0.5);
-  }
   public int type() {
     return 1;
   }

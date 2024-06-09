@@ -85,9 +85,6 @@ public class Map{
   public int getHeight(){
     return background.height;
   }
-  public void addCurr() {
-    curr++;
-  }
   public Block getStart(){
     return start;
   }
@@ -364,9 +361,6 @@ public class Map{
   public void addMoney(int n) {
     money += n;
   }
-  public void noLives() {
-    lives = 0;
-  }
   public Block getNext(float x, float y){
     return start;
   }
@@ -390,13 +384,5 @@ public class Map{
   public int getLives(){
     return lives;
   }
-  void mousePressed() {
-  }
-  public void displayPath(){
-      for (Block i : path){
-        fill(0);
-        rect(i.getX(), i.getY(), 862/20, 532/13);
-      }
-   }
 }
   
