@@ -106,7 +106,7 @@ class GlueGun extends Monkeys{
     upgrade = !upgrade;
   }
   public void attack(Bloons b){
-    d = new Dart(pos.x,pos.y,m,1,0);
+    d = new Dart(pos.x,pos.y,m,3,0);
     if (timer == 0){
       /*if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
         if (b.getLevel() > 1) {
@@ -155,6 +155,6 @@ class GlueGun extends Monkeys{
     rotate(0.5);
   }
   public int type() {
-    return 1;
+    return 3;
   }
 }

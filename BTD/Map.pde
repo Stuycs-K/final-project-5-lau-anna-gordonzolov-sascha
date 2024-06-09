@@ -225,7 +225,7 @@ public class Map{
     fill(#89CFF0);
     rect(745,180,70,80,10);
     d = loadImage("sGlue.png");
-    image(d,770,190);
+    image(d,765,190);
     textSize(20);
     fill(0,0,0);
     for(int x = -1; x < 2; x++){

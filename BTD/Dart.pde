@@ -16,6 +16,10 @@ public class Dart {
       speed = 2;
       sprite = loadImage("nail" + num + ".png");
     }
+    else if (type == 3) {
+      speed = 15;
+      sprite = loadImage("glueBall.png");
+    }
      pos = new PVector(x,y);
      m = map;
      ogX = x;
@@ -36,6 +40,24 @@ public class Dart {
     if (pos.x < bloon.getPos().x + 12 && pos.x > bloon.getPos().x - 12 && pos.y < bloon.getPos().y + 20.5 && pos.y > bloon.getPos().y - 20.5){
       m.addMoney(bloon.getValue());
       bloon.levelDown();
+      mon.setAtt();
+      popped = true;
+    }
+    else {
+      popped = false;
+    }
+    this.display();
+    PVector dist = PVector.sub(bloon.getPos(),mon.getPos());
+    PVector move = dist.div(dist.mag());
+    pos.x += move.x * speed;
+    pos.y += move.y * speed;
+    return popped;
+  }
+  public boolean fly(Bloons bloon, Monkeys mon) {
+    if (pos.x < bloon.getPos().x + 12 && pos.x > bloon.getPos().x - 12 && pos.y < bloon.getPos().y + 20.5 && pos.y > bloon.getPos().y - 20.5){
+      //m.addMoney(bloon.getValue());
+      //bloon.levelDown();
+      bloon.glue();
       mon.setAtt();
       popped = true;
     }
