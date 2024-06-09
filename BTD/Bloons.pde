@@ -11,6 +11,7 @@ public class Bloons{
   LinkedList<Block> path = map.getPath();
   int pathBlock;
   int turns;
+  private int timer;
   PImage[] sprites = new PImage[]{loadImage("red.png"), loadImage("blue.png"), loadImage("green.png"), loadImage("yellow.png"), loadImage("pink.png")};
   //in BTD, call this with (0,205);
   public Bloons(int level, Map map){
@@ -80,9 +81,37 @@ public class Bloons{
       pos.y = 1000;
     }
   }
+  public void glueLevel(int l){
+    level = l;
+    if (level >= 1) {
+      balloon = sprites[level-1];
+      velo = (2.5 + 0.5 * (level - 1))*0.75;
+      value = level;
+      m = map;
+    }
+    else {
+      exists = false;
+      pos.x = 1000;
+      pos.y = 1000;
+    }
+  }
+  public void glue() {
+    print("glued");
+    velo *= 0.5;
+    if (timer == 0) {
+      glueLevelDown();
+      timer = 50;
+    }
+    else {
+      timer--;
+    }
+  }
   public void levelDown(){
     this.level(level - 1);
     //remove this balloon and replace it with a lower level at the same position
+  }
+  public void glueLevelDown() {
+    this.glueLevel(level-1);
   }
   public void exist(){
     exists = true;

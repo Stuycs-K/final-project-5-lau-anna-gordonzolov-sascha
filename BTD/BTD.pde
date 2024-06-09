@@ -219,6 +219,10 @@ void draw() {
                   pop.play();
                 }
                 m.display();
+              } else if (m.type() == 3) {
+                if (m.getDart().fly(m.getBlon(),m)) {
+                  pop.play();
+                }
               }
             }
           }
