@@ -222,6 +222,26 @@ public class Map{
     stroke(#556915);
     fill(#71E709);
     rect(660,410,156,100,10);
+    fill(#89CFF0);
+    rect(745,180,70,80,10);
+    d = loadImage("sGlue.png");
+    image(d,770,190);
+    textSize(20);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text(280, 765+x,255);
+        text(280, 765,255+x);
+    } 
+    fill(255);
+    text(280, 765,255);
+    textSize(16);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text("$", 755+x,255);
+        text("$", 755,255+x);
+    } 
+    fill(255);
+    text("$", 755,255);
     textSize(40);
     fill(0,0,0);
     for(int x = -1; x < 2; x++){
