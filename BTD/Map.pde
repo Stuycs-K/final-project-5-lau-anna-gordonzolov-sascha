@@ -159,6 +159,7 @@ public class Map{
     } 
     fill(255);
     text(title, xpos,50);
+    //dart
     fill(#89CFF0);
     rect(660,80,70,80,10);
     PImage d = loadImage("sDartMonkey.png");
@@ -179,6 +180,7 @@ public class Map{
     } 
     fill(255);
     text("$", 675,155);
+    //tack
     fill(#89CFF0);
     rect(745,80,70,80,10);
     d = loadImage("sTackShooter.png");
@@ -199,6 +201,49 @@ public class Map{
     } 
     fill(255);
     text("$", 755,155);
+    //sniper
+    fill(#89CFF0);
+    rect(660,180,70,80,10);
+    d = loadImage("sDartMonkey.png");
+    image(d,680,182);
+    textSize(20);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text(200, 685+x,255);
+        text(200, 685,255+x);
+    } 
+    fill(255);
+    text(200, 685,255);
+    textSize(16);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text("$", 675+x,255);
+        text("$", 675,255+x);
+    } 
+    fill(255);
+    text("$", 675,255);
+    //super
+    fill(#89CFF0);
+    rect(745,180,70,80,10);
+    d = loadImage("sDartMonkey.png");
+    image(d,760,190);
+    textSize(20);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text(280, 765+x,255);
+        text(280, 765,255+x);
+    } 
+    fill(255);
+    text(280, 765,255);
+    textSize(16);
+    fill(0,0,0);
+    for(int x = -1; x < 2; x++){
+        text("$", 755+x,255);
+        text("$", 755,255+x);
+    } 
+    fill(255);
+    text("$", 755,255);
+    //start
     stroke(#556915);
     fill(#71E709);
     rect(660,410,156,100,10);

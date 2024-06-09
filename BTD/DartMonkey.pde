@@ -108,20 +108,14 @@ class DartMonkey extends Monkeys {
   }
   public void attack(Bloons b) {
     d = new Dart(pos.x, pos.y, m, 1, 0);
-    if (timer == 0) {
-      /*if (around(pos.x,b.getX()) && around(pos.y, b.getY())) {
-       if (b.getLevel() > 1) {
-       b.levelDown();
-       }
-       }*/
+    if (timer % 38 == 0) {
       att = true;
       PVector dir = PVector.sub(b.getPos(), pos);
       angle = dir.heading();
       bloon = b.getPos();
       blon = b;
-      timer = 40;
     } else {
-      timer --;
+      timer ++;
     }
   }
   public String box() {
