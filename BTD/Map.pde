@@ -245,25 +245,25 @@ public class Map{
     text("$", 750,265);
     //ninja
     fill(#89CFF0);
-    rect(660,290,70,80,10);
+    rect(660,300,70,80,10);
     d = loadImage("sNinja.png");
-    image(d,675,302);
+    image(d,675,312);
     textSize(20);
     fill(0,0,0);
     for(int x = -1; x < 2; x++){
-        text(340, 685+x,365);
-        text(340, 685,365+x);
+        text(340, 685+x,375);
+        text(340, 685,375+x);
     } 
     fill(255);
-    text(340, 685,365);
+    text(340, 685,375);
     textSize(16);
     fill(0,0,0);
     for(int x = -1; x < 2; x++){
-        text("$", 675+x,365);
-        text("$", 675,365+x);
+        text("$", 675+x,375);
+        text("$", 675,375+x);
     } 
     fill(255);
-    text("$", 675,365);
+    text("$", 675,375);
     //start
     stroke(#556915);
     fill(#71E709);
