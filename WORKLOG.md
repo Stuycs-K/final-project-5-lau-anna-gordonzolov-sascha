@@ -121,3 +121,6 @@ Changed the Bloon constructor and the level down method to accomodate more Bloon
 
 ### date 6/7
 Added new Bloon types and added a popping sound effect.
+
+### date 6/8
+Created options for upgrading the radius of a Bloon and selling a Bloon. Made the monkeys rotate and started creating new monkey types.
