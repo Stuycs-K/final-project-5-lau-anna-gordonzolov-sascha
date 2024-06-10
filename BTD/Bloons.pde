@@ -173,16 +173,13 @@ public class Bloons{
       this.level(13);
       Bloons temp1 = new Bloons(13,m,pos.x - 12,pos.y - 12);
       temp1.exist();
-      Bloons temp2 = new Bloons(13,m,pos.x - 12,pos.y - 12);
+      Bloons temp2 = new Bloons(13,m,pos.x - 24,pos.y - 24);
       temp2.exist();
-      Bloons temp3 = new Bloons(13,m,pos.x - 12,pos.y - 12);
+      Bloons temp3 = new Bloons(13,m,pos.x + 12,pos.y + 12);
       temp3.exist();
-      Bloons temp4 = new Bloons(13,m,pos.x - 12,pos.y - 12);
-      temp4.exist();
       r.getIn().get(0).add(temp1);
       r.getIn().get(0).add(temp2);
       r.getIn().get(0).add(temp3);
-      r.getIn().get(0).add(temp4);
     }
     //remove this balloon and replace it with a lower level at the same position
   }
