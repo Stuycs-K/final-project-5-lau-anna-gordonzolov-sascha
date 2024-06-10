@@ -11,3 +11,6 @@ Install the Sound library.
 Click the tiles on the sidebar on the right to create a monkey, drag it to a valid area around the path, and click it again to place it down. Continue doing so until you run out of money or until you think you have
 enough monkeys. Press the "START" button to begin a round. After each round ends, place any new monkeys and press the "START" button again for the next round. Click on a monkey you have placed in order to upgrade
 its radius or sell it. For the purposes of viewing advanced features, press the enter key to skip to later rounds.
+**Possible bug:** when too many monkeys are placed too close to each other, some may stop shooting. We hypothesize that it is because they attempt to shoot the same balloon, and the one that fails to shoot it stops
+shooting. To avoid this, try placing monkeys farther from each other so that their radii don't overlap.
+**Presentation video:** [Video](https://drive.google.com/file/d/1LFv9vXmJwdVz0HtjaBmUY2pZwPrFrafj/view?usp=drive_link)
