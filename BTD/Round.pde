@@ -438,7 +438,7 @@ public class Round{
     }
     if (n == 20){
       in = new ArrayList<ArrayList<Bloons>>(Collections.nCopies(2, null));
-      place = new ArrayList<Integer>(Collections.nCopies(1, 0));
+      place = new ArrayList<Integer>(Collections.nCopies(2, 0));
       ArrayList<Bloons> temp1 = new ArrayList<Bloons>(6);
       for (int i = 0; i < 6; i++){
         Bloons b = new Bloons(6, map);
@@ -1131,7 +1131,7 @@ public class Round{
           place.set(0, place.get(0) + 1);
         }
       }
-      if (timer > 6 * 18){
+      if (timer > 6 * 18 && timer <= 7 * 18){
         if (timer % 18 == 0){
           in.get(1).get(place.get(1)).exist();
           place.set(1, place.get(1) + 1);

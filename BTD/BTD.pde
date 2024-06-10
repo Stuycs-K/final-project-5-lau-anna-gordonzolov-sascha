@@ -14,6 +14,7 @@ boolean lost = false;
 Monkeys monk;
 boolean selected;
 boolean clicked;
+Monkeys chosen;
 void keyPressed() {
   if (key == 10) {
     if (!start){
@@ -55,6 +56,7 @@ void mouseClicked() {
   for (int i = 0; i < monkeys.size(); i++) {
     Monkeys m = monkeys.get(i);
     if (m.isIn(mouseX,mouseY)) {
+      chosen = m;
       m.changeUpgrade();
       m.changeDisplayRad();
       clicked = !clicked;
@@ -63,14 +65,26 @@ void mouseClicked() {
       //rect(660,300,156,100,10);
       if (mouseX >= 660 && mouseX <= 816 && mouseY >= 300 && mouseY <= 400) {
         if (map.getMoney() >= 150) {
-          m.addRad(15);
-          m.addUpgrade();
-          map.subMoney(150);
+          if (chosen.type() != 3) {
+            m.addRad(15);
+            m.addUpgrade();
+            map.subMoney(150);
+          }
+          else {
+            m.changeFreq();
+            m.addUpgrade();
+            map.subMoney(235);
+          }
         }
       }
       //rect(660,190,156,100,10);
       else if (mouseX >= 660 && mouseX <= 816 && mouseY >= 190 && mouseY <= 290) {
-        map.addMoney((int) ((m.getCost() + m.countUpgrades() * 150) * 0.7));
+        if (chosen.type() != 3) {
+          map.addMoney((int) ((m.getCost() + m.countUpgrades() * 150) * 0.7));
+        }
+        else {
+          map.addMoney((int) ((m.getCost() + m.countUpgrades() * 235) * 0.7));
+        }
         monkeys.remove(m);
         clicked = !clicked;
         return;

@@ -19,6 +19,7 @@ class SniperMonkey extends Monkeys{
   private float angle = 3 * PI/2;
   private boolean upgrade;
   private int upgrades;
+  private int freq = 200;
   public SniperMonkey(int x, int y, Map map){
     has = -1;
     upgrade = false;
@@ -34,7 +35,7 @@ class SniperMonkey extends Monkeys{
     sprite = loadImage("sniper.png");
     pos = new PVector(x,y);
     isSelected = false;
-    diameter = 120;
+    diameter = 5000;
     cost = 300;
   }
   public int getCost() {
@@ -80,12 +81,12 @@ class SniperMonkey extends Monkeys{
   }
   public void displayRad(){
     fill(#d3d3d3, 150);
-    circle(pos.x, pos.y, diameter);
+    circle(pos.x, pos.y, 120);
     this.display();
   }
   public void displayRadRed(){
     fill(#FF0000, 150);
-    circle(pos.x, pos.y, diameter);
+    circle(pos.x, pos.y, 120);
     this.display();
   }
   public void changeDisplayRad(){
@@ -111,7 +112,7 @@ class SniperMonkey extends Monkeys{
   }
   public void attack(Bloons b){
     d = new Dart(pos.x, pos.y, m, 1, 0);
-    if (timer % 200 == 0){
+    if (timer % freq == 0){
       att = true;
       PVector dir = PVector.sub(b.getPos(), pos);
       angle = dir.heading();
@@ -119,6 +120,9 @@ class SniperMonkey extends Monkeys{
       blon = b;
     }
     timer ++;
+  }
+  public void changeFreq() {
+    freq -= 50;
   }
   public String box(){
     return (minX + " " + maxX + " " + minY + " " + maxY);

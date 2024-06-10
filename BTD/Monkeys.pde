@@ -27,6 +27,8 @@ abstract class Monkeys{
       monk.displayRad();
     }
   }
+  public void changeFreq() {
+  }
   public void changeUpgrade() {
   }
   public void changeSel() {
@@ -66,8 +68,6 @@ abstract class Monkeys{
   }
   public void addRad(int n) {
   }
-  public void click(){
-  }
   public void display(){
   }
   public void displayRad(){
@@ -91,9 +91,6 @@ abstract class Monkeys{
   public Dart getDart(){
     return d;
   }
-  public String box(){
-    return ("");
-  }
   public void setCor(float x, float y){
   }
   public Dart getDart(int n){
@@ -101,12 +98,6 @@ abstract class Monkeys{
   }
   public int getCost() {
     return cost;
-  }
-  public int sell(){
-    return -1;
-  }
-  public int buy(){
-    return -1;
   }
   public void setSelect() {
     isSelected = !isSelected;
