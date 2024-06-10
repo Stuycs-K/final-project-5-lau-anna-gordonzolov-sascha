@@ -122,7 +122,7 @@ class SniperMonkey extends Monkeys{
     timer ++;
   }
   public void changeFreq() {
-    freq -= 50;
+    freq /= 1.2;
   }
   public String box(){
     return (minX + " " + maxX + " " + minY + " " + maxY);

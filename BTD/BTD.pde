@@ -79,6 +79,7 @@ void mouseClicked() {
             map.subMoney(235);
           }
         }
+        return;
       }
       //rect(660,190,156,100,10);
       else if (mouseX >= 660 && mouseX <= 816 && mouseY >= 190 && mouseY <= 290) {
