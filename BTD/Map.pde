@@ -8,12 +8,14 @@ public class Map{
   private Block[][] blocks;
   private LinkedList<Block> path;
   private ArrayList<Block> turns;
+  private boolean done;
   private PFont font = createFont("honey.ttf", 16);
   private PImage coins = loadImage("money.png");
   private PImage health = loadImage("health.png");
   private String title;
   private float titleS;
   public Map(PImage map){
+    done = true;
     title = "TOWERS";
     titleS = 20;
     background = map;
@@ -81,6 +83,12 @@ public class Map{
   }
   public int getWidth(){
     return background.width;
+  }
+  public void setDone(boolean tf){
+    done = tf;
+  }
+  public boolean getDone(){
+    return done;
   }
   public int getHeight(){
     return background.height;

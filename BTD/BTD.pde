@@ -158,6 +158,7 @@ void mouseClicked() {
     else{
       if (rounds.get(curr).nextRound()) {
         curr++;
+        map.setDone(true);
       }
     }
   }
@@ -209,6 +210,10 @@ void draw() {
   }
   if (map.getLives() == 0){
     lost = true;
+  }
+  if (map.getDone() && rounds.get(curr).nextRound()){
+    map.addMoney(100 + curr + 1);
+    map.setDone(false);
   }
   won = !lost && rounds.size() == curr + 1 && rounds.get(curr).nextRound();
   map.display();
