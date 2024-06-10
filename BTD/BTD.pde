@@ -1,5 +1,6 @@
 import processing.sound.*;
 SoundFile pop;
+SoundFile bg;
 PImage p;
 Map map;
 Bloons balloon;
@@ -185,6 +186,8 @@ void setup() {
   clicked = false;
   p = loadImage("map.png");
   pop = new SoundFile(this, "pop.mp3");
+  bg = new SoundFile(this, "theme.mp3");
+  bg.loop();
   map = new Map(p);
   turningpt = map.getTurns();
   rounds = new ArrayList<Round>();
