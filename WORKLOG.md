@@ -69,6 +69,9 @@ Trying to rewrite the rounds class but its ending up looking like a bigger job t
 ### date 6/8
 Productive day! I made 20 full rounds mimicking the rounds of the real game -- the system implemented yesterday helped significantly. Now when monkeys are selected to place you can tell by a red or grey radius whether or not the monkey can be placed. Started making a super and sniper monkey! Super is done, sniper is close. 
 
+### date 6/9
+Reworked levelDown so that not when a bloon of a certain class is popped it can spawn multiple children. Added a couple of features with money, including the ability to give the player cash freely and a $100 + n reward for clearing round n. Made music for the game! Now the game is accompanied by constant looping music. 
+
 ## Anna Lau
 
 ### date 5/22
