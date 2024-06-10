@@ -169,7 +169,13 @@ void reset() {
   curr = 0;
   clicked = false;
   map = new Map(p);
+  rounds = new ArrayList<Round>();
   monkeys = new ArrayList<Monkeys>();
+  size(826, 532);
+  for (int i = 1; i < 21; i++){
+    Round temp = new Round(i, map);
+    rounds.add(temp);
+  }
 }
 void setup() {
   start = false;
@@ -181,7 +187,6 @@ void setup() {
   map = new Map(p);
   turningpt = map.getTurns();
   rounds = new ArrayList<Round>();
-  //balloons = new ArrayList<Bloons>();
   monkeys = new ArrayList<Monkeys>();
   size(826, 532);
   for (int i = 1; i < 21; i++){
