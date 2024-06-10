@@ -141,7 +141,9 @@ public class Bloons{
     }
     else if (level >=6 && level <=9) {
       this.level(5);
-      r.getIn().get(0).add(new Bloons(5,m,pos.x,pos.y));
+      Bloons temp = new Bloons(5,m,pos.x - 20,pos.y - 20);
+      temp.exist();
+      r.getIn().get(0).add(temp);
     }
     else if (level == 10) {
       this.level(6);
