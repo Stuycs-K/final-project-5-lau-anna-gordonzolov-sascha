@@ -27,6 +27,8 @@ abstract class Monkeys{
       monk.displayRad();
     }
   }
+  public void changeFreq() {
+  }
   public void changeUpgrade() {
   }
   public void changeSel() {

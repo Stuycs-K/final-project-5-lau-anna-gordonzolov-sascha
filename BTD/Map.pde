@@ -274,35 +274,68 @@ public class Map{
     fill(255);
     text("START", 680,475);
     if (clicked) {
-      stroke(#556915);
-      fill(#71E709);
-      rect(660,300,156,100,10);
-      d = loadImage("upgrade.png");
-      image(d,700,330);
-      textSize(18);
-      fill(0,0,0);
-      for(int x = -1; x < 2; x++){
-          text("LARGER RADIUS", 665+x,325);
-          text("LARGER RADIUS", 665,325+x);
-      } 
-      fill(255);
-      text("LARGER RADIUS", 665,325);
-      textSize(20);
-      fill(0,0,0);
-      for(int x = -1; x < 2; x++){
-          text(150, 730+x,395);
-          text(150, 730,395+x);
-      } 
-      fill(255);
-      text(150, 730,395);
-      textSize(16);
-      fill(0,0,0);
-      for(int x = -1; x < 2; x++){
-          text("$", 720+x,395);
-          text("$", 720,395+x);
-      } 
-      fill(255);
-      text("$", 720,395);
+      if (chosen.type() != 3) {
+        stroke(#556915);
+        fill(#71E709);
+        rect(660,300,156,100,10);
+        d = loadImage("upgrade.png");
+        image(d,700,330);
+        textSize(18);
+        fill(0,0,0);
+        for(int x = -1; x < 2; x++){
+            text("LARGER RADIUS", 665+x,325);
+            text("LARGER RADIUS", 665,325+x);
+        } 
+        fill(255);
+        text("LARGER RADIUS", 665,325);
+        textSize(20);
+        fill(0,0,0);
+        for(int x = -1; x < 2; x++){
+            text(150, 730+x,395);
+            text(150, 730,395+x);
+        } 
+        fill(255);
+        text(150, 730,395);
+        textSize(16);
+        fill(0,0,0);
+        for(int x = -1; x < 2; x++){
+            text("$", 720+x,395);
+            text("$", 720,395+x);
+        } 
+        fill(255);
+        text("$", 720,395);
+      }
+      else {
+        stroke(#556915);
+        fill(#71E709);
+        rect(660,300,156,100,10);
+        d = loadImage("speed.png");
+        image(d,720,330);
+        textSize(15);
+        fill(0,0,0);
+        for(int x = -1; x < 2; x++){
+            text("FASTER SHOOTING", 665+x,325);
+            text("FASTER SHOOTING", 665,325+x);
+        } 
+        fill(255);
+        text("FASTER SHOOTING", 665,325);
+        textSize(20);
+        fill(0,0,0);
+        for(int x = -1; x < 2; x++){
+            text(235, 730+x,395);
+            text(235, 730,395+x);
+        } 
+        fill(255);
+        text(235, 730,395);
+        textSize(16);
+        fill(0,0,0);
+        for(int x = -1; x < 2; x++){
+            text("$", 720+x,395);
+            text("$", 720,395+x);
+        } 
+        fill(255);
+        text("$", 720,395);
+      }
       stroke(#556915);
       fill(#71E709);
       rect(660,190,156,100,10);
