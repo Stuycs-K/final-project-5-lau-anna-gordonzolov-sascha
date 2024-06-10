@@ -16,6 +16,9 @@ boolean selected;
 boolean clicked;
 Monkeys chosen;
 void keyPressed() {
+  if (key == 109){
+    map.addMoney(100);
+  }
   if (key == 10) {
     if (!start){
       start = true;
