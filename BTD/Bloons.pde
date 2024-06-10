@@ -141,29 +141,48 @@ public class Bloons{
     }
     else if (level >=6 && level <=9) {
       this.level(5);
-      r.getIn().get(0).add(new Bloons(5,m,pos.x,pos.y));
+      Bloons temp = new Bloons(5,m,pos.x - 12,pos.y - 12);
+      temp.exist();
+      r.getIn().get(0).add(temp);
     }
     else if (level == 10) {
       this.level(6);
-      r.getIn().get(0).add(new Bloons(6,m,pos.x,pos.y));
+      Bloons temp = new Bloons(6,m,pos.x - 12,pos.y - 12);
+      temp.exist();
+      r.getIn().get(0).add(temp);
     }
     else if (level == 11) {
       this.level(6);
-      r.getIn().get(0).add(new Bloons(7,m,pos.x,pos.y));
+      Bloons temp = new Bloons(6,m,pos.x - 12,pos.y - 12);
+      temp.exist();
+      r.getIn().get(0).add(temp);
     }
     else if (level == 12) {
       this.level(11);
-      r.getIn().get(0).add(new Bloons(11,m,pos.x,pos.y));
+      Bloons temp = new Bloons(11,m,pos.x - 12,pos.y - 12);
+      temp.exist();
+      r.getIn().get(0).add(temp);
     }
     else if (level == 13) {
       this.level(12);
-      r.getIn().get(0).add(new Bloons(12,m,pos.x,pos.y));
+      Bloons temp = new Bloons(12,m,pos.x - 12,pos.y - 12);
+      temp.exist();
+      r.getIn().get(0).add(temp);
     }
     else if (level == 14) {
       this.level(13);
-      r.getIn().get(0).add(new Bloons(13,m,pos.x,pos.y));
-      r.getIn().get(0).add(new Bloons(13,m,pos.x,pos.y));
-      r.getIn().get(0).add(new Bloons(13,m,pos.x,pos.y));
+      Bloons temp1 = new Bloons(13,m,pos.x - 12,pos.y - 12);
+      temp1.exist();
+      Bloons temp2 = new Bloons(13,m,pos.x - 12,pos.y - 12);
+      temp2.exist();
+      Bloons temp3 = new Bloons(13,m,pos.x - 12,pos.y - 12);
+      temp3.exist();
+      Bloons temp4 = new Bloons(13,m,pos.x - 12,pos.y - 12);
+      temp4.exist();
+      r.getIn().get(0).add(temp1);
+      r.getIn().get(0).add(temp2);
+      r.getIn().get(0).add(temp3);
+      r.getIn().get(0).add(temp4);
     }
     //remove this balloon and replace it with a lower level at the same position
   }
